@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Indicator Profile — AAPO</title>
+<link rel="stylesheet" href="css/theme.css?v=9" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  .badge-tab-btn { font-family: var(--font-display); font-weight: 600; font-size: 1rem; padding: 4px 0; border-bottom: 3px solid transparent; cursor: pointer; background: none; }
+  .badge-tab-btn.active { border-bottom-color: currentColor; }
+  .badge-tab-btn .count { font-weight: 500; }
+  .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; margin-right: 4px; flex-shrink: 0; }
+  .chamber-select-col { text-align: left; border-radius: var(--radius); padding: 8px 12px; background: var(--paper-raised); cursor: pointer; transition: background .15s ease; }
+  .chamber-select-col:hover:not(.active) { background: var(--hairline); }
+  .chamber-select-col.active { background: var(--highlight-dim); }
+  .card-chevron { transition: transform .2s ease; color: var(--ink-faint); }
+  .breadcrumb-select {
+    appearance: none; -webkit-appearance: none; background: transparent; border: none; cursor: pointer;
+    font: inherit; font-weight: 600; color: var(--ink); padding: 0 16px 0 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="%238A9099" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat; background-position: right center;
+  }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <a href="indicators.html" class="hover:text-[var(--ink)]">Explore by Indicator</a>
+    <span class="mx-1.5">›</span>
+    <select id="breadcrumb-indicator" class="breadcrumb-select"></select>
+  </div>
+
+  <main>
+
+    <!-- ===================== OVERVIEW ===================== -->
+    <section style="background:var(--highlight-dim)" class="py-12">
+      <div class="shell">
+        <div class="flex items-center justify-between gap-4 flex-wrap mb-6">
+          <div class="flex items-center gap-3">
+            <span class="font-display text-sm font-semibold text-[var(--ink-soft)]">Asia Parliamentary Openness Index</span>
+            <select id="cycle-select" class="control !py-1.5 !text-xs"></select>
+          </div>
+          <div class="flex items-center gap-5 text-sm">
+            <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
+            <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+          </div>
+        </div>
+
+        <div class="eyebrow mb-2">Indicator:</div>
+        <h1 id="indicator-name" class="font-display text-4xl font-bold mb-6">—</h1>
+
+        <div class="grid lg:grid-cols-[1fr_360px] gap-8">
+          <div class="text-sm space-y-1.5" id="indicator-facts"></div>
+          <div class="card p-6" id="overview-card"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BADGE TABS + COUNTRY CARDS ===================== -->
+    <section class="shell py-16">
+      <div class="flex items-center gap-8 mb-8 flex-wrap" id="badge-tabs"></div>
+      <div id="country-list"></div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { loadFullDataset } from "./js/data.js?v=13";
+    import { buildIndex, calculateIndicatorClassification, calculateQuestionScore } from "./js/calculations.js?v=15";
+    import { fmtPct, badgeFor } from "./js/ui.js?v=13";
+    import { questionBlockHTML } from "./components/questionBlock.js?v=1";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("indicators");
+
+      const dataset = await loadFullDataset();
+      const idx = buildIndex(dataset);
+      const countryIds = dataset.countries.map((c) => c.country_id);
+      const countryById = new Map(dataset.countries.map((c) => [c.country_id, c]));
+
+      const params = new URLSearchParams(window.location.search);
+      const requestedId = params.get("id");
+      const indicatorRow = dataset.indicators.find((i) => i.indicator_id === requestedId) || dataset.indicators[0];
+      const indicatorId = indicatorRow.indicator_id;
+
+      document.getElementById("cycle-select").innerHTML = `<option>2026</option>`;
+      const breadcrumbSelect = document.getElementById("breadcrumb-indicator");
+      const uniqueIndicators = [...new Map(dataset.indicators.map((i) => [i.indicator_id, i])).values()]
+        .sort((a, b) => a.indicator_name.localeCompare(b.indicator_name));
+      breadcrumbSelect.innerHTML = uniqueIndicators
+        .map((i) => `<option value="${i.indicator_id}"${i.indicator_id === indicatorId ? " selected" : ""}>${i.indicator_name}</option>`).join("");
+      breadcrumbSelect.addEventListener("change", () => {
+        window.location.href = `indicator.html?id=${breadcrumbSelect.value}`;
+      });
+      document.getElementById("indicator-name").textContent = indicatorRow.indicator_name;
+
+      const relevance = dataset.relevances.find((r) => r.relevance_id === indicatorRow.relevance_id);
+      const dimension = dataset.dimensions.find((d) => d.dimension_id === relevance?.dimension_id);
+      const questions = idx.questionsByIndicator.get(indicatorId) || [];
+
+      document.getElementById("indicator-facts").innerHTML = `
+        <div><span class="font-medium text-[var(--ink)]">Dimension:</span> ${dimension?.dimension ?? "—"}</div>
+        <div><span class="font-medium text-[var(--ink)]">Dimension Relevance:</span> ${relevance?.dimension_relevance ?? "—"}</div>
+        <div><span class="font-medium text-[var(--ink)]">Number of question:</span> ${questions.length}</div>
+      `;
+
+      // ---------- Classify every country for this indicator ----------
+      const classifications = countryIds.map((cid) => ({
+        countryId: cid,
+        classification: calculateIndicatorClassification(cid, indicatorId, idx),
+      }));
+      const counts = { achieved: 0, partly_achieved: 0, not_achieved: 0, na: 0 };
+      classifications.forEach((c) => { counts[c.classification] = (counts[c.classification] || 0) + 1; });
+      const total = countryIds.length;
+      const pct = (n) => (total ? (n / total) * 100 : 0);
+      const achievedPct = total ? (counts.achieved / total) * 100 : 0;
+
+      // ---------- Overview card ----------
+      document.getElementById("overview-card").innerHTML = `
+        <div class="mb-5" style="color:var(--achieved)">
+          <span class="font-mono text-3xl font-bold">${fmtPct(achievedPct, 0)}</span>
+          <span class="text-sm"> of countries</span>
+          <div class="text-sm">achieve this indicator</div>
+        </div>
+        <div class="flex rounded-full overflow-hidden h-2 mb-2">
+          <div style="width:${pct(counts.achieved)}%; background:var(--achieved)"></div>
+          <div style="width:${pct(counts.partly_achieved)}%; background:var(--partly)"></div>
+          <div style="width:${pct(counts.not_achieved)}%; background:var(--not-achieved)"></div>
+          <div style="width:${pct(counts.na)}%; background:var(--na)"></div>
+        </div>
+        <div class="text-[0.68rem] text-[var(--ink-faint)] mb-1">Number of country</div>
+        <div class="flex items-center gap-3 text-xs text-[var(--ink-soft)] flex-wrap">
+          <span class="flex items-center"><span class="legend-dot" style="background:var(--achieved)"></span>${counts.achieved}</span>
+          <span class="flex items-center"><span class="legend-dot" style="background:var(--partly)"></span>${counts.partly_achieved}</span>
+          <span class="flex items-center"><span class="legend-dot" style="background:var(--not-achieved)"></span>${counts.not_achieved}</span>
+          <span class="flex items-center"><span class="legend-dot" style="background:var(--na)"></span>${counts.na}</span>
+        </div>
+      `;
+
+      // ---------- Badge tabs ----------
+      const TABS = [
+        { key: "achieved", label: "Achieved", color: "var(--achieved)" },
+        { key: "partly_achieved", label: "Partly Achieved", color: "var(--partly)" },
+        { key: "not_achieved", label: "Not Achieved", color: "var(--not-achieved)" },
+        { key: "na", label: "N/A", color: "var(--na)" },
+      ];
+      const badgeTabsEl = document.getElementById("badge-tabs");
+      badgeTabsEl.innerHTML = TABS.map((t, i) => `
+        <button class="badge-tab-btn${i === 0 ? " active" : ""}" data-key="${t.key}" style="color:${t.color}">
+          ${t.label} <span class="count">(${counts[t.key] || 0})</span>
+        </button>
+      `).join("");
+
+      // ---------- Country cards for the active tab ----------
+      function chamberScoreForIndicator(chamberId) {
+        let score = 0, max = 0;
+        questions.forEach((q) => {
+          const resp = idx.responseByChamberQuestion.get(`${chamberId}__${q.question_id}`);
+          const s = calculateQuestionScore(resp, q, idx);
+          if (!s.isNA) { score += s.score; max += s.max; }
+        });
+        score = Math.round(score * 100) / 100;
+        max = Math.round(max);
+        return { score, max, pct: max > 0 ? (score / max) * 100 : null };
+      }
+
+      function countryRaw(countryId) {
+        const chambers = idx.chambersByCountry.get(countryId) || [];
+        let score = 0, max = 0;
+        chambers.forEach((ch) => {
+          const s = chamberScoreForIndicator(ch.chamber_id);
+          score += s.score; max += s.max;
+        });
+        return { score: Math.round(score * 100) / 100, max: Math.round(max) };
+      }
+
+      const OVERALL_TOOLTIP_HTML = `The overall score is calculated by converting the raw score into a percentage using the following formula: Overall Score = (Raw Score ÷ Total Possible Score) × 100
+        <br /><br />
+        To ensure fair comparisons across countries with different parliamentary systems, the scores of bicameral legislatures are calculated by averaging the scores of their lower and upper chambers. For unicameral legislatures, the score of the single chamber is used.`;
+
+      function chamberColHTML(chamber, label, score) {
+        return `
+          <button type="button" class="chamber-select-col" data-chamber-id="${chamber.chamber_id}">
+            <div class="text-xs text-[var(--ink-faint)] mb-0.5">${label}</div>
+            <div class="font-mono font-semibold">${score.max > 0 ? score.score : "—"}${score.max > 0 ? `<span class="text-[var(--ink-faint)]">/${score.max}</span>` : ""}</div>
+          </button>`;
+      }
+
+      function countryCardHTML(countryId) {
+        const country = countryById.get(countryId);
+        const chambers = idx.chambersByCountry.get(countryId) || [];
+        const isBicameral = chambers.length === 2;
+        const lowerChamber = chambers.find((c) => c.chamber_type === "lower" || c.chamber_type === "unicameral");
+        const upperChamber = chambers.find((c) => c.chamber_type === "upper");
+
+        const lowerScore = chamberScoreForIndicator(lowerChamber.chamber_id);
+        const upperScore = upperChamber ? chamberScoreForIndicator(upperChamber.chamber_id) : null;
+        const validPcts = [lowerScore.pct, upperScore?.pct].filter((p) => p !== null && p !== undefined);
+        const overallPct = validPcts.length ? validPcts.reduce((a, b) => a + b, 0) / validPcts.length : null;
+
+        const defaultChamberId = lowerChamber.chamber_id;
+        const chamberContentHTML = (chamberId) => questions.map((q, i) => questionBlockHTML(q, i, chamberId, idx)).join("");
+
+        return `
+          <div class="card mb-4 overflow-hidden country-indicator-card" data-country-id="${countryId}" data-active-chamber="" data-reveal>
+            <div class="card-toggle cursor-pointer px-5 py-5 flex items-center gap-4">
+              <svg class="card-chevron flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-display font-semibold flex-1 truncate min-w-0">${country.country_name}</span>
+              <div class="flex items-center gap-3 flex-shrink-0">
+                ${chamberColHTML(lowerChamber, "Lower Chamber", lowerScore)}
+                ${isBicameral ? chamberColHTML(upperChamber, "Upper Chamber", upperScore) : ""}
+                <div class="text-right relative">
+                  <div class="text-xs text-[var(--ink-faint)] mb-0.5 flex items-center justify-end gap-1">
+                    <span>Overall</span>
+                    <button type="button" class="info-icon overall-info-btn" aria-expanded="false" aria-label="How is this calculated?">?</button>
+                  </div>
+                  <div class="font-mono font-semibold text-lg" style="color:var(--highlight)">${overallPct !== null ? fmtPct(overallPct, 0) : "—"}</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-content" style="display:none">
+              <div class="px-5 pb-5 pt-4 border-t border-[var(--hairline)]" data-chamber-content>${chamberContentHTML(defaultChamberId)}</div>
+              <div class="text-right px-5 pb-5">
+                <a href="country.html?id=${countryId}" class="btn text-sm font-medium" style="background:var(--highlight-dim); color:var(--highlight);">Explore ${country.country_name} →</a>
+              </div>
+            </div>
+          </div>`;
+      }
+
+      function renderCountryList(activeKey) {
+        closeOverallTooltip();
+        const ids = classifications.filter((c) => c.classification === activeKey).map((c) => c.countryId)
+          .sort((a, b) => {
+            const rawA = countryRaw(a), rawB = countryRaw(b);
+            const pctA = rawA.max > 0 ? rawA.score / rawA.max : 0;
+            const pctB = rawB.max > 0 ? rawB.score / rawB.max : 0;
+            if (pctB !== pctA) return pctB - pctA;
+            return countryById.get(a).country_name.localeCompare(countryById.get(b).country_name);
+          });
+        document.getElementById("country-list").innerHTML = ids.length
+          ? ids.map((cid) => countryCardHTML(cid)).join("")
+          : `<p class="text-sm text-[var(--ink-faint)] py-10 text-center">No countries in this category.</p>`;
+        refreshDynamicUI();
+      }
+
+      // ---------- Country card interactions (delegated, since cards re-render on every tab switch) ----------
+      const countryListEl = document.getElementById("country-list");
+      let openOverallTooltip = null;
+      function closeOverallTooltip() {
+        if (openOverallTooltip) {
+          openOverallTooltip.el.remove();
+          openOverallTooltip.btn.setAttribute("aria-expanded", "false");
+          openOverallTooltip = null;
+        }
+      }
+
+      countryListEl.addEventListener("click", (e) => {
+        // Overall-score tooltip toggle — rendered as a floating element appended to
+        // <body> (positioned via the button's bounding rect) rather than nested inside
+        // the card, since the card's overflow:hidden would otherwise clip it.
+        const infoBtn = e.target.closest(".overall-info-btn");
+        if (infoBtn) {
+          const wasOpenForThisButton = openOverallTooltip?.btn === infoBtn;
+          closeOverallTooltip();
+          if (!wasOpenForThisButton) {
+            const rect = infoBtn.getBoundingClientRect();
+            const tooltip = document.createElement("div");
+            tooltip.className = "overall-info-tooltip card p-3 text-xs text-[var(--ink-soft)] leading-relaxed text-left";
+            tooltip.style.cssText = `position:fixed; width:320px; z-index:50; background:var(--paper-raised); top:${rect.bottom + 8}px; left:${Math.max(12, rect.right - 320)}px;`;
+            tooltip.innerHTML = OVERALL_TOOLTIP_HTML;
+            document.body.appendChild(tooltip);
+            infoBtn.setAttribute("aria-expanded", "true");
+            openOverallTooltip = { el: tooltip, btn: infoBtn };
+          }
+          return;
+        }
+
+        // Chamber selection: switch which chamber's questions are shown, and make sure the card is open
+        const chamberBtn = e.target.closest(".chamber-select-col");
+        if (chamberBtn) {
+          const card = chamberBtn.closest(".country-indicator-card");
+          card.dataset.activeChamber = chamberBtn.dataset.chamberId;
+          card.querySelectorAll(".chamber-select-col").forEach((b) => b.classList.toggle("active", b === chamberBtn));
+          card.querySelector("[data-chamber-content]").innerHTML = questions.map((q, i) => questionBlockHTML(q, i, chamberBtn.dataset.chamberId, idx)).join("");
+          card.querySelector(".card-content").style.display = "block";
+          card.querySelector(".card-chevron").style.transform = "rotate(180deg)";
+          refreshDynamicUI();
+          return;
+        }
+
+        // Card expand/collapse toggle
+        const toggle = e.target.closest(".card-toggle");
+        if (toggle) {
+          const card = toggle.closest(".country-indicator-card");
+          const content = card.querySelector(".card-content");
+          const chevron = card.querySelector(".card-chevron");
+          const isOpen = content.style.display === "block";
+          if (!isOpen && !card.querySelector(".chamber-select-col.active")) {
+            // Nothing selected yet — default to the lower chamber on first expand.
+            const lowerBtn = card.querySelector(".chamber-select-col");
+            lowerBtn.classList.add("active");
+            card.dataset.activeChamber = lowerBtn.dataset.chamberId;
+          }
+          if (isOpen) {
+            // Collapsing — clear the selection so the next expand defaults back to Lower Chamber.
+            card.querySelectorAll(".chamber-select-col").forEach((b) => b.classList.remove("active"));
+            card.dataset.activeChamber = "";
+          }
+          content.style.display = isOpen ? "none" : "block";
+          chevron.style.transform = isOpen ? "" : "rotate(180deg)";
+          return;
+        }
+      });
+
+      // Document-level: closes the tooltip on ANY outside click, including ones outside
+      // #country-list entirely (e.g. navbar, hero) — the delegated listener above can only
+      // ever see clicks within its own subtree, so it can't catch those on its own.
+      document.addEventListener("click", (e) => {
+        if (openOverallTooltip && !openOverallTooltip.el.contains(e.target) && !openOverallTooltip.btn.contains(e.target)) {
+          closeOverallTooltip();
+        }
+      });
+
+      // A fixed-position tooltip would visually drift from its button on scroll, so close it instead.
+      window.addEventListener("scroll", closeOverallTooltip, true);
+
+      badgeTabsEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".badge-tab-btn");
+        if (!btn) return;
+        badgeTabsEl.querySelectorAll(".badge-tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderCountryList(btn.dataset.key);
+      });
+
+      renderCountryList("achieved");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Downloads — AAPO</title>
+<meta name="description" content="Download the underlying AAPO dataset, the survey question set, and the assessment report." />
+<link rel="stylesheet" href="css/theme.css?v=9" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .toc-link { display: block; padding: 6px 0; font-size: 0.92rem; color: var(--ink-soft); border-left: 2px solid transparent; padding-left: 12px; }
+  .toc-link:hover { color: var(--ink); }
+  .toc-link.active { color: var(--ink); font-weight: 600; border-color: var(--highlight); }
+  .download-item {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    background: var(--paper-raised); border-radius: var(--radius); padding: 20px 22px;
+    text-decoration: none; color: inherit; transition: box-shadow .15s ease, transform .12s ease;
+  }
+  .download-item:hover { box-shadow: 0 6px 18px rgba(29,43,54,0.08); }
+  .download-item:active { transform: scale(0.995); }
+  .download-item.is-disabled { cursor: default; opacity: 0.6; }
+  .download-item.is-disabled:hover { box-shadow: none; }
+  .cover-placeholder {
+    width: 64px; height: 80px; flex-shrink: 0; border-radius: 6px; background: var(--hairline);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font-size: 0.65rem; color: var(--ink-faint); line-height: 1.2; font-family: var(--font-mono);
+  }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <span class="text-[var(--ink)] font-medium">Downloads</span>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section style="background:var(--highlight-dim)" class="py-16 text-center">
+      <div class="shell">
+        <h1 class="font-display text-4xl font-bold">Downloads</h1>
+      </div>
+    </section>
+
+    <!-- ===================== TOC + CONTENT ===================== -->
+    <section class="shell py-16">
+      <div class="grid lg:grid-cols-[180px_1fr] gap-10">
+
+        <!-- Table of contents -->
+        <nav class="hidden lg:block">
+          <div class="sticky top-24">
+            <a href="#raw-data" class="toc-link active" data-toc>Raw data</a>
+            <a href="#survey-question" class="toc-link" data-toc>Survey question</a>
+            <a href="#report" class="toc-link" data-toc>Report</a>
+          </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="flex flex-col gap-8">
+
+          <!-- Raw Data -->
+          <div id="raw-data" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-6">Raw Data</h2>
+            <div class="flex flex-col gap-4">
+              <a href="downloads/aapo_2026_results.csv" download class="download-item">
+                <div>
+                  <div class="font-display font-semibold mb-1">2026 Asia Parliamentary Openness Index result</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Published: July 2026</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Format: CSV</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-shrink-0 mt-1"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="data/metadata/countries.csv" download class="download-item">
+                <div>
+                  <div class="font-display font-semibold mb-1">2026 Country &amp; chamber reference data</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Published: July 2026</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Format: CSV</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-shrink-0 mt-1"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Survey Question -->
+          <div id="survey-question" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-6">Survey Question</h2>
+            <div class="flex flex-col gap-4">
+              <a href="downloads/aapo_2026_codebook.csv" download class="download-item">
+                <div>
+                  <div class="font-display font-semibold mb-1">2026 Asia Parliamentary Openness Index question codebook</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Published: July 2026</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Format: CSV</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-shrink-0 mt-1"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="data/metadata/questions.csv" download class="download-item">
+                <div>
+                  <div class="font-display font-semibold mb-1">2026 Asia Parliamentary Openness Index question set (raw)</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Published: July 2026</div>
+                  <div class="text-sm text-[var(--ink-soft)]">Format: CSV</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-shrink-0 mt-1"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Report -->
+          <div id="report" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-6">Report</h2>
+            <p class="text-sm text-[var(--ink-faint)] mb-4">The full narrative report for this cycle hasn't been published yet — these will become downloadable once available.</p>
+            <div class="flex flex-col gap-4">
+              <div class="download-item is-disabled">
+                <div class="flex gap-4">
+                  <div class="cover-placeholder">Cover<br />Image</div>
+                  <div>
+                    <div class="font-display font-semibold mb-1">2026 Asia Parliamentary Openness Index report</div>
+                    <div class="text-sm text-[var(--ink-soft)]">Published: —</div>
+                    <div class="text-sm text-[var(--ink-soft)]">Format: PDF</div>
+                  </div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-shrink-0 mt-1"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="download-item is-disabled">
+                <div class="flex gap-4">
+                  <div class="cover-placeholder">Cover<br />Image</div>
+                  <div>
+                    <div class="font-display font-semibold mb-1">2026 Asia Parliamentary Openness Index summary brief</div>
+                    <div class="text-sm text-[var(--ink-soft)]">Published: —</div>
+                    <div class="text-sm text-[var(--ink-soft)]">Format: PDF</div>
+                  </div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-shrink-0 mt-1"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage } from "./js/app.js?v=16";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("downloads");
+
+      // Highlight the current section in the sidebar TOC on scroll
+      const sections = ["raw-data", "survey-question", "report"].map((id) => document.getElementById(id));
+      const tocLinks = document.querySelectorAll("[data-toc]");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          tocLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+        });
+      }, { rootMargin: "-40% 0px -50% 0px" });
+      sections.forEach((s) => s && observer.observe(s));
+    });
+  </script>
+</body>
+</html>

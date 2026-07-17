@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explore by Country — AAPO</title>
+<meta name="description" content="Select a country to view its detailed parliamentary openness scores for each indicator." />
+<link rel="stylesheet" href="css/theme.css?v=9" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  .sort-th {
+    display: inline-flex; align-items: center; gap: 4px; cursor: pointer; user-select: none;
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  .sort-th:hover { color: var(--ink); }
+  .sort-chevrons { display: inline-flex; flex-direction: column; line-height: 0; opacity: 0.5; }
+  .sort-th.active .sort-chevrons { opacity: 1; }
+  .country-row { display: grid; grid-template-columns: 56px 1fr 120px 120px 140px 24px; align-items: center; gap: 16px; padding: 16px 4px; border-bottom: 1px solid var(--hairline); color: inherit; text-decoration: none; }
+  .country-row:hover { background: var(--highlight-dim); }
+  .country-header-row { display: grid; grid-template-columns: 56px 1fr 120px 120px 140px 24px; align-items: start; gap: 16px; row-gap: 10px; padding: 0 4px 10px 4px; border-bottom: 1px solid var(--hairline); }
+  .chamber-sub-label { font-size: 0.62rem; }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <span class="text-[var(--ink)] font-medium">Explore by Country</span>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section style="background:var(--highlight-dim)">
+      <div class="shell py-16 text-center">
+        <div class="flex items-center justify-center gap-3 mb-5 flex-wrap">
+          <span class="font-display text-lg font-semibold text-[var(--ink-soft)]">Asia Parliamentary Openness Index</span>
+          <select id="cycle-select" class="control !py-2"></select>
+        </div>
+        <h1 class="font-display text-3xl md:text-[2.4rem] font-bold leading-tight mb-5">Explore by Country</h1>
+        <p class="max-w-xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-7">
+          Select a country to view its detailed parliamentary openness scores for each indicator.
+        </p>
+        <div class="flex items-center justify-center gap-5 text-sm">
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COUNTRY LIST ===================== -->
+    <section class="shell py-16">
+
+      <div class="relative max-w-sm mb-8">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-faint)]"><circle cx="7" cy="7" r="5.2" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <input id="country-search" type="text" placeholder="Search country" class="w-full pl-10 pr-4 py-3 rounded-[var(--radius)] border border-[var(--hairline)] bg-[var(--paper-raised)] text-sm" />
+      </div>
+
+      <div class="country-header-row eyebrow">
+        <button class="sort-th row-span-2" data-sort="rank"><span>Rank</span><span class="sort-chevrons">▲▼</span></button>
+        <button class="sort-th row-span-2" data-sort="name"><span>Country Name</span><span class="sort-chevrons">▲▼</span></button>
+        <div class="col-span-2 relative flex items-center justify-center gap-1.5">
+          <span>Raw Score</span>
+          <button type="button" class="info-icon" id="raw-score-info-btn" aria-expanded="false" aria-label="How is the raw score calculated?">?</button>
+          <div id="raw-score-tooltip" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 z-10 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed normal-case tracking-normal font-body" style="background:var(--paper-raised)">
+            <b>The raw score</b> is the sum of the points earned across all assessment questions, with each question worth one point. The total possible score may vary between countries because some assessment questions are not applicable in certain national contexts. These questions are excluded from the calculation, so each country's score is based only on the questions that apply to its parliament.
+          </div>
+        </div>
+        <div class="row-span-2 relative flex items-center justify-end gap-1.5">
+          <span>Overall Score</span>
+          <button type="button" class="info-icon" id="overall-score-info-btn" aria-expanded="false" aria-label="How is the overall score calculated?">?</button>
+          <div id="overall-score-tooltip" class="hidden absolute top-full right-0 mt-2 w-80 z-10 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed normal-case tracking-normal font-body" style="background:var(--paper-raised)">
+            <b>The overall score</b> is calculated by converting the raw score into a percentage using the following formula: Overall Score = (Raw Score ÷ Total Possible Score) × 100
+            <br /><br />
+            To ensure fair comparisons across countries with different parliamentary systems, the scores of bicameral legislatures are calculated by averaging the scores of their lower and upper chambers. For unicameral legislatures, the score of the single chamber is used.
+          </div>
+        </div>
+        <div class="row-span-2"></div>
+        <div class="text-center chamber-sub-label pt-0.5">Lower Chamber</div>
+        <div class="text-center chamber-sub-label pt-0.5">Upper Chamber</div>
+      </div>
+
+      <div id="country-list"></div>
+      <p id="no-results" class="hidden text-sm text-[var(--ink-faint)] py-10 text-center"></p>
+
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage } from "./js/app.js?v=16";
+    import { loadFullDataset } from "./js/data.js?v=13";
+    import { buildIndex, calculateRanking, getChamberForCountry, calculateChamberScore } from "./js/calculations.js?v=14";
+    import { fmtPct } from "./js/ui.js?v=13";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("countries");
+
+      const dataset = await loadFullDataset();
+      const idx = buildIndex(dataset);
+      const countryIds = dataset.countries.map((c) => c.country_id);
+      const countryById = new Map(dataset.countries.map((c) => [c.country_id, c]));
+
+      document.getElementById("cycle-select").innerHTML = `<option>2026</option>`;
+
+      // ---------- Build the row dataset once ----------
+      function chamberRaw(countryId, slot) {
+        const chamber = getChamberForCountry(countryId, slot, idx);
+        if (!chamber) return null;
+        const s = calculateChamberScore(chamber.chamber_id, idx);
+        if (s.isNA) return null;
+        return { score: s.score, max: Math.round(s.max) };
+      }
+
+      const ranking = calculateRanking(countryIds, idx, "overall");
+      const rows = ranking.map((r) => {
+        return {
+          countryId: r.countryId,
+          name: countryById.get(r.countryId).country_name,
+          rank: r.rank,
+          pct: r.pct,
+          lower: chamberRaw(r.countryId, "lower"),
+          upper: chamberRaw(r.countryId, "upper"),
+        };
+      });
+
+      // ---------- Sorting ----------
+      let sortField = "rank"; // "rank" | "name"
+      let sortDir = "asc";    // "asc" | "desc"
+
+      function sortedRows() {
+        const list = rows.slice();
+        if (sortField === "name") {
+          list.sort((a, b) => a.name.localeCompare(b.name));
+        } else {
+          list.sort((a, b) => a.rank - b.rank);
+        }
+        if (sortDir === "desc") list.reverse();
+        return list;
+      }
+
+      function updateSortHeaders() {
+        document.querySelectorAll(".sort-th").forEach((btn) => {
+          const isActive = btn.dataset.sort === sortField;
+          btn.classList.toggle("active", isActive);
+          btn.querySelector(".sort-chevrons").textContent = isActive ? (sortDir === "asc" ? "▲" : "▼") : "▲▼";
+        });
+      }
+
+      // ---------- Search ----------
+      const searchEl = document.getElementById("country-search");
+      const listEl = document.getElementById("country-list");
+      const noResultsEl = document.getElementById("no-results");
+
+      function rawCellHTML(raw) {
+        if (!raw) return `<span class="text-[var(--ink-faint)]">—</span>`;
+        const scoreDisplay = String(Math.round(raw.score * 100) / 100);
+        return `${scoreDisplay}<span class="text-[var(--ink-faint)]">/${raw.max}</span>`;
+      }
+
+      function rowHTML(r) {
+        return `
+          <a href="country.html?id=${r.countryId}" class="country-row">
+            <span class="font-mono text-[var(--ink-faint)]">${r.rank}</span>
+            <span class="font-display font-semibold">${r.name}</span>
+            <span class="font-mono text-sm text-center">${rawCellHTML(r.lower)}</span>
+            <span class="font-mono text-sm text-center">${rawCellHTML(r.upper)}</span>
+            <span class="font-mono font-semibold text-right">${fmtPct(r.pct, 0)}</span>
+            <span class="text-[var(--ink-faint)] text-right">→</span>
+          </a>`;
+      }
+
+      function render() {
+        const q = searchEl.value.trim().toLowerCase();
+        const filtered = q ? sortedRows().filter((r) => r.name.toLowerCase().includes(q)) : sortedRows();
+
+        updateSortHeaders();
+
+        if (filtered.length === 0) {
+          listEl.innerHTML = "";
+          noResultsEl.textContent = `No data for "${searchEl.value.trim()}" is available in this cycle.`;
+          noResultsEl.classList.remove("hidden");
+          return;
+        }
+        noResultsEl.classList.add("hidden");
+        listEl.innerHTML = filtered.map(rowHTML).join("");
+      }
+
+      searchEl.addEventListener("input", render);
+
+      document.querySelectorAll(".sort-th").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const field = btn.dataset.sort;
+          if (sortField === field) {
+            sortDir = sortDir === "asc" ? "desc" : "asc";
+          } else {
+            sortField = field;
+            sortDir = "asc";
+          }
+          render();
+        });
+      });
+
+      // ---------- Score info tooltips ----------
+      function wireTooltip(btnId, tooltipId) {
+        const btn = document.getElementById(btnId);
+        const tooltip = document.getElementById(tooltipId);
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = !tooltip.classList.contains("hidden");
+          tooltip.classList.toggle("hidden", isOpen);
+          btn.setAttribute("aria-expanded", String(!isOpen));
+        });
+        document.addEventListener("click", (e) => {
+          if (!tooltip.classList.contains("hidden") && e.target !== btn && !tooltip.contains(e.target)) {
+            tooltip.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+      wireTooltip("overall-score-info-btn", "overall-score-tooltip");
+      wireTooltip("raw-score-info-btn", "raw-score-tooltip");
+
+      render();
+    });
+  </script>
+</body>
+</html>

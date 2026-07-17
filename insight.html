@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insights — AAPO</title>
+<meta name="description" content="Overall parliamentary openness scores across Asia-Pacific, with dimension-by-dimension breakdowns and country comparisons." />
+<link rel="stylesheet" href="css/theme.css?v=9" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+<style>
+  .rank-row { display: grid; grid-template-columns: 32px 1fr 48px 20px; align-items: center; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--hairline); font-size: 0.86rem; }
+  .rank-row:last-child { border-bottom: none; }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <span class="text-[var(--ink)] font-medium">Insights</span>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section style="background:var(--highlight-dim)">
+      <div class="shell py-16 text-center">
+        <div class="flex items-center justify-center gap-3 mb-5 flex-wrap">
+          <h1 class="font-display text-3xl md:text-[2.6rem] font-bold leading-tight">Asia Parliamentary Openness Index</h1>
+          <select id="cycle-select" class="control !py-2"></select>
+        </div>
+        <div class="flex items-center justify-center gap-5 text-sm mb-9">
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+        </div>
+        <p class="font-display font-bold text-[var(--ink)] mb-3" id="hero-country-count"></p>
+        <p class="max-w-xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-12" id="hero-summary">
+          This cycle's assessment finds wide variation in how openly the region's parliaments operate.
+          A handful of unicameral chambers — Taiwan, Australia, and South Korea — lead the pack with
+          strong disclosure of proceedings and reasonably accessible records, while several bicameral
+          upper houses lag noticeably behind their own lower chambers. Transparency around meeting
+          agendas and broadcasts is comparatively strong across the board, but accountability —
+          asset declarations, conflict-of-interest disclosure, oversight of publicly funded staff — is
+          the weakest dimension almost everywhere, and no parliament yet fully achieves every citizen
+          participation indicator.
+        </p>
+        <a href="#overall-score" class="inline-flex flex-col items-center gap-1 font-display font-medium text-sm">
+          Explore
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== OVERALL SCORE ===================== -->
+    <section id="overall-score" class="py-16" style="background:var(--highlight-dim)">
+      <div class="shell">
+        <h2 class="text-center font-display text-2xl md:text-3xl font-bold mb-3">Overall Score</h2>
+        <p class="text-center text-[var(--ink-soft)] max-w-2xl mx-auto mb-8">The overall score reflects a parliament's level of openness across three combined dimensions: Transparency, Accountability, and Citizen Participation.</p>
+
+        <div class="card p-6 md:p-8" id="overall-score-section"></div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPLORE BY DIMENSION ===================== -->
+    <section class="shell py-16">
+      <h2 class="text-center font-display text-2xl md:text-3xl font-bold mb-8">Compare by Dimension</h2>
+
+      <div class="flex border-b border-[var(--hairline)]" id="dimension-tabs"></div>
+
+      <div id="dimension-panel" class="pt-8"></div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="shell pb-16">
+      <div class="card p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style="background:var(--highlight-dim); border-color:transparent;">
+        <div>
+          <h2 class="font-display text-xl font-semibold mb-2">Go deeper into the data</h2>
+          <p class="text-[var(--ink-soft)] max-w-md">Explore every country's full profile, or browse the index indicator by indicator.</p>
+        </div>
+        <div class="flex gap-3 flex-shrink-0">
+          <a href="countries.html" class="btn btn-primary">Explore by country</a>
+          <a href="indicators.html" class="btn btn-ghost">Explore by indicator</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { loadFullDataset } from "./js/data.js?v=13";
+    import { buildIndex, calculateRanking, calculateChamberRanking } from "./js/calculations.js?v=15";
+    import { renderCountryScoreChart } from "./js/charts.js?v=14";
+    import { fmtPct } from "./js/ui.js?v=13";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      bootstrapPage("insight");
+
+      const dataset = await loadFullDataset();
+      const idx = buildIndex(dataset);
+      const countryIds = dataset.countries.map((c) => c.country_id);
+      const countryById = new Map(dataset.countries.map((c) => [c.country_id, c]));
+
+      document.getElementById("hero-country-count").textContent = `${dataset.countries.length} Countries were assessed`;
+
+      document.getElementById("cycle-select").innerHTML = `<option>2026</option>`;
+
+      const rootCSS = getComputedStyle(document.documentElement);
+      const resolveColor = (name, fallback) => (rootCSS.getPropertyValue(name) || fallback).trim();
+
+      // Shared state so the Compare / Highlight selection made in ANY of the
+      // four score sections (Overall Score + the 3 dimension tabs) applies to
+      // all of them — the sections still compute their own scores (each is a
+      // different scope), but they all stay in sync on mode + highlighted country.
+      let sharedCompareMode = "mixed";
+      let sharedHighlightId = "";
+      let overallController = null;
+      let dimensionController = null;
+      const activeControllers = () => [overallController, dimensionController].filter(Boolean);
+
+      function broadcastCompareChange(mode) {
+        sharedCompareMode = mode;
+        activeControllers().forEach((ctrl) => {
+          if (ctrl.chamberSelect.value !== mode) ctrl.chamberSelect.value = mode;
+          ctrl.renderData();
+        });
+      }
+
+      function broadcastHighlightChange(highlightId) {
+        sharedHighlightId = highlightId || "";
+        activeControllers().forEach((ctrl) => {
+          if (ctrl.highlightSelect.value !== sharedHighlightId) ctrl.highlightSelect.value = sharedHighlightId;
+          ctrl.renderHighlightOnly();
+        });
+      }
+
+      // =========================================================
+      // Reusable "score section" component: Compare dropdown + Highlight
+      // dropdown + info tooltip + stacked bar chart + rank/country list.
+      // Used identically for the Overall Score section and every
+      // Explore-by-Dimension tab — edit this one place to change all of them.
+      // =========================================================
+      function scoreSectionMarkup({ chartHeight = 360, tableMaxHeight = 300 } = {}) {
+        return `
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-6">
+            <div class="flex items-center gap-2 relative">
+              <span class="font-display font-medium text-sm">Compare</span>
+              <select class="control chamber-select">
+                <option value="mixed">Both chamber</option>
+                <option value="lower">Lower chamber</option>
+                <option value="upper">Upper chamber</option>
+              </select>
+              <button type="button" class="info-icon chamber-info-btn" aria-expanded="false" aria-label="How is this score calculated?">?</button>
+              <div class="chamber-info-tooltip hidden absolute top-full left-0 mt-2 w-80 z-10 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed" style="background:var(--paper-raised)">
+                Due to differences in parliamentary systems, some countries have two chambers (bicameral), while others have only one (unicameral). To ensure fair comparisons, three comparison views are available:
+                <ul class="list-disc pl-4 mt-2 space-y-1.5">
+                  <li><strong>Both Chambers</strong> compares countries by averaging the scores of their lower and upper chambers. For unicameral legislatures, the score of the single chamber is used.</li>
+                  <li><strong>Lower Chamber</strong> compares the lower house of each country. For unicameral legislatures, the single chamber is treated as the lower chamber for comparison.</li>
+                  <li><strong>Upper Chamber</strong> compares only the upper houses (senates) of countries with bicameral legislatures.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-display font-medium text-sm">Highlight</span>
+              <select class="control highlight-select"></select>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-[1fr_300px] gap-6">
+            <div class="min-w-0 relative overflow-hidden" style="height:${chartHeight}px">
+              <canvas class="score-chart"></canvas>
+            </div>
+            <div class="rank-country">
+              <div class="grid text-xs eyebrow pb-2 border-b border-[var(--hairline)]" style="grid-template-columns:32px 1fr 48px 20px">
+                <span>Rank</span><span>Country</span><span class="text-right">Score</span><span></span>
+              </div>
+              <div class="rank-country-body max-h-[${tableMaxHeight}px] overflow-y-auto"></div>
+            </div>
+          </div>`;
+      }
+
+      /**
+       * Mounts behavior onto a section already containing scoreSectionMarkup().
+       * `level`/`key` scope the score to "overall" (key=null) or a specific
+       * dimension/relevance/indicator, exactly like calculateRanking's params.
+       */
+      function mountScoreSection(sectionEl, { level = "overall", key = null } = {}) {
+        const chamberSelect = sectionEl.querySelector(".chamber-select");
+        const highlightSelect = sectionEl.querySelector(".highlight-select");
+        const canvas = sectionEl.querySelector(".score-chart");
+        const tableBody = sectionEl.querySelector(".rank-country-body");
+        const infoBtn = sectionEl.querySelector(".chamber-info-btn");
+        const infoTooltip = sectionEl.querySelector(".chamber-info-tooltip");
+
+        highlightSelect.innerHTML = `<option value="">Select country</option>` + dataset.countries
+          .slice().sort((a, b) => a.country_name.localeCompare(b.country_name))
+          .map((c) => `<option value="${c.country_id}">${c.country_name}</option>`).join("");
+
+        // Reflect whatever Compare/Highlight selection is already shared across
+        // the other score sections, so a newly mounted section (e.g. switching
+        // to a different dimension tab) starts in sync rather than resetting.
+        chamberSelect.value = sharedCompareMode;
+        highlightSelect.value = sharedHighlightId;
+
+        // click-to-toggle info tooltip (rather than a hover-only title)
+        infoBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = !infoTooltip.classList.contains("hidden");
+          infoTooltip.classList.toggle("hidden", isOpen);
+          infoBtn.setAttribute("aria-expanded", String(!isOpen));
+        });
+        document.addEventListener("click", (e) => {
+          if (!infoTooltip.classList.contains("hidden") && e.target !== infoBtn && !infoTooltip.contains(e.target)) {
+            infoTooltip.classList.add("hidden");
+            infoBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        let chart = null;
+
+        function computeRanking() {
+          const mode = chamberSelect.value; // "mixed" | "lower" | "upper"
+          return (mode === "mixed"
+            ? calculateRanking(countryIds, idx, level, key)
+            : calculateChamberRanking(countryIds, mode, idx, level, key)
+          ).map((r) => ({ ...r, name: countryById.get(r.countryId).country_name }));
+        }
+
+        function averageRowHTML(avg) {
+          return `
+            <div class="rank-row" style="grid-template-columns:32px 1fr 48px 20px; background:var(--paper); border-top:1px dashed var(--ink-faint); border-bottom:1px dashed var(--ink-faint);">
+              <span></span>
+              <span class="font-display font-medium text-[var(--ink-faint)] uppercase text-[0.68rem] tracking-wide">Average</span>
+              <span class="font-mono text-right text-[var(--ink-faint)]">${fmtPct(avg, 0)}</span>
+              <span></span>
+            </div>`;
+        }
+
+        function renderTable(ranking, average) {
+          if (ranking.length === 0) {
+            tableBody.innerHTML = `<p class="text-sm text-[var(--ink-faint)] py-4">No countries have this chamber.</p>`;
+            return;
+          }
+          let inserted = false;
+          const rows = [];
+          ranking.forEach((r) => {
+            if (!inserted && average !== null && r.pct < average) {
+              rows.push(averageRowHTML(average));
+              inserted = true;
+            }
+            rows.push(`
+              <a href="country.html?id=${r.countryId}" class="rank-row hover:bg-[var(--highlight-dim)] -mx-1 px-1 rounded" style="grid-template-columns:32px 1fr 48px 20px">
+                <span class="font-mono text-[var(--ink-faint)]">${r.rank}</span>
+                <span class="font-display font-medium truncate">${r.name}</span>
+                <span class="font-mono text-right">${fmtPct(r.pct, 0)}</span>
+                <span class="text-[var(--ink-faint)]">→</span>
+              </a>`);
+          });
+          if (!inserted && average !== null) rows.push(averageRowHTML(average));
+          tableBody.innerHTML = rows.join("");
+        }
+
+        // Compare dropdown changed: data itself changes. Update the existing chart's
+        // data in place and let Chart.js transition smoothly from the previous bars
+        // rather than destroying/recreating (which would restart the animation from 0).
+        function renderData() {
+          const ranking = computeRanking();
+          const highlightId = highlightSelect.value || null;
+          const labels = ranking.map((r) => r.name);
+          const achieved = ranking.map((r) => r.pct ?? 0);
+          const remainder = ranking.map((r) => 100 - (r.pct ?? 0));
+          const colors = ranking.map((r) => (r.countryId === highlightId ? resolveColor("--amber", "#D9A441") : resolveColor("--highlight", "#1F3A5F")));
+          const average = ranking.length ? ranking.reduce((sum, r) => sum + (r.pct ?? 0), 0) / ranking.length : null;
+
+          if (!chart) {
+            chart = renderCountryScoreChart(canvas, { labels, achieved, remainder, colors, average });
+          } else {
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = achieved;
+            chart.data.datasets[0].backgroundColor = colors;
+            chart.data.datasets[1].data = remainder;
+            chart.options.plugins.averageLine.value = average;
+            chart.update();
+          }
+          renderTable(ranking, average);
+        }
+
+        // Highlight dropdown changed: no data change, just recolor one bar — instantly,
+        // with no animation, since nothing is actually moving.
+        function renderHighlightOnly() {
+          if (!chart) return renderData();
+          const ranking = computeRanking();
+          const highlightId = highlightSelect.value || null;
+          const colors = ranking.map((r) => (r.countryId === highlightId ? resolveColor("--amber", "#D9A441") : resolveColor("--highlight", "#1F3A5F")));
+          chart.data.datasets[0].backgroundColor = colors;
+          chart.update("none");
+        }
+
+        chamberSelect.addEventListener("change", () => broadcastCompareChange(chamberSelect.value));
+        highlightSelect.addEventListener("change", () => broadcastHighlightChange(highlightSelect.value));
+        renderData();
+
+        return { chamberSelect, highlightSelect, renderData, renderHighlightOnly };
+      }
+
+      const overallSectionEl = document.getElementById("overall-score-section");
+      overallSectionEl.innerHTML = scoreSectionMarkup({ chartHeight: 380, tableMaxHeight: 320 });
+      overallController = mountScoreSection(overallSectionEl, { level: "overall", key: null });
+
+      // ---------- Explore by Dimension: tabs ----------
+      const dimensionDefs = {
+        "Transparency": "How a parliament proactively discloses legislative activities and decision-making processes. Indicators include advance publication of meeting agendas, disclosure of budget drafts, availability of live broadcasts, access to post-session recordings, comprehensive meeting minutes, public access to verbatim transcripts, and publication of MPs' voting records.",
+        "Accountability": "The extent to which individual legislators are held responsible for their financial and interest-related conduct. Indicators include mechanisms for declaring conflicts of interest, disclosure of asset and wealth declarations, publication of salaries and benefit structures, transparency in financial reports for official trips, disclosure of travel itineraries, and disclosure of information regarding publicly funded staff.",
+        "Citizen Participation": "The extent to which citizens can meaningfully engage in and express opinions about parliamentary processes. Indicators include public access to plenary and committee meetings, freedom for citizen journalists to report, permission for the public to photograph/record/livestream sessions, online availability of parliamentary documents, and the existence of Open Parliament Plans.",
+      };
+      const dimensionLabels = {
+        "Transparency": "Transparency (In Parliamentary Operations)",
+      };
+      // Fixed display order, independent of row order in dimensions.csv
+      const TAB_ORDER = ["Transparency", "Accountability", "Citizen Participation"];
+      const orderedDimensions = TAB_ORDER
+        .map((name) => dataset.dimensions.find((d) => d.dimension === name))
+        .filter(Boolean);
+
+      const tabsEl = document.getElementById("dimension-tabs");
+      const panelEl = document.getElementById("dimension-panel");
+
+      tabsEl.innerHTML = orderedDimensions.map((d, i) => `
+        <button class="tab-btn flex-1${i === 0 ? " active" : ""}" data-dimension-id="${d.dimension_id}">${d.dimension}</button>
+      `).join("");
+
+      function renderDimensionPanel(dimensionId) {
+        const dim = orderedDimensions.find((d) => d.dimension_id === dimensionId);
+
+        panelEl.innerHTML = `
+          <p id="dimension-desc" class="text-[var(--ink-soft)] leading-relaxed mb-8">
+            <span class="font-display font-semibold text-[var(--ink)]">${dimensionLabels[dim.dimension] ?? dim.dimension}:</span> ${dimensionDefs[dim.dimension] ?? ""}
+          </p>
+
+          <div class="card p-6 md:p-8" id="dimension-score-section"></div>
+        `;
+
+        const dimensionSectionEl = document.getElementById("dimension-score-section");
+        dimensionSectionEl.innerHTML = scoreSectionMarkup({ chartHeight: 340, tableMaxHeight: 280 });
+        dimensionController = mountScoreSection(dimensionSectionEl, { level: "dimension", key: dimensionId });
+
+        refreshDynamicUI();
+      }
+
+      tabsEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".tab-btn");
+        if (!btn) return;
+        tabsEl.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderDimensionPanel(btn.dataset.dimensionId);
+      });
+
+      renderDimensionPanel(orderedDimensions[0].dimension_id);
+      refreshDynamicUI();
+    });
+  </script>
+</body>
+</html>

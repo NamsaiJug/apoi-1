@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — AAPO</title>
+<meta name="description" content="What AAPO measures, how the methodology works, who's behind it, and how to get in touch." />
+<link rel="stylesheet" href="css/theme.css?v=9" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  .toc-link { display: block; padding: 6px 0; font-size: 0.92rem; color: var(--ink-soft); border-left: 2px solid transparent; padding-left: 12px; }
+  .toc-link:hover { color: var(--ink); }
+  .toc-link.active { color: var(--ink); font-weight: 600; border-color: var(--highlight); }
+  .dim-circle { width: 120px; height: 120px; border-radius: 999px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 14px; background: var(--paper-raised); font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; }
+  .cycle-pill { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; border-radius: 999px; background: var(--paper-raised); border: 1px solid var(--hairline); font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); transition: border-color .15s ease, color .15s ease; }
+  .cycle-pill:hover { border-color: var(--highlight); color: var(--ink); }
+  .team-row { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--hairline); }
+  .team-row:last-child { border-bottom: none; }
+  .team-logo { width: 64px; height: 64px; flex-shrink: 0; border-radius: 8px; background: var(--paper-raised); border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: var(--ink-faint); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <span class="text-[var(--ink)] font-medium">About</span>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section style="background:var(--highlight-dim)" class="py-16 text-center">
+      <div class="shell">
+        <h1 class="font-display text-4xl font-bold">About</h1>
+      </div>
+    </section>
+
+    <!-- ===================== TOC + CONTENT ===================== -->
+    <section class="shell py-16">
+      <div class="grid lg:grid-cols-[200px_1fr] gap-10">
+
+        <!-- Table of contents -->
+        <nav class="hidden lg:block">
+          <div class="sticky top-24">
+            <a href="#about-the-index" class="toc-link active" data-toc>About the index</a>
+            <a href="#methodology" class="toc-link" data-toc>Methodology</a>
+            <a href="#about-contributors" class="toc-link" data-toc>About contributors</a>
+            <a href="#report-issues" class="toc-link" data-toc>Report Issues</a>
+            <a href="#contact" class="toc-link" data-toc>Contact</a>
+          </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="flex flex-col gap-8">
+
+          <!-- ===================== ABOUT THE INDEX ===================== -->
+          <div id="about-the-index" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-5">About the index</h2>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              The Asia Parliamentary Openness Index (AAPO) assesses how openly national parliaments across
+              the Asia-Pacific region disclose their activities, hold their members accountable, and make
+              room for citizens to take part. Every parliament assessed answers the same set of questions,
+              scored consistently and rolled up into a single comparable score.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-4">3 Dimensions</h3>
+            <div class="flex flex-col gap-8 max-w-3xl mb-10" id="dimension-circles"></div>
+
+            <h3 class="font-display text-lg font-semibold mb-4">Structure</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              Each dimension breaks down into relevances, each relevance into indicators, and each indicator
+              into one or more questions — the level at which every chamber is actually scored. Scores roll
+              back up the same hierarchy to produce indicator, dimension, and overall results.
+            </p>
+            <div class="flex flex-wrap items-center gap-10 mb-10">
+              <svg width="220" height="220" viewBox="0 0 220 220" class="flex-shrink-0">
+                <circle cx="110" cy="110" r="105" fill="var(--hairline)" />
+                <circle cx="110" cy="110" r="78" fill="#B9C2C6" />
+                <circle cx="110" cy="110" r="50" fill="#7C8A90" />
+                <circle cx="110" cy="110" r="24" fill="var(--ink)" />
+                <line x1="110" y1="5" x2="200" y2="20" stroke="var(--ink-faint)" stroke-width="1" />
+                <line x1="110" y1="32" x2="200" y2="60" stroke="var(--ink-faint)" stroke-width="1" />
+                <line x1="110" y1="60" x2="200" y2="100" stroke="var(--ink-faint)" stroke-width="1" />
+                <line x1="110" y1="110" x2="200" y2="140" stroke="var(--ink-faint)" stroke-width="1" />
+              </svg>
+              <div class="flex flex-col gap-5 text-sm">
+                <div><span class="w-2 h-2 rounded-full inline-block mr-2" style="background:var(--hairline)"></span>Dimension</div>
+                <div><span class="w-2 h-2 rounded-full inline-block mr-2" style="background:#B9C2C6"></span>Dimension Relevance</div>
+                <div><span class="w-2 h-2 rounded-full inline-block mr-2" style="background:#7C8A90"></span>Indicator</div>
+                <div><span class="w-2 h-2 rounded-full inline-block mr-2" style="background:var(--ink)"></span>Question</div>
+              </div>
+            </div>
+
+            <h3 class="font-display text-lg font-semibold mb-4">Who this index is for</h3>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <h4 class="font-display font-semibold mb-1">NGOs &amp; Civil Society</h4>
+                <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Plan advocacy activities and prioritize reform efforts using indicator-level evidence.</p>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold mb-1">Parliamentarians &amp; Staff</h4>
+                <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Identify where your own parliament falls short and strengthen its openness practices.</p>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold mb-1">Academics &amp; Researchers</h4>
+                <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Analyze whether parliamentary openness is associated with corruption, democratic quality, or public trust.</p>
+              </div>
+              <div>
+                <h4 class="font-display font-semibold mb-1">The Press</h4>
+                <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Report on transparency gaps to raise public awareness and hold parliaments accountable.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== METHODOLOGY ===================== -->
+          <div id="methodology" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-5">Methodology</h2>
+
+            <h3 class="font-display text-lg font-semibold mb-3">Scope and Objectives</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              Effective democratic governance requires that legislatures operate with meaningful openness
+              and accountability to the citizens they represent, yet the extent to which parliaments meet
+              these standards often remains difficult to assess in a systematic, comparable manner. The
+              Asian Parliamentary Openness Index (APOI) addresses this gap by providing a rigorous,
+              evidence-based assessment of parliamentary openness across Asia along three core dimensions:
+              access to information, accountability mechanisms, and citizen participation. The Index is
+              designed to serve as both a diagnostic instrument and an advocacy tool, enabling Parliamentary
+              Monitoring Organizations (PMOs) and other stakeholders to ground reform demands in verifiable,
+              cross-nationally comparable evidence.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-3">Methodological Foundations</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              The APOI indicator framework builds on three established international precedents. The Latin
+              American Index for Legislative Transparency (LAILT), administered by the Latin American
+              Network for Legislative Transparency, served as the primary methodological reference,
+              providing the foundational architecture for APOI's design and demonstrating how a shared
+              assessment standard can be constructed across a politically diverse region. The Africa Open
+              Parliament Index contributed further insight drawn from the experience of building
+              cross-national indicators across African countries with diverse democratic trajectories. The
+              Inter-Parliamentary Union's Parline database — covering over 190 national parliaments
+              globally — informed both the thematic scope of the indicators and serves as a global baseline
+              for contextualising APOI findings. Directorio Legislativo of Argentina was engaged as
+              international advisor, providing technical guidance on adapting these frameworks to the Asian
+              regional context.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-3">Indicator Co-Construction Process</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              APOI's indicators were developed through a participatory co-construction process. Beginning
+              in November 2024, member organisations engaged in structured monthly online deliberations
+              over nearly one year, submitting written inputs in advance of each session via a standardised
+              online form. Each meeting was dedicated to one dimension of the framework. In September 2025,
+              members convened in Tokyo, Japan for an in-person consensus workshop to complete the first
+              draft of the indicator set. Subsequent monthly meetings refined the indicator language and
+              questionnaire design, with the framework formally finalised in June 2026.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-3">Assessment Framework and Scoring</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              The APOI framework comprises three dimensions and 31 assessment items. Dimension One —
+              Transparency (16 items) — examines the proactive disclosure of meeting agendas, session
+              recordings, verbatim transcripts, members' voting records, parliamentary expenditure, and the
+              existence of a freedom of information framework. Dimension Two — Accountability (7 items) —
+              assesses public disclosure of members' assets, conflicts of interest, salaries and benefits,
+              and constituency development funds. Dimension Three — Citizen Participation (8 items) —
+              evaluates formal mechanisms for citizen engagement across the legislative process and the
+              physical and digital accessibility of parliamentary resources.
+            </p>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              Each item is scored on a three-tier scale: 1 point where a practice is legally mandated and
+              implemented; 0.5 points where a practice exists through convention or non-binding guidance
+              without legal obligation; and 0 points where no mechanism exists. This graduated approach
+              captures meaningful distinctions between full, partial, and absent openness, generating
+              actionable diagnoses for reform.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-3">De Facto Assessment Approach</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              A defining methodological principle of APOI is its focus on de facto practice rather than de
+              jure provision. While many legislatures operate within frameworks that nominally guarantee
+              transparency, significant gaps frequently exist between formal obligations and actual
+              implementation. APOI distinguishes three categories of transparency deficit, each implying a
+              distinct reform pathway: where neither legal requirement nor practice exists, foundational
+              legislation is required; where provisions exist but are not implemented, the priority is
+              enforcement; and where good practice lacks legal backing, entrenchment is needed to safeguard
+              against political regression.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-3">Survey Implementation and Dissemination</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              In each country, the assessment is carried out by local PMOs or independent think tanks, with
+              academic experts engaged to verify and validate the findings. All responses are derived
+              exclusively from publicly available information. Critically, APOI is not a parliamentary
+              self-assessment; it constitutes an independent, external evaluation from a civic standpoint,
+              providing an objective appraisal of actual parliamentary openness. The inaugural report is
+              scheduled for completion in August 2026 and will be formally launched at an international
+              press conference in Bangkok, Thailand in September 2026.
+            </p>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
+              The findings are designed to support peer learning and evidence-based advocacy. Cross-national
+              comparison enables parliaments to identify areas of comparative strength for regional
+              knowledge exchange, while surfacing clear priorities for reform. AAPO believes that
+              structured, evidence-informed dialogue among Asian parliaments transforms the pursuit of
+              openness into a collective regional endeavour. Beyond Asia, APOI aspires to serve as a bridge
+              connecting PMOs across Asia, Latin America, and Africa — facilitating dialogue and mutual
+              learning among the three regional transparency indices and contributing to a broader global
+              movement towards legislatures that are more open, more transparent, and more genuinely
+              accountable to the people they serve.
+            </p>
+
+            <h3 class="font-display text-lg font-semibold mb-3">Assessment Cycles</h3>
+            <p class="text-sm text-[var(--ink-soft)] mb-3">Every 2 years, during July–August.</p>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-sm font-medium mr-1">Result:</span>
+              <a href="insight.html" class="cycle-pill" style="text-decoration:none;">2026 →</a>
+            </div>
+          </div>
+
+          <!-- ===================== ABOUT CONTRIBUTORS ===================== -->
+          <div id="about-contributors" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-6">About contributors</h2>
+            <div class="mb-8 rounded-[var(--radius)] flex items-center justify-center font-display font-semibold text-[var(--ink-faint)]" style="width:160px; height:100px; background:var(--paper-raised); border:1px solid var(--hairline);">AAPO Logo</div>
+            <h3 class="font-display text-xl font-bold mb-4">Asian Alliance for Parliamentary Openness (AAPO)</h3>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-10">
+              We are a regional network of civil society organizations committed to parliamentary monitoring
+              and democratic advocacy across the Asia-Pacific. Together, we have launched the Asia
+              Parliamentary Openness Index, a collaborative initiative designed to assess and promote
+              transparency within parliaments throughout the region.
+            </p>
+            <h3 class="font-display text-lg font-semibold mb-2">Our team</h3>
+            <div id="team-list"></div>
+          </div>
+
+          <!-- ===================== REPORT ISSUES ===================== -->
+          <div id="report-issues" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-5">Report Issues</h2>
+            <p class="text-[var(--ink-soft)] leading-relaxed mb-6">
+              If you believe an assessment doesn't accurately reflect your parliament's practices, submit
+              supporting evidence through the form below. Our team reviews every submission and, where
+              warranted, updates the assessment ahead of the next cycle.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUzpNtGzBEwPaC1FhNTuFkcwCtLkogFzRZJpnQv5QeHVf7pg/viewform" target="_blank" rel="noopener" class="btn btn-primary">Report form</a>
+          </div>
+
+          <!-- ===================== CONTACT ===================== -->
+          <div id="contact" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
+            <h2 class="font-display text-2xl font-bold mb-4">Contact</h2>
+            <p class="text-sm text-[var(--ink-soft)]"><a href="mailto:hello@aapo-index.org" class="text-[var(--highlight)] hover:underline">hello@aapo-index.org</a></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { loadCountries } from "./js/data.js?v=13";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("about");
+
+      const countries = await loadCountries();
+
+      // ---------- 3 Dimension circles ----------
+      const dimensionDefs = {
+        "Transparency": "(In Parliamentary Operations) How a parliament proactively discloses legislative activities and decision-making processes. Indicators include advance publication of meeting agendas, disclosure of budget drafts, availability of live broadcasts, access to post-session recordings, comprehensive meeting minutes, public access to verbatim transcripts, and publication of MPs' voting records.",
+        "Accountability": "The extent to which individual legislators are held responsible for their financial and interest-related conduct. Indicators include mechanisms for declaring conflicts of interest, disclosure of asset and wealth declarations, publication of salaries and benefit structures, transparency in financial reports for official trips, disclosure of travel itineraries, and disclosure of information regarding publicly funded staff.",
+        "Citizen Participation": "The extent to which citizens can meaningfully engage in and express opinions about parliamentary processes. Indicators include public access to plenary and committee meetings, freedom for citizen journalists to report, permission for the public to photograph/record/livestream sessions, online availability of parliamentary documents, and the existence of Open Parliament Plans.",
+      };
+      const TAB_ORDER = ["Transparency", "Accountability", "Citizen Participation"];
+      document.getElementById("dimension-circles").innerHTML = TAB_ORDER.map((name) => `
+        <div class="flex items-center gap-8">
+          <div class="dim-circle flex-shrink-0">${name}</div>
+          <div class="text-left">
+            <h4 class="font-display font-semibold mb-1">${name}</h4>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">${dimensionDefs[name]}</p>
+          </div>
+        </div>
+      `).join("");
+
+      // ---------- Our team (org info per country, from countries.csv) ----------
+      document.getElementById("team-list").innerHTML = countries
+        .slice().sort((a, b) => a.country_name.localeCompare(b.country_name))
+        .map((c) => `
+          <div class="team-row">
+            <div class="team-logo">Logo</div>
+            <div class="flex-1 flex items-start justify-between gap-4">
+              <div>
+                <div class="font-display font-semibold">${c.org_name || "Not yet published"}</div>
+                ${c.org_name ? `
+                  <div class="text-sm text-[var(--ink-soft)]">${c.org_website ? `<a href="${c.org_website}" target="_blank" rel="noopener" class="text-[var(--highlight)] hover:underline">${c.org_website}</a>` : ""}</div>
+                  <div class="text-sm text-[var(--ink-soft)]">${c.org_contact || ""}</div>
+                ` : `<div class="text-sm text-[var(--ink-faint)]">Evaluator details have not yet been published for this cycle.</div>`}
+              </div>
+              <div class="text-sm text-[var(--ink-faint)] flex-shrink-0">${c.country_name}</div>
+            </div>
+          </div>`).join("");
+
+      // Bind the accordion we just inserted (bootstrapPage only bound what existed at load time)
+      refreshDynamicUI();
+
+      // ---------- TOC scroll spy ----------
+      const sectionIds = ["about-the-index", "methodology", "about-contributors", "report-issues", "contact"];
+      const sections = sectionIds.map((id) => document.getElementById(id));
+      const tocLinks = document.querySelectorAll("[data-toc]");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          tocLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+        });
+      }, { rootMargin: "-40% 0px -50% 0px" });
+      sections.forEach((s) => s && observer.observe(s));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Country Profile — AAPO</title>
+<link rel="stylesheet" href="css/theme.css?v=10" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  .chamber-tab-btn {
+    font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--ink-soft);
+    cursor: pointer; flex: 1; text-align: center; padding: 12px 16px;
+    border: 1px solid var(--hairline); background: var(--paper-raised); transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .chamber-tab-btn:first-child { border-radius: var(--radius) 0 0 var(--radius); border-right: none; }
+  .chamber-tab-btn:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+  .chamber-tab-btn.active { color: #fff; background: var(--highlight); border-color: var(--highlight); }
+  .chamber-tab-btn:hover:not(.active) { color: var(--ink); background: var(--highlight-dim); }
+  .mini-bar-row { display: grid; grid-template-columns: 1fr 32px; align-items: center; gap: 8px; font-size: 0.72rem; }
+  .breadcrumb-select {
+    appearance: none; -webkit-appearance: none; background: transparent; border: none; cursor: pointer;
+    font: inherit; font-weight: 600; color: var(--ink); padding: 0 16px 0 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="%238A9099" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat; background-position: right center;
+  }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <a href="countries.html" class="hover:text-[var(--ink)]">Explore by Country</a>
+    <span class="mx-1.5">›</span>
+    <select id="breadcrumb-country" class="breadcrumb-select"></select>
+  </div>
+
+  <main>
+
+    <!-- ===================== OVERVIEW ===================== -->
+    <section style="background:var(--highlight-dim)" class="py-12">
+      <div class="shell">
+        <div class="flex items-center justify-between gap-4 flex-wrap mb-6">
+          <div class="flex items-center gap-3">
+            <span class="font-display text-sm font-semibold text-[var(--ink-soft)]">Asia Parliamentary Openness Index</span>
+            <select id="cycle-select" class="control !py-1.5 !text-xs"></select>
+          </div>
+          <div class="flex items-center gap-5 text-sm">
+            <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
+            <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+          </div>
+        </div>
+
+        <h1 id="country-name" class="font-display text-4xl font-bold mb-6">—</h1>
+
+        <div class="grid lg:grid-cols-[1fr_360px] gap-8">
+          <div>
+            <div class="text-sm space-y-1.5 mb-6" id="country-facts"></div>
+            <div class="eyebrow mb-2">Key findings</div>
+            <p class="text-[var(--ink-soft)] leading-relaxed text-sm" id="key-findings">—</p>
+          </div>
+
+          <div class="card p-6" id="overall-score-card"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DETAIL ===================== -->
+    <section class="shell py-16">
+
+      <div class="flex mb-8" id="chamber-tabs"></div>
+
+      <div class="flex border-b border-[var(--hairline)] mb-8" id="dimension-tabs"></div>
+
+      <div id="dimension-panel"></div>
+
+    </section>
+
+    <!-- ===================== ABOUT EVALUATOR ===================== -->
+    <section class="shell pb-16">
+      <div id="about-evaluator-card"></div>
+    </section>
+
+    <!-- ===================== DOWNLOAD DATA CTA ===================== -->
+    <section class="shell pb-16">
+      <div class="card p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style="background:var(--highlight-dim); border-color:transparent;">
+        <div>
+          <h2 class="font-display text-xl font-semibold mb-2">Conduct deeper analysis</h2>
+          <p class="text-[var(--ink-soft)] max-w-md">Machine-readable data for all countries in this cycle is available for download.</p>
+        </div>
+        <div class="flex gap-3 flex-shrink-0">
+          <a href="downloads.html" class="btn btn-primary">Download raw data</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { loadFullDataset } from "./js/data.js?v=13";
+    import {
+      buildIndex, calculateCountryScore, calculateChamberScore, calculateDimensionScore, calculateCountryRawScore,
+      calculateIndicatorClassification, calculateIndicatorClassificationForChamber, calculateQuestionScore,
+    } from "./js/calculations.js?v=15";
+    import { fmtPct, badgeFor } from "./js/ui.js?v=13";
+    import { questionBlockHTML } from "./components/questionBlock.js?v=1";
+
+    // Formats a raw (achieved) score for display: whole numbers show as-is,
+    // fractional totals (e.g. 0.25 + 1 + 0.25 = 1.5) show their real decimal
+    // value instead of being rounded to the nearest integer — rounding here
+    // would silently disagree with the per-question breakdown shown below it.
+    function fmtRaw(n) {
+      return String(Math.round(n * 100) / 100);
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("countries");
+
+      const dataset = await loadFullDataset();
+      const idx = buildIndex(dataset);
+      const countryIds = dataset.countries.map((c) => c.country_id);
+
+      const params = new URLSearchParams(window.location.search);
+      const requestedId = params.get("id");
+      const country = dataset.countries.find((c) => c.country_id === requestedId) || dataset.countries[0];
+      const countryId = country.country_id;
+
+      document.getElementById("cycle-select").innerHTML = `<option>2026</option>`;
+      const breadcrumbSelect = document.getElementById("breadcrumb-country");
+      breadcrumbSelect.innerHTML = dataset.countries
+        .slice().sort((a, b) => a.country_name.localeCompare(b.country_name))
+        .map((c) => `<option value="${c.country_id}"${c.country_id === countryId ? " selected" : ""}>${c.country_name}</option>`).join("");
+      breadcrumbSelect.addEventListener("change", () => {
+        window.location.href = `country.html?id=${breadcrumbSelect.value}`;
+      });
+      document.getElementById("country-name").textContent = country.country_name;
+
+      const chambers = idx.chambersByCountry.get(countryId) || [];
+      const isBicameral = chambers.length === 2;
+      const lowerChamber = chambers.find((c) => c.chamber_type === "lower" || c.chamber_type === "unicameral");
+      const upperChamber = chambers.find((c) => c.chamber_type === "upper");
+
+      // ---------- Country facts ----------
+      document.getElementById("country-facts").innerHTML = `
+        <div><span class="font-medium text-[var(--ink)]">Government System:</span> ${country.government_system || "—"}</div>
+        <div><span class="font-medium text-[var(--ink)]">Parliamentary type:</span> <span class="capitalize">${country.parliamnet_type || "—"}</span></div>
+        <div><span class="font-medium text-[var(--ink)]">Parliament Name:</span> ${country.parliament_name || "—"}</div>
+        <div><span class="font-medium text-[var(--ink)]">Parliament Official Website:</span> ${country.parliament_website ? `<a href="${country.parliament_website}" target="_blank" rel="noopener" class="text-[var(--highlight)] hover:underline">${country.parliament_website}</a>` : "—"}</div>
+      `;
+
+      // ---------- Key findings (computed, not lorem ipsum) ----------
+      const dimensionNames = dataset.dimensions.map((d) => d.dimension);
+      const dimScores = dataset.dimensions.map((d) => ({
+        name: d.dimension,
+        pct: calculateCountryScore(countryId, idx, "dimension", d.dimension_id).pct,
+      })).filter((d) => d.pct !== null);
+      const overall = calculateCountryScore(countryId, idx);
+      const countryRaw = calculateCountryRawScore(countryId, idx);
+      let findingsText = `${country.country_name} scores ${fmtPct(overall.pct)} overall.`;
+      if (dimScores.length) {
+        const strongest = dimScores.reduce((a, b) => (b.pct > a.pct ? b : a));
+        const weakest = dimScores.reduce((a, b) => (b.pct < a.pct ? b : a));
+        findingsText += ` Its strongest dimension is ${strongest.name} (${fmtPct(strongest.pct)}), while ${weakest.name} (${fmtPct(weakest.pct)}) lags furthest behind.`;
+      }
+      if (isBicameral) {
+        const lowerScore = calculateChamberScore(lowerChamber.chamber_id, idx);
+        const upperScore = calculateChamberScore(upperChamber.chamber_id, idx);
+        const gap = Math.abs(lowerScore.pct - upperScore.pct);
+        if (gap >= 5) {
+          const aheadName = lowerScore.pct > upperScore.pct ? lowerChamber.chamber_name : upperChamber.chamber_name;
+          findingsText += ` There is a notable gap between chambers, with the ${aheadName} scoring higher.`;
+        }
+      }
+      document.getElementById("key-findings").textContent = findingsText;
+
+      // ---------- Overall Score card ----------
+      function dimensionMiniBarsHTML(chamberId, idPrefix) {
+        return dataset.dimensions.map((d) => {
+          const s = calculateDimensionScore(chamberId, d.dimension_id, idx);
+          return `
+            <div class="mb-2">
+              <div class="mini-bar-row mb-1">
+                <span class="text-[var(--ink-soft)]">${d.dimension}</span>
+                <span class="font-mono text-right text-[var(--ink)]">${fmtPct(s.pct, 0)}</span>
+              </div>
+              <div class="mini-bar-slot" data-chamber="${idPrefix}" data-dim="${d.dimension_id}"></div>
+            </div>`;
+        }).join("");
+      }
+
+      let scoreCardHTML = `
+        <div class="text-center mb-5 relative">
+          <div class="flex items-center justify-center gap-1.5 font-display font-semibold">
+            <span>Overall Score</span>
+            <button type="button" class="info-icon" id="overall-info-btn" aria-expanded="false" aria-label="How is this calculated?">?</button>
+          </div>
+          <div id="overall-info-tooltip" class="hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 w-80 z-10 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed text-left normal-case tracking-normal font-body" style="background:var(--paper-raised)">
+            The overall score is calculated by converting the raw score into a percentage using the following formula: Overall Score = (Raw Score ÷ Total Possible Score) × 100
+            <br /><br />
+            To ensure fair comparisons across countries with different parliamentary systems, the scores of bicameral legislatures are calculated by averaging the scores of their lower and upper chambers. For unicameral legislatures, the score of the single chamber is used.
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-1 mb-6">
+          <span class="font-mono text-4xl font-bold" style="color:var(--highlight)">${fmtPct(overall.pct, 0)}</span>
+          <span class="font-mono text-xs text-[var(--ink-faint)]">(<span style="color:var(--highlight)">${fmtRaw(countryRaw.score)}</span>/${Math.round(countryRaw.max)})</span>
+        </div>`;
+
+      if (isBicameral) {
+        scoreCardHTML += `
+          <div class="grid grid-cols-2 gap-6 pt-5 border-t border-[var(--hairline)]">
+            <div>
+              <div class="text-xs font-medium text-center mb-2">Lower Chamber</div>
+              <div class="font-mono text-2xl font-semibold text-center" style="color:var(--highlight)">${fmtPct(calculateChamberScore(lowerChamber.chamber_id, idx).pct, 0)}</div>
+              <div class="font-mono text-xs text-[var(--ink-faint)] text-center mb-3">(<span style="color:var(--highlight)">${fmtRaw(calculateChamberScore(lowerChamber.chamber_id, idx).score)}</span>/${Math.round(calculateChamberScore(lowerChamber.chamber_id, idx).max)})</div>
+              ${dimensionMiniBarsHTML(lowerChamber.chamber_id, "lower")}
+            </div>
+            <div>
+              <div class="text-xs font-medium text-center mb-2">Upper Chamber</div>
+              <div class="font-mono text-2xl font-semibold text-center" style="color:var(--highlight)">${fmtPct(calculateChamberScore(upperChamber.chamber_id, idx).pct, 0)}</div>
+              <div class="font-mono text-xs text-[var(--ink-faint)] text-center mb-3">(<span style="color:var(--highlight)">${fmtRaw(calculateChamberScore(upperChamber.chamber_id, idx).score)}</span>/${Math.round(calculateChamberScore(upperChamber.chamber_id, idx).max)})</div>
+              ${dimensionMiniBarsHTML(upperChamber.chamber_id, "upper")}
+            </div>
+          </div>`;
+      } else {
+        scoreCardHTML += `
+          <div class="pt-5 border-t border-[var(--hairline)]">
+            ${dimensionMiniBarsHTML(lowerChamber.chamber_id, "single")}
+          </div>`;
+      }
+
+      document.getElementById("overall-score-card").innerHTML = scoreCardHTML;
+
+      document.querySelectorAll(".mini-bar-slot").forEach((slot) => {
+        const chamberId = slot.dataset.chamber === "lower" ? lowerChamber.chamber_id : slot.dataset.chamber === "upper" ? upperChamber.chamber_id : lowerChamber.chamber_id;
+        const dimId = slot.dataset.dim;
+        const s = calculateDimensionScore(chamberId, dimId, idx);
+        const width = s.pct === null ? 0 : Math.max(2, s.pct);
+        slot.innerHTML = `
+          <div style="background:var(--hairline); border-radius:999px; height:8px; width:100%; overflow:hidden;">
+            <div style="background:var(--highlight); height:100%; width:${width}%; border-radius:999px; transition:width .8s cubic-bezier(.16,1,.3,1);"></div>
+          </div>`;
+      });
+
+      const overallInfoBtn = document.getElementById("overall-info-btn");
+      const overallInfoTooltip = document.getElementById("overall-info-tooltip");
+      overallInfoBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = !overallInfoTooltip.classList.contains("hidden");
+        overallInfoTooltip.classList.toggle("hidden", isOpen);
+        overallInfoBtn.setAttribute("aria-expanded", String(!isOpen));
+      });
+      document.addEventListener("click", (e) => {
+        if (!overallInfoTooltip.classList.contains("hidden") && e.target !== overallInfoBtn && !overallInfoTooltip.contains(e.target)) {
+          overallInfoTooltip.classList.add("hidden");
+          overallInfoBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // ---------- Chamber tabs (hidden for unicameral) ----------
+      let activeChamberId = lowerChamber.chamber_id;
+      const chamberTabsEl = document.getElementById("chamber-tabs");
+      if (isBicameral) {
+        chamberTabsEl.innerHTML = `
+          <button class="chamber-tab-btn active" data-chamber-id="${lowerChamber.chamber_id}">Lower Chamber</button>
+          <button class="chamber-tab-btn" data-chamber-id="${upperChamber.chamber_id}">Upper Chamber</button>
+        `;
+        chamberTabsEl.addEventListener("click", (e) => {
+          const btn = e.target.closest(".chamber-tab-btn");
+          if (!btn) return;
+          activeChamberId = btn.dataset.chamberId;
+          chamberTabsEl.querySelectorAll(".chamber-tab-btn").forEach((b) => b.classList.toggle("active", b === btn));
+          renderDimensionPanel(activeDimensionId);
+        });
+      } else {
+        chamberTabsEl.classList.add("hidden");
+      }
+
+      // ---------- Dimension tabs ----------
+      const TAB_ORDER = ["Transparency", "Accountability", "Citizen Participation"];
+      const orderedDimensions = TAB_ORDER.map((name) => dataset.dimensions.find((d) => d.dimension === name)).filter(Boolean);
+      const dimensionTabsEl = document.getElementById("dimension-tabs");
+      dimensionTabsEl.innerHTML = orderedDimensions.map((d, i) => `
+        <button class="tab-btn flex-1${i === 0 ? " active" : ""}" data-dimension-id="${d.dimension_id}">${d.dimension}</button>
+      `).join("");
+      let activeDimensionId = orderedDimensions[0].dimension_id;
+
+      dimensionTabsEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".tab-btn");
+        if (!btn) return;
+        dimensionTabsEl.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeDimensionId = btn.dataset.dimensionId;
+        renderDimensionPanel(activeDimensionId);
+      });
+
+      // ---------- Indicator cards ----------
+      function classificationBadge(c) {
+        return {
+          achieved: { tone: "achieved", label: "Achieved" },
+          partly_achieved: { tone: "partly", label: "Partly achieved" },
+          not_achieved: { tone: "not", label: "Not achieved" },
+          na: { tone: "na", label: "N/A" },
+        }[c] || { tone: "na", label: "N/A" };
+      }
+
+      function indicatorCardHTML(ind, chamberId) {
+        const classification = calculateIndicatorClassificationForChamber(chamberId, ind.indicator_id, idx);
+        const badge = classificationBadge(classification);
+        const questions = idx.questionsByIndicator.get(ind.indicator_id) || [];
+        const achievedCount = countryIds.filter((cid) => calculateIndicatorClassification(cid, ind.indicator_id, idx) === "achieved").length;
+
+        const indicatorRaw = questions.reduce((acc, q) => {
+          const resp = idx.responseByChamberQuestion.get(`${chamberId}__${q.question_id}`);
+          const s = calculateQuestionScore(resp, q, idx);
+          if (s.isNA) return acc;
+          return { score: acc.score + s.score, max: acc.max + s.max };
+        }, { score: 0, max: 0 });
+        const rawScoreHTML = indicatorRaw.max > 0
+          ? `<span class="font-mono text-xs text-[var(--ink-faint)]">(<span style="color:var(--highlight)">${fmtRaw(indicatorRaw.score)}</span>/${Math.round(indicatorRaw.max)})</span>`
+          : "";
+
+        return `
+          <div class="card mb-4 overflow-hidden" data-reveal>
+            <div class="accordion-item !border-0">
+              <button class="accordion-trigger !px-5 !py-5">
+                <svg class="accordion-chevron flex-shrink-0 mr-3" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="flex items-start justify-between gap-4 flex-1 text-left">
+                  <div>
+                    <div class="font-display font-semibold">${ind.indicator_name}</div>
+                    <div class="text-xs text-[var(--ink-faint)] mt-1">${questions.length} Question${questions.length === 1 ? "" : "s"}</div>
+                  </div>
+                  <div class="text-right flex-shrink-0">
+                    <div class="flex items-center justify-end gap-2">
+                      ${badgeFor(badge.tone, badge.label)}
+                      ${rawScoreHTML}
+                    </div>
+                    <div class="text-xs text-[var(--ink-faint)] mt-1.5">
+                      <a href="indicator.html?id=${ind.indicator_id}" class="hover:text-[var(--highlight)]">${achievedCount} countries achieved →</a>
+                    </div>
+                  </div>
+                </div>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner px-5 pb-5">
+                  ${questions.map((q, i) => questionBlockHTML(q, i, chamberId, idx)).join("")}
+                  <div class="text-right mt-5">
+                    <a href="indicator.html?id=${ind.indicator_id}" class="btn text-sm font-medium" style="background:var(--highlight-dim); color:var(--highlight);">Explore indicator →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+      }
+
+      const dimensionShortDefs = {
+        "Transparency": "How a parliament proactively discloses legislative activities and decision-making processes.",
+        "Accountability": "The extent to which individual legislators are held responsible for their financial and interest-related conduct.",
+        "Citizen Participation": "The extent to which citizens can meaningfully engage in and express opinions about parliamentary processes.",
+      };
+
+      function renderDimensionPanel(dimensionId) {
+        const dim = dataset.dimensions.find((d) => d.dimension_id === dimensionId);
+        const relevances = idx.relevancesByDimension.get(dimensionId) || [];
+        const indicatorIds = new Set();
+        relevances.forEach((r) => (idx.indicatorsByRelevance.get(r.relevance_id) || []).forEach((i) => indicatorIds.add(i.indicator_id)));
+
+        const seen = new Set();
+        const groupsHTML = relevances.map((r) => {
+          const items = (idx.indicatorsByRelevance.get(r.relevance_id) || []).filter((ind) => {
+            if (seen.has(ind.indicator_id)) return false;
+            seen.add(ind.indicator_id);
+            return true;
+          });
+          if (items.length === 0) return "";
+          return `
+            <div class="mb-8">
+              <div class="text-sm font-medium text-[var(--ink-soft)] mb-4 pb-2 border-b border-[var(--hairline)]">${r.dimension_relevance}</div>
+              ${items.map((ind) => indicatorCardHTML(ind, activeChamberId)).join("")}
+            </div>`;
+        }).join("");
+
+        document.getElementById("dimension-panel").innerHTML = `
+          <p class="text-[var(--ink-soft)] leading-relaxed mb-6">${dimensionShortDefs[dim.dimension] ?? ""}</p>
+          <div class="mb-6">
+            <span class="font-display text-lg font-semibold">${indicatorIds.size} Indicators</span>
+            <span class="text-sm text-[var(--ink-faint)]">Grouped by ${relevances.length} dimension relevance${relevances.length === 1 ? "" : "s"}</span>
+          </div>
+          ${groupsHTML}
+        `;
+
+        refreshDynamicUI();
+      }
+
+      renderDimensionPanel(activeDimensionId);
+
+      // ---------- About Evaluator ----------
+      const evaluatorCard = document.getElementById("about-evaluator-card");
+      if (country.org_name) {
+        evaluatorCard.innerHTML = `
+          <div class="pt-6 border-t border-[var(--hairline)]">
+            <div class="eyebrow mb-4">About Evaluator</div>
+            <div class="grid sm:grid-cols-3 gap-6 text-sm">
+              <div>
+                <div class="text-xs text-[var(--ink-faint)] mb-1">Organization Name</div>
+                <div class="text-[var(--ink-soft)]">${country.org_name}</div>
+              </div>
+              <div>
+                <div class="text-xs text-[var(--ink-faint)] mb-1">Website</div>
+                ${country.org_website ? `<a href="${country.org_website}" target="_blank" rel="noopener" class="text-[var(--highlight)] hover:underline">${country.org_website}</a>` : `<div class="text-[var(--ink-faint)]">—</div>`}
+              </div>
+              <div>
+                <div class="text-xs text-[var(--ink-faint)] mb-1">Contact</div>
+                <div class="text-[var(--ink-soft)]">${country.org_contact || "—"}</div>
+              </div>
+            </div>
+          </div>`;
+      } else {
+        evaluatorCard.innerHTML = `
+          <div class="pt-6 border-t border-[var(--hairline)]">
+            <div class="eyebrow mb-3">About Evaluator</div>
+            <p class="text-sm text-[var(--ink-faint)]">Evaluator details for this country have not yet been published for this cycle.</p>
+          </div>`;
+      }
+    });
+  </script>
+</body>
+</html>

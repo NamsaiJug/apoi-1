@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explore by Indicator — AAPO</title>
+<meta name="description" content="Select an indicator to see how every country compares, question by question." />
+<link rel="stylesheet" href="css/theme.css?v=9" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  .indicator-card { display: flex; align-items: center; gap: 24px; text-decoration: none; color: inherit; }
+  .indicator-card:hover { border-color: var(--highlight); }
+  .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; margin-right: 4px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <!-- Breadcrumb -->
+  <div class="shell pt-5 pb-1 text-sm text-[var(--ink-faint)]">
+    <a href="index.html" class="hover:text-[var(--ink)]">Home</a>
+    <span class="mx-1.5">›</span>
+    <span class="text-[var(--ink)] font-medium">Explore by Indicator</span>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section style="background:var(--highlight-dim)">
+      <div class="shell py-16 text-center">
+        <div class="flex items-center justify-center gap-3 mb-5 flex-wrap">
+          <span class="font-display text-lg font-semibold text-[var(--ink-soft)]">Asia Parliamentary Openness Index</span>
+          <select id="cycle-select" class="control !py-2"></select>
+        </div>
+        <h1 class="font-display text-3xl md:text-[2.4rem] font-bold leading-tight mb-5">Explore by Indicator</h1>
+        <p class="max-w-xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-7">
+          Select an indicator to see how every country compares on a single indicator, question by question.
+        </p>
+        <div class="flex items-center justify-center gap-5 text-sm">
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DIMENSION TABS + CONTENT ===================== -->
+    <section class="shell py-16">
+      <div class="flex border-b border-[var(--hairline)] mb-8" id="dimension-tabs"></div>
+      <div id="dimension-panel"></div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { loadFullDataset } from "./js/data.js?v=13";
+    import { buildIndex, calculateIndicatorClassification } from "./js/calculations.js?v=15";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("indicators");
+
+      const dataset = await loadFullDataset();
+      const idx = buildIndex(dataset);
+      const countryIds = dataset.countries.map((c) => c.country_id);
+
+      document.getElementById("cycle-select").innerHTML = `<option>2026</option>`;
+
+      const dimensionDefs = {
+        "Transparency": "How a parliament proactively discloses legislative activities and decision-making processes. Indicators include advance publication of meeting agendas, disclosure of budget drafts, availability of live broadcasts, access to post-session recordings, comprehensive meeting minutes, public access to verbatim transcripts, and publication of MPs' voting records.",
+        "Accountability": "The extent to which individual legislators are held responsible for their financial and interest-related conduct. Indicators include mechanisms for declaring conflicts of interest, disclosure of asset and wealth declarations, publication of salaries and benefit structures, transparency in financial reports for official trips, disclosure of travel itineraries, and disclosure of information regarding publicly funded staff.",
+        "Citizen Participation": "The extent to which citizens can meaningfully engage in and express opinions about parliamentary processes. Indicators include public access to plenary and committee meetings, freedom for citizen journalists to report, permission for the public to photograph/record/livestream sessions, online availability of parliamentary documents, and the existence of Open Parliament Plans.",
+      };
+      const dimensionLabels = { "Transparency": "Transparency (In Parliamentary Operations)" };
+      const TAB_ORDER = ["Transparency", "Accountability", "Citizen Participation"];
+      const orderedDimensions = TAB_ORDER.map((name) => dataset.dimensions.find((d) => d.dimension === name)).filter(Boolean);
+
+      const tabsEl = document.getElementById("dimension-tabs");
+      tabsEl.innerHTML = orderedDimensions.map((d, i) => `
+        <button class="tab-btn flex-1${i === 0 ? " active" : ""}" data-dimension-id="${d.dimension_id}">${d.dimension}</button>
+      `).join("");
+
+      function legendHTML() {
+        return `
+          <div class="flex items-center gap-3 text-xs text-[var(--ink-soft)] flex-wrap relative">
+            <span class="flex items-center"><span class="legend-dot" style="background:var(--achieved)"></span>Achieved</span>
+            <span class="flex items-center"><span class="legend-dot" style="background:var(--partly)"></span>Partly achieved</span>
+            <span class="flex items-center"><span class="legend-dot" style="background:var(--not-achieved)"></span>Not achieved</span>
+            <span class="flex items-center"><span class="legend-dot" style="background:var(--na)"></span>N/A</span>
+            <button type="button" class="info-icon legend-info-btn" aria-expanded="false" aria-label="What do these badges mean?">?</button>
+            <div class="legend-info-tooltip hidden absolute top-full right-0 mt-2 w-80 z-10 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed normal-case tracking-normal font-body" style="background:var(--paper-raised)">
+              <ul class="list-disc pl-4 space-y-1.5">
+                <li><b>Achieved</b>: All questions within the indicator receive a score of 1.</li>
+                <li><b>Partly achieved</b>: At least one chamber scores less than 1 on at least one question within the indicator.</li>
+                <li><b>Not achieved</b>: All chambers receive a score of 0 for all questions within the indicator.</li>
+                <li><b>N/A</b>: All chambers receive N/A for all questions within the indicator.</li>
+              </ul>
+            </div>
+          </div>`;
+      }
+
+      // Delegated click handling so every legend popover (one per relevance
+      // group) works without needing to rebind listeners on each re-render.
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".legend-info-btn");
+        if (btn) {
+          const tooltip = btn.nextElementSibling;
+          const isOpen = !tooltip.classList.contains("hidden");
+          document.querySelectorAll(".legend-info-tooltip").forEach((t) => { if (t !== tooltip) t.classList.add("hidden"); });
+          tooltip.classList.toggle("hidden", isOpen);
+          btn.setAttribute("aria-expanded", String(!isOpen));
+          return;
+        }
+        document.querySelectorAll(".legend-info-tooltip:not(.hidden)").forEach((t) => {
+          if (!t.contains(e.target)) t.classList.add("hidden");
+        });
+      });
+
+      function indicatorCardHTML(ind) {
+        const questions = idx.questionsByIndicator.get(ind.indicator_id) || [];
+        const counts = { achieved: 0, partly_achieved: 0, not_achieved: 0, na: 0 };
+        countryIds.forEach((cid) => {
+          const c = calculateIndicatorClassification(cid, ind.indicator_id, idx);
+          counts[c] = (counts[c] || 0) + 1;
+        });
+        const total = countryIds.length;
+        const pct = (n) => (total ? (n / total) * 100 : 0);
+
+        return `
+          <a href="indicator.html?id=${ind.indicator_id}" class="indicator-card card p-5 mb-4" data-reveal>
+            <div class="grid grid-cols-2 gap-6 flex-1 min-w-0">
+              <div class="min-w-0">
+                <div class="font-display font-semibold mb-1">${ind.indicator_name}</div>
+                <div class="text-xs text-[var(--ink-faint)]">${questions.length} Question${questions.length === 1 ? "" : "s"}</div>
+              </div>
+              <div class="min-w-0">
+                <div class="flex rounded-full overflow-hidden h-2 mb-2">
+                  <div style="width:${pct(counts.achieved)}%; background:var(--achieved)"></div>
+                  <div style="width:${pct(counts.partly_achieved)}%; background:var(--partly)"></div>
+                  <div style="width:${pct(counts.not_achieved)}%; background:var(--not-achieved)"></div>
+                  <div style="width:${pct(counts.na)}%; background:var(--na)"></div>
+                </div>
+                <div class="flex items-center gap-4 text-xs text-[var(--ink-soft)] flex-wrap">
+                  <span class="text-[var(--ink-faint)]">Number of countries</span>
+                  <span class="flex items-center"><span class="legend-dot" style="background:var(--achieved)"></span>${counts.achieved}</span>
+                  <span class="flex items-center"><span class="legend-dot" style="background:var(--partly)"></span>${counts.partly_achieved}</span>
+                  <span class="flex items-center"><span class="legend-dot" style="background:var(--not-achieved)"></span>${counts.not_achieved}</span>
+                  <span class="flex items-center"><span class="legend-dot" style="background:var(--na)"></span>${counts.na}</span>
+                </div>
+              </div>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="flex-shrink-0 text-[var(--ink-faint)]"><path d="M4 9h10M9 4l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>`;
+      }
+
+      function renderDimensionPanel(dimensionId) {
+        const dim = orderedDimensions.find((d) => d.dimension_id === dimensionId);
+        const relevances = idx.relevancesByDimension.get(dimensionId) || [];
+        const indicatorIds = new Set();
+        relevances.forEach((r) => (idx.indicatorsByRelevance.get(r.relevance_id) || []).forEach((i) => indicatorIds.add(i.indicator_id)));
+
+        const seen = new Set();
+        const groupsHTML = relevances.map((r) => {
+          const items = (idx.indicatorsByRelevance.get(r.relevance_id) || []).filter((ind) => {
+            if (seen.has(ind.indicator_id)) return false;
+            seen.add(ind.indicator_id);
+            return true;
+          });
+          if (items.length === 0) return "";
+          return `
+            <div class="mb-10">
+              <div class="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-[var(--hairline)] flex-wrap">
+                <span class="text-sm font-medium text-[var(--ink-soft)]">${r.dimension_relevance}</span>
+                ${legendHTML()}
+              </div>
+              ${items.map((ind) => indicatorCardHTML(ind)).join("")}
+            </div>`;
+        }).join("");
+
+        document.getElementById("dimension-panel").innerHTML = `
+          <p id="dimension-desc" class="text-[var(--ink-soft)] leading-relaxed mb-8">
+            <span class="font-display font-semibold text-[var(--ink)]">${dimensionLabels[dim.dimension] ?? dim.dimension}:</span> ${dimensionDefs[dim.dimension] ?? ""}
+          </p>
+          <div class="mb-6">
+            <span class="font-display text-lg font-semibold">${indicatorIds.size} Indicators</span>
+            <span class="text-sm text-[var(--ink-faint)]">Grouped by dimension relevance</span>
+          </div>
+          ${groupsHTML}
+        `;
+
+        refreshDynamicUI();
+      }
+
+      let activeDimensionId = orderedDimensions[0].dimension_id;
+      tabsEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".tab-btn");
+        if (!btn) return;
+        tabsEl.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeDimensionId = btn.dataset.dimensionId;
+        renderDimensionPanel(activeDimensionId);
+      });
+
+      renderDimensionPanel(activeDimensionId);
+    });
+  </script>
+</body>
+</html>

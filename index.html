@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asia Parliamentary Openness Index — AAPO</title>
+<meta name="description" content="A regional index tracking how openly Asia-Pacific parliaments operate." />
+<link rel="stylesheet" href="css/theme.css?v=10" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font-family: var(--font-display); font-weight: 500; font-size: 0.92rem; background: var(--ink); color: #fff; transition: transform .12s ease, background .15s ease; }
+  .cta-btn:hover { background: #000; }
+  .cta-btn:active { transform: scale(0.98); }
+  .dim-circle { width: 168px; height: 168px; border-radius: 999px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; background: var(--paper-raised); font-family: var(--font-display); font-weight: 600; font-size: 0.98rem; margin-inline: auto; }
+  .logo-placeholder { width: 84px; height: 56px; border-radius: 8px; background: var(--paper-raised); border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; font-size: 0.68rem; color: var(--ink-faint); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main>
+
+    <!-- ===================== 1. HERO ===================== -->
+    <section style="background:var(--highlight-dim); min-height:70vh;" class="text-center flex items-center">
+      <div class="shell w-full">
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">Asia Parliamentary Openness Index</h1>
+        <p class="max-w-xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-10">
+          A regional index tracking how openly Asia-Pacific parliaments operate
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="insight.html" class="cta-btn">See insights</a>
+          <a href="countries.html" class="cta-btn">Explore by country</a>
+          <a href="indicators.html" class="cta-btn">Explore by indicator</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. ABOUT THE INDEX ===================== -->
+    <section class="py-20 border-t border-[var(--hairline)]">
+      <div class="shell text-center">
+        <h2 class="font-display text-3xl font-bold mb-6">About the index</h2>
+        <p class="max-w-2xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-12">
+          AAPO assesses how openly national parliaments across Asia-Pacific operate, so citizens, media,
+          and reformers can see exactly where each parliament stands. Every parliament is scored against
+          the same set of questions, organized into three dimensions of openness.
+        </p>
+        <div class="eyebrow mb-6">3 Dimensions</div>
+        <div class="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-10" id="dimension-circles"></div>
+        <div class="flex items-center justify-center gap-5 text-sm">
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">See more</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. WHO THIS IS FOR ===================== -->
+    <section class="py-20 border-t border-[var(--hairline)]">
+      <div class="shell">
+        <h2 class="font-display text-3xl font-bold text-center mb-12">Who this is for</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="font-display font-semibold mb-2">NGOs &amp; Civil Society</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Plan advocacy activities and prioritize reform efforts using indicator-level evidence.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold mb-2">Parliamentarians &amp; Staff</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Identify where your own parliament falls short and strengthen its openness practices.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold mb-2">Academics &amp; Researchers</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Analyze whether parliamentary openness is associated with corruption, democratic quality, or public trust.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold mb-2">The Press</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Report on transparency gaps to raise public awareness and hold parliaments accountable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. INSIGHT HIGHLIGHT ===================== -->
+    <section class="py-20 border-t border-[var(--hairline)]">
+      <div class="shell grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-display text-3xl font-bold mb-6" id="home-insight-title">Insight</h2>
+          <p class="text-[var(--ink-soft)] leading-relaxed mb-8" id="home-insight-summary">Loading regional data…</p>
+          <a href="insight.html" class="cta-btn">See more</a>
+        </div>
+        <div id="home-insight-chart">
+          <div class="rounded-[var(--radius)] p-5 text-center mb-3" style="background:var(--paper-raised); border:1px solid var(--hairline);">
+            <div class="eyebrow mb-1">Overall Score</div>
+            <div class="font-mono text-3xl font-bold" id="insight-overall-value" style="color:var(--highlight)">—</div>
+            <div class="text-xs text-[var(--ink-faint)] mt-1" id="insight-overall-caption"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-3" id="insight-dimension-boxes"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. EXPLORE CARDS ===================== -->
+    <section class="shell py-20">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-8">
+          <h3 class="font-display text-2xl font-bold mb-3">Explore by Country</h3>
+          <p class="text-[var(--ink-soft)] leading-relaxed mb-8">See every country's overall score, chamber-by-chamber breakdown, and indicator-level detail.</p>
+          <a href="countries.html" class="cta-btn">Explore</a>
+        </div>
+        <div class="card p-8">
+          <h3 class="font-display text-2xl font-bold mb-3">Explore by Indicator</h3>
+          <p class="text-[var(--ink-soft)] leading-relaxed mb-8">See how every country compares on a single indicator, question by question.</p>
+          <a href="indicators.html" class="cta-btn">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. CONTRIBUTORS ===================== -->
+    <section style="background:var(--paper)" class="py-20 border-t border-[var(--hairline)] text-center">
+      <div class="shell">
+        <p class="eyebrow mb-3">Contributors</p>
+        <h2 class="font-display text-2xl font-bold mb-8">Asian Alliance for Parliamentary Openness (AAPO)</h2>
+        <div class="mx-auto mb-10 rounded-[var(--radius)] flex items-center justify-center font-display font-semibold text-[var(--ink-faint)]" style="width:160px; height:100px; background:var(--paper-raised); border:1px solid var(--hairline);">AAPO Logo</div>
+        <p class="max-w-2xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-12">
+          We are a regional network of civil society organizations committed to parliamentary monitoring
+          and democratic advocacy across the Asia-Pacific. Together, we have launched the Asia
+          Parliamentary Openness Index, a collaborative initiative designed to assess and promote
+          transparency within parliaments throughout the region.
+        </p>
+        <p class="eyebrow mb-4">Our team</p>
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+          <div class="logo-placeholder">Logo</div>
+        </div>
+        <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">See more</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script type="module">
+    import { bootstrapPage } from "./js/app.js?v=16";
+    import { loadFullDataset } from "./js/data.js?v=13";
+    import { buildIndex, calculateRegionalAverage } from "./js/calculations.js?v=15";
+    import { fmtPct } from "./js/ui.js?v=13";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await bootstrapPage("");
+
+      const dataset = await loadFullDataset();
+      const idx = buildIndex(dataset);
+      const countryIds = dataset.countries.map((c) => c.country_id);
+
+      const TAB_ORDER = ["Transparency", "Accountability", "Citizen Participation"];
+      const orderedDimensions = TAB_ORDER.map((name) => dataset.dimensions.find((d) => d.dimension === name)).filter(Boolean);
+      const dimensionShortDefs = {
+        "Transparency": "How a parliament proactively discloses legislative activities and decision-making processes.",
+        "Accountability": "The extent to which individual legislators are held responsible for their financial and interest-related conduct.",
+        "Citizen Participation": "The extent to which citizens can meaningfully engage in and express opinions about parliamentary processes.",
+      };
+
+      // ---------- 3 Dimension circles ----------
+      document.getElementById("dimension-circles").innerHTML = orderedDimensions.map((d) => `
+        <div>
+          <div class="dim-circle">${d.dimension}</div>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed mt-4 max-w-[220px] mx-auto text-center">${dimensionShortDefs[d.dimension] ?? ""}</p>
+        </div>
+      `).join("");
+
+      // ---------- Insight highlight (regional average + aperture) ----------
+      const regionalAvg = calculateRegionalAverage(countryIds, idx);
+      const cycleYear = "2026";
+      document.getElementById("home-insight-title").textContent = `${cycleYear} Insight`;
+
+      const dimAverages = dataset.dimensions.map((d) => ({
+        name: d.dimension,
+        pct: calculateRegionalAverage(countryIds, idx, "dimension", d.dimension_id),
+      })).filter((d) => d.pct !== null);
+      let summary = `Across ${countryIds.length} parliaments assessed this cycle, the regional average sits at ${fmtPct(regionalAvg)}.`;
+      if (dimAverages.length) {
+        const strongest = dimAverages.reduce((a, b) => (b.pct > a.pct ? b : a));
+        const weakest = dimAverages.reduce((a, b) => (b.pct < a.pct ? b : a));
+        summary += ` ${strongest.name} leads the way regionally at ${fmtPct(strongest.pct)}, while ${weakest.name} lags furthest behind at ${fmtPct(weakest.pct)}.`;
+      }
+      document.getElementById("home-insight-summary").textContent = summary;
+
+      document.getElementById("insight-overall-value").textContent = fmtPct(regionalAvg, 0);
+      document.getElementById("insight-overall-caption").textContent = `average score for ${countryIds.length} countries`;
+
+      document.getElementById("insight-dimension-boxes").innerHTML = orderedDimensions.map((d) => {
+        const pct = calculateRegionalAverage(countryIds, idx, "dimension", d.dimension_id);
+        return `
+          <div class="rounded-[var(--radius)] p-4 text-center" style="background:var(--paper-raised); border:1px solid var(--hairline);">
+            <div class="text-xs font-medium text-[var(--ink-soft)] mb-1">${d.dimension}</div>
+            <div class="font-mono text-xl font-semibold" style="color:var(--highlight)">${fmtPct(pct, 0)}</div>
+            <div class="text-[0.68rem] text-[var(--ink-faint)] mt-0.5">average</div>
+          </div>`;
+      }).join("");
+    });
+  </script>
+</body>
+</html>
