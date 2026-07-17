@@ -1,0 +1,69 @@
+response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
+AUS_up_0069,AUS_up,Q1.1,O0001,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+AUS_up_0070,AUS_up,Q1.2,O0005,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+AUS_up_0071,AUS_up,Q2.1,O0007,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+AUS_up_0072,AUS_up,Q2.2,O0010,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+AUS_up_0073,AUS_up,Q3.1,O0013,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+AUS_up_0074,AUS_up,Q3.2,O0016,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+AUS_up_0075,AUS_up,Q4.1,O0019,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+AUS_up_0076,AUS_up,Q4.2,O0023,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_up_0077,AUS_up,Q5.1,O0025,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+AUS_up_0078,AUS_up,Q5.2,O0028,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+AUS_up_0079,AUS_up,Q6.1,O0032,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_up_0080,AUS_up,Q6.2,O0034,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+AUS_up_0081,AUS_up,Q7.1,O0037,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_up_0082,AUS_up,Q7.2,O0040,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+AUS_up_0083,AUS_up,Q8.1,O0044,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+AUS_up_0084,AUS_up,Q8.2,O0046,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+AUS_up_0085,AUS_up,Q9.1,O0049,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+AUS_up_0086,AUS_up,Q9.2,O0053,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_up_0087,AUS_up,Q10.1,O0055;O0056;O0057,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+AUS_up_0088,AUS_up,Q10.2,O0060,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+AUS_up_0089,AUS_up,Q10.3,O0063,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+AUS_up_0090,AUS_up,Q11.1,O0067,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_up_0091,AUS_up,Q11.2,O0072,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+AUS_up_0092,AUS_up,Q11.3,O0077,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+AUS_up_0093,AUS_up,Q12.1,O0079,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_up_0094,AUS_up,Q12.2,O0082,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_up_0095,AUS_up,Q13.1,O0085,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_up_0096,AUS_up,Q13.2,O0088,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
+AUS_up_0097,AUS_up,Q14.1,O0091,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_up_0098,AUS_up,Q15.1,O0094,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_up_0099,AUS_up,Q15.2,O0097,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+AUS_up_0100,AUS_up,Q16.1,O0103,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_up_0101,AUS_up,Q16.2,O0105,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+AUS_up_0102,AUS_up,Q17.1,O0109,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+AUS_up_0103,AUS_up,Q17.2,O0111,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+AUS_up_0104,AUS_up,Q17.3,O0118,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+AUS_up_0105,AUS_up,Q18.1,O0120,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_up_0106,AUS_up,Q18.2,O0123,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_up_0107,AUS_up,Q18.3,O0128,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+AUS_up_0108,AUS_up,Q19.1,O0132,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_up_0109,AUS_up,Q20.1,O0135,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_up_0110,AUS_up,Q20.2,O0138,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_up_0111,AUS_up,Q21.1,O0144,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_up_0112,AUS_up,Q21.2,O0146,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+AUS_up_0113,AUS_up,Q22.1,O0149,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+AUS_up_0114,AUS_up,Q22.2,O0152,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+AUS_up_0115,AUS_up,Q22.3,O0157,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+AUS_up_0116,AUS_up,Q23.1,O0161,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+AUS_up_0117,AUS_up,Q23.2,O0166,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_up_0118,AUS_up,Q23.3,O0171,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_up_0119,AUS_up,Q24.1,O0173,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+AUS_up_0120,AUS_up,Q24.2,O0178,"Available in the national language only, no official translation.","See parliament website, official publications section."
+AUS_up_0121,AUS_up,Q25.1,O0181;O0182;O0183,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+AUS_up_0122,AUS_up,Q25.2,O0186,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+AUS_up_0123,AUS_up,Q25.3,O0190,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_up_0124,AUS_up,Q26.1,O0194,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
+AUS_up_0125,AUS_up,Q26.2,O0196,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_up_0126,AUS_up,Q26.3,O0203,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_up_0127,AUS_up,Q27.1,O0205;O0206;O0207;O0208,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+AUS_up_0128,AUS_up,Q27.2,O0211,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+AUS_up_0129,AUS_up,Q28.1,O0213,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_up_0130,AUS_up,Q29.1,O0217;O0218;O0219;O0220;O0221,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_up_0131,AUS_up,Q29.2,O0224,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_up_0132,AUS_up,Q30.1,O0226,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+AUS_up_0133,AUS_up,Q30.2,O0229,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+AUS_up_0134,AUS_up,Q30.3,O0235,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+AUS_up_0135,AUS_up,Q31.1,O0238,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_up_0136,AUS_up,Q31.2,O0241,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.

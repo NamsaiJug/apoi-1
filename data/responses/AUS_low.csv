@@ -1,0 +1,69 @@
+response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
+AUS_low_0001,AUS_low,Q1.1,O0001,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+AUS_low_0002,AUS_low,Q1.2,O0004,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+AUS_low_0003,AUS_low,Q2.1,O0008,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+AUS_low_0004,AUS_low,Q2.2,O0010,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_low_0005,AUS_low,Q3.1,O0013,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_low_0006,AUS_low,Q3.2,O0016,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+AUS_low_0007,AUS_low,Q4.1,O0019,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_low_0008,AUS_low,Q4.2,O0022,"Available in the national language only, no official translation.","See parliament website, official publications section."
+AUS_low_0009,AUS_low,Q5.1,O0025,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+AUS_low_0010,AUS_low,Q5.2,O0029,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_low_0011,AUS_low,Q6.1,O0032,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_low_0012,AUS_low,Q6.2,O0034,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_low_0013,AUS_low,Q7.1,O0038,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+AUS_low_0014,AUS_low,Q7.2,O0041,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_low_0015,AUS_low,Q8.1,O0043,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_low_0016,AUS_low,Q8.2,O0046,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+AUS_low_0017,AUS_low,Q9.1,O0049,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_low_0018,AUS_low,Q9.2,O0053,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+AUS_low_0019,AUS_low,Q10.1,O0055,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_low_0020,AUS_low,Q10.2,O0060,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+AUS_low_0021,AUS_low,Q10.3,O0065,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+AUS_low_0022,AUS_low,Q11.1,O0067,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+AUS_low_0023,AUS_low,Q11.2,O0073,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+AUS_low_0024,AUS_low,Q11.3,O0077,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+AUS_low_0025,AUS_low,Q12.1,O0080,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
+AUS_low_0026,AUS_low,Q12.2,O0082,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_low_0027,AUS_low,Q13.1,O0085,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_low_0028,AUS_low,Q13.2,O0088,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_low_0029,AUS_low,Q14.1,O0091,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_low_0030,AUS_low,Q15.1,O0095,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+AUS_low_0031,AUS_low,Q15.2,O0097,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+AUS_low_0032,AUS_low,Q16.1,O0103,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_low_0033,AUS_low,Q16.2,O0106,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+AUS_low_0034,AUS_low,Q17.1,O0108,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+AUS_low_0035,AUS_low,Q17.2,O0111,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+AUS_low_0036,AUS_low,Q17.3,O0118,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+AUS_low_0037,AUS_low,Q18.1,O0120,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_low_0038,AUS_low,Q18.2,O0123,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+AUS_low_0039,AUS_low,Q18.3,O0128,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+AUS_low_0040,AUS_low,Q19.1,O0132,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_low_0041,AUS_low,Q20.1,O0136,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+AUS_low_0042,AUS_low,Q20.2,O0138,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+AUS_low_0043,AUS_low,Q21.1,O0143,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+AUS_low_0044,AUS_low,Q21.2,O0147,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+AUS_low_0045,AUS_low,Q22.1,O0149,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+AUS_low_0046,AUS_low,Q22.2,O0154,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+AUS_low_0047,AUS_low,Q22.3,O0157,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+AUS_low_0048,AUS_low,Q23.1,O0162,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+AUS_low_0049,AUS_low,Q23.2,O0166,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+AUS_low_0050,AUS_low,Q23.3,O0171,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_low_0051,AUS_low,Q24.1,O0173,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_low_0052,AUS_low,Q24.2,O0178,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+AUS_low_0053,AUS_low,Q25.1,O0181;O0182;O0183,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+AUS_low_0054,AUS_low,Q25.2,O0188,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_low_0055,AUS_low,Q25.3,O0190,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
+AUS_low_0056,AUS_low,Q26.1,O0193,"Available in the national language only, no official translation.","See parliament website, official publications section."
+AUS_low_0057,AUS_low,Q26.2,O0196,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+AUS_low_0058,AUS_low,Q26.3,O0201,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+AUS_low_0059,AUS_low,Q27.1,O0205;O0206;O0207;O0208,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+AUS_low_0060,AUS_low,Q27.2,O0210,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+AUS_low_0061,AUS_low,Q28.1,O0213,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_low_0062,AUS_low,Q29.1,O0217;O0218;O0219;O0220,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+AUS_low_0063,AUS_low,Q29.2,O0223,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_low_0064,AUS_low,Q30.1,O0226,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+AUS_low_0065,AUS_low,Q30.2,O0231,"Available in the national language only, no official translation.","See parliament website, official publications section."
+AUS_low_0066,AUS_low,Q30.3,O0234,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_low_0067,AUS_low,Q31.1,O0238,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+AUS_low_0068,AUS_low,Q31.2,O0240,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.

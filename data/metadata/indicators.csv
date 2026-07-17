@@ -1,0 +1,33 @@
+indicator_id,relevance_id,indicator_no,indicator_name
+I1,DR1,1,Code of conduct for MPs
+I2,DR1,2,Conflicts of interest of MPs
+I3,DR1,3,Asset and liability disclosure of MPs
+I4,DR2,4,Formal channel for public queries
+I5,DR3,5,Pre-legislative scrutiny of bills
+I6,DR3,6,Post-legislative scrutiny of laws
+I7,DR4,7,Public feedback on bills prior to Parliament deliberation
+I8,DR4,8,Public feedback on bills during Parliament deliberation
+I9,DR4,9,Public feedback on laws post-enactment
+I10,DR5,10,Availability of MP personal information
+I11,DR5,11,Availability of MPs' staff personal information
+I12,DR6,12,Physical accessibility for persons with disabilities
+I13,DR6,13,Web content accessibility for persons with disabilities
+I14,DR7,14,Openness of plenary sessions to public
+I15,DR7,15,Schedule of plenary sessions
+I16,DR8,16,Recordings of plenary sessions
+I17,DR8,17,Transcripts of plenary sessions
+I18,DR9,18,Attendance in plenary sessions
+I19,DR7,19,Openness of committee meetings to public
+I20,DR7,20,Schedule of committee meetings
+I21,DR8,21,Recordings of committee meetings
+I22,DR8,22,Transcripts of committee meetings
+I23,DR9,23,Attendance in committee meetings
+I24,DR10,24,Publishing of bills prior to introduction in Parliament
+I25,DR7,25,Publishing of details tied to bill amendments post introduction in Parliament
+I25,DR10,25,Publishing of details tied to bill amendments post introduction in Parliament
+I26,DR11,26,MP voting records in plenary sessions
+I27,DR12,27,MP salaries and benefits
+I28,DR12,28,Constituency development funds
+I29,DR12,29,Parliament spending
+I30,DR13,30,National budget transparency
+I31,DR14,31,Freedom of information

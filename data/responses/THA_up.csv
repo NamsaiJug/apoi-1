@@ -1,0 +1,69 @@
+response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
+THA_up_0001,THA_up,Q1.1,O0002,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+THA_up_0002,THA_up,Q1.2,O0004,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+THA_up_0003,THA_up,Q2.1,O0009,"Available in the national language only, no official translation.","See parliament website, official publications section."
+THA_up_0004,THA_up,Q2.2,O0010,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+THA_up_0005,THA_up,Q3.1,O0015,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0006,THA_up,Q3.2,O0017,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+THA_up_0007,THA_up,Q4.1,O0021,"Available in the national language only, no official translation.","See parliament website, official publications section."
+THA_up_0008,THA_up,Q4.2,O0022,"Available in the national language only, no official translation.","See parliament website, official publications section."
+THA_up_0009,THA_up,Q5.1,O0025,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0010,THA_up,Q5.2,O0028,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+THA_up_0011,THA_up,Q6.1,O0031,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+THA_up_0012,THA_up,Q6.2,O0036,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+THA_up_0013,THA_up,Q7.1,O0038,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+THA_up_0014,THA_up,Q7.2,O0040,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+THA_up_0015,THA_up,Q8.1,O0045,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+THA_up_0016,THA_up,Q8.2,O0048,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+THA_up_0017,THA_up,Q9.1,O0049,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+THA_up_0018,THA_up,Q9.2,O0053,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+THA_up_0019,THA_up,Q10.1,O0055,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+THA_up_0020,THA_up,Q10.2,O0060,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+THA_up_0021,THA_up,Q10.3,O0065,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+THA_up_0022,THA_up,Q11.1,O0067,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0023,THA_up,Q11.2,O0072,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+THA_up_0024,THA_up,Q11.3,O0075,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+THA_up_0025,THA_up,Q12.1,O0079,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+THA_up_0026,THA_up,Q12.2,O0082,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0027,THA_up,Q13.1,O0085,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+THA_up_0028,THA_up,Q13.2,O0088,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+THA_up_0029,THA_up,Q14.1,O0091,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+THA_up_0030,THA_up,Q15.1,O0094,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+THA_up_0031,THA_up,Q15.2,O0097,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
+THA_up_0032,THA_up,Q16.1,O0102,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+THA_up_0033,THA_up,Q16.2,O0105,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0034,THA_up,Q17.1,O0109,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+THA_up_0035,THA_up,Q17.2,O0111,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+THA_up_0036,THA_up,Q17.3,O0116,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0037,THA_up,Q18.1,O0121,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+THA_up_0038,THA_up,Q18.2,O0125,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+THA_up_0039,THA_up,Q18.3,O0128,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+THA_up_0040,THA_up,Q19.1,O0132,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
+THA_up_0041,THA_up,Q20.1,O0136,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+THA_up_0042,THA_up,Q20.2,O0140,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+THA_up_0043,THA_up,Q21.1,O0144,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+THA_up_0044,THA_up,Q21.2,O0147,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+THA_up_0045,THA_up,Q22.1,O0150,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+THA_up_0046,THA_up,Q22.2,O0152,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+THA_up_0047,THA_up,Q22.3,O0157,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+THA_up_0048,THA_up,Q23.1,O0161,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+THA_up_0049,THA_up,Q23.2,O0166,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0050,THA_up,Q23.3,O0171,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+THA_up_0051,THA_up,Q24.1,O0174,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+THA_up_0052,THA_up,Q24.2,O0178,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+THA_up_0053,THA_up,Q25.1,O0181;O0182,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+THA_up_0054,THA_up,Q25.2,O0186,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+THA_up_0055,THA_up,Q25.3,O0191,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+THA_up_0056,THA_up,Q26.1,O0193,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+THA_up_0057,THA_up,Q26.2,O0198,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+THA_up_0058,THA_up,Q26.3,O0204,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+THA_up_0059,THA_up,Q27.1,O0205,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+THA_up_0060,THA_up,Q27.2,O0210,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+THA_up_0061,THA_up,Q28.1,O0213,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+THA_up_0062,THA_up,Q29.1,O0217;O0218,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+THA_up_0063,THA_up,Q29.2,O0224,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
+THA_up_0064,THA_up,Q30.1,O0226,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+THA_up_0065,THA_up,Q30.2,O0231,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+THA_up_0066,THA_up,Q30.3,O0235,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+THA_up_0067,THA_up,Q31.1,O0239,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+THA_up_0068,THA_up,Q31.2,O0241,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.

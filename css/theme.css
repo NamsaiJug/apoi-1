@@ -1,0 +1,168 @@
+/* =========================================================
+   AAPO — Asia Parliamentary Openness Index
+   Design tokens & base styles
+   Typeface pairing: IBM Plex Sans (display/body) + IBM Plex Mono (data)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Paper & ink */
+  --paper: #F7F5F0;
+  --paper-raised: #FFFFFF;
+  --ink: #1D2B36;
+  --ink-soft: #47555F;
+  --ink-faint: #8A9099;
+  --hairline: #DEDAD0;
+
+  /* Accents */
+  --highlight: #1F3A5F;
+  --highlight-dim: #E7ECF1;
+  --amber: #D9A441;
+  --amber-dim: #FBF1DD;
+
+  /* Score bands */
+  --achieved: #2F8F5B;
+  --achieved-bg: #E7F3EC;
+  --partly: #D9A441;
+  --partly-bg: #FBF1DD;
+  --not-achieved: #B84C3E;
+  --not-achieved-bg: #F7E9E6;
+  --na: #ACAFB4;
+  --na-bg: #EEEDEB;
+
+  /* Type */
+  --font-display: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+.font-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.font-body { font-family: var(--font-body); letter-spacing: normal; }
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible {
+  outline: 2px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---------- Layout shell ---------- */
+.shell { max-width: 1180px; margin-inline: auto; padding-inline: 24px; }
+
+/* ---------- Navbar ---------- */
+.aapo-nav {
+  border-bottom: 1px solid var(--hairline);
+  background: rgba(247,245,240,0.92);
+  backdrop-filter: blur(6px);
+  position: sticky; top: 0; z-index: 40;
+}
+.aapo-nav a.nav-link {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.aapo-nav a.nav-link:hover { color: var(--ink); }
+.aapo-nav a.nav-link.active { color: var(--ink); border-color: var(--amber); font-weight: 500; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 999px;
+  font-size: 0.92rem; font-weight: 500;
+  transition: transform .12s ease, background .15s ease, box-shadow .15s ease;
+}
+.btn-primary { background: var(--highlight); color: #fff; }
+.btn-primary:hover { background: #16293F; }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--hairline); }
+.btn-ghost:hover { border-color: var(--ink-faint); }
+.btn:active { transform: scale(0.98); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+}
+.card:hover { box-shadow: 0 8px 24px rgba(29,43,54,0.07); border-color: #cfc9ba; }
+
+/* ---------- Badges ---------- */
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; letter-spacing: .01em; }
+.badge-achieved { background: var(--achieved-bg); color: var(--achieved); }
+.badge-partly { background: var(--partly-bg); color: #93731f; }
+.badge-not { background: var(--not-achieved-bg); color: var(--not-achieved); }
+.badge-na { background: var(--na-bg); color: #6c6f74; }
+
+/* ---------- Accordion ---------- */
+.accordion-item { border-bottom: 1px solid var(--hairline); }
+.accordion-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 4px; text-align: left; font-family: var(--font-display); font-weight: 500;
+  color: var(--ink); cursor: pointer;
+}
+.accordion-chevron { transition: transform .2s ease; color: var(--ink-faint); flex-shrink: 0; }
+.accordion-item.open > .accordion-trigger .accordion-chevron { transform: rotate(180deg); }
+.accordion-panel { display: grid; grid-template-rows: minmax(0, 0fr); min-height: 0; overflow: hidden; transition: grid-template-rows .25s ease; }
+.accordion-item.open > .accordion-panel { grid-template-rows: minmax(0, 1fr); }
+.accordion-panel-inner { overflow: hidden; min-height: 0; }
+
+/* ---------- Glossary side panel ---------- */
+.glossary-overlay {
+  position: fixed; inset: 0; background: rgba(29,43,54,0.35);
+  opacity: 0; pointer-events: none; transition: opacity .2s ease; z-index: 50;
+}
+.glossary-overlay.open { opacity: 1; pointer-events: auto; }
+.glossary-panel {
+  position: fixed; top: 0; right: 0; height: 100%; width: min(420px, 92vw);
+  background: var(--paper-raised); transform: translateX(100%);
+  transition: transform .28s cubic-bezier(.4,0,.2,1); z-index: 51;
+  box-shadow: -12px 0 32px rgba(29,43,54,0.12);
+  display: flex; flex-direction: column;
+}
+.glossary-panel.open { transform: translateX(0); }
+
+.glossary-term-trigger {
+  color: inherit; cursor: pointer; white-space: nowrap;
+}
+.glossary-term-trigger:hover .glossary-icon { color: #16293F; }
+.glossary-icon {
+  display: inline-block; vertical-align: -1px; margin-left: 3px; color: var(--highlight);
+}
+
+/* ---------- Aperture signature element ---------- */
+.aperture-blade { transition: transform 1.1s cubic-bezier(.16,1,.3,1); }
+
+/* ---------- Misc ---------- */
+.hairline { border-color: var(--hairline); }
+.eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ---------- Shared: dropdown control + info-icon tooltip trigger ---------- */
+select.control { border: 1px solid var(--hairline); border-radius: 8px; padding: 8px 12px; background: var(--paper-raised); font-family: var(--font-display); font-size: 0.86rem; }
+.info-icon { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 999px; border: 1px solid var(--ink-faint); background: transparent; color: var(--ink-faint); font-size: 11px; font-weight: 600; font-family: inherit; line-height: 1; padding: 0; cursor: pointer; flex-shrink: 0; }
+.info-icon:hover { border-color: var(--ink); color: var(--ink); }
+
+/* ---------- Shared: dimension/section tab bar ---------- */
+.tab-btn { padding: 16px 8px; font-family: var(--font-display); font-weight: 600; color: var(--ink-soft); border-bottom: 3px solid transparent; transition: color .15s ease, border-color .15s ease; cursor: pointer; }
+.tab-btn.active { color: var(--ink); border-color: var(--highlight); }
+.tab-btn:hover { color: var(--ink); }

@@ -1,0 +1,69 @@
+response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
+KHM_low_0545,KHM_low,Q1.1,O0002,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+KHM_low_0546,KHM_low,Q1.2,O0004,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+KHM_low_0547,KHM_low,Q2.1,O0009,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+KHM_low_0548,KHM_low,Q2.2,O0010,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+KHM_low_0549,KHM_low,Q3.1,O0013,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+KHM_low_0550,KHM_low,Q3.2,O0017,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+KHM_low_0551,KHM_low,Q4.1,O0020,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+KHM_low_0552,KHM_low,Q4.2,O0023,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+KHM_low_0553,KHM_low,Q5.1,O0025,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
+KHM_low_0554,KHM_low,Q5.2,O0030,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+KHM_low_0555,KHM_low,Q6.1,O0033,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
+KHM_low_0556,KHM_low,Q6.2,O0035,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+KHM_low_0557,KHM_low,Q7.1,O0037,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+KHM_low_0558,KHM_low,Q7.2,O0042,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+KHM_low_0559,KHM_low,Q8.1,O0045,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+KHM_low_0560,KHM_low,Q8.2,O0047,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
+KHM_low_0561,KHM_low,Q9.1,O0049,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0562,KHM_low,Q9.2,O0053,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+KHM_low_0563,KHM_low,Q10.1,O0059,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
+KHM_low_0564,KHM_low,Q10.2,O0061,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+KHM_low_0565,KHM_low,Q10.3,O0063,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
+KHM_low_0566,KHM_low,Q11.1,O0069,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+KHM_low_0567,KHM_low,Q11.2,O0074,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+KHM_low_0568,KHM_low,Q11.3,O0078,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+KHM_low_0569,KHM_low,Q12.1,O0080,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+KHM_low_0570,KHM_low,Q12.2,O0082,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+KHM_low_0571,KHM_low,Q13.1,O0087,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
+KHM_low_0572,KHM_low,Q13.2,O0088,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+KHM_low_0573,KHM_low,Q14.1,O0091,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0574,KHM_low,Q15.1,O0095,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+KHM_low_0575,KHM_low,Q15.2,O0099,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+KHM_low_0576,KHM_low,Q16.1,O0104,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+KHM_low_0577,KHM_low,Q16.2,O0106,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0578,KHM_low,Q17.1,O0108,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
+KHM_low_0579,KHM_low,Q17.2,O0115,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+KHM_low_0580,KHM_low,Q17.3,O0116,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0581,KHM_low,Q18.1,O0120,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+KHM_low_0582,KHM_low,Q18.2,O0123,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+KHM_low_0583,KHM_low,Q18.3,O0131,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+KHM_low_0584,KHM_low,Q19.1,O0133,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
+KHM_low_0585,KHM_low,Q20.1,O0135,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
+KHM_low_0586,KHM_low,Q20.2,O0140,Publicly available on the parliament's official website.,"See parliament website, official publications section."
+KHM_low_0587,KHM_low,Q21.1,O0145,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+KHM_low_0588,KHM_low,Q21.2,O0147,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+KHM_low_0589,KHM_low,Q22.1,O0151,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0590,KHM_low,Q22.2,O0152,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+KHM_low_0591,KHM_low,Q22.3,O0160,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
+KHM_low_0592,KHM_low,Q23.1,O0163,"Available in the national language only, no official translation.","See parliament website, official publications section."
+KHM_low_0593,KHM_low,Q23.2,O0164,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+KHM_low_0594,KHM_low,Q23.3,O0169,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
+KHM_low_0595,KHM_low,Q24.1,O0175,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
+KHM_low_0596,KHM_low,Q24.2,O0176,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+KHM_low_0597,KHM_low,Q25.1,O0181,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
+KHM_low_0598,KHM_low,Q25.2,O0186,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+KHM_low_0599,KHM_low,Q25.3,O0191,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+KHM_low_0600,KHM_low,Q26.1,O0195,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+KHM_low_0601,KHM_low,Q26.2,O0196,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+KHM_low_0602,KHM_low,Q26.3,O0201,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+KHM_low_0603,KHM_low,Q27.1,O0209,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
+KHM_low_0604,KHM_low,Q27.2,O0212,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
+KHM_low_0605,KHM_low,Q28.1,O0214,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0606,KHM_low,Q29.1,O0217;O0218,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+KHM_low_0607,KHM_low,Q29.2,O0225,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+KHM_low_0608,KHM_low,Q30.1,O0227,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
+KHM_low_0609,KHM_low,Q30.2,O0233,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
+KHM_low_0610,KHM_low,Q30.3,O0235,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
+KHM_low_0611,KHM_low,Q31.1,O0237,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+KHM_low_0612,KHM_low,Q31.2,O0242,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."

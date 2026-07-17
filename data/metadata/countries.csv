@@ -1,0 +1,12 @@
+country_id,country_name,government_system,parliamnet_type,parliament_name,parliament_website,org_name,org_website,org_contact
+THA,Thailand,Constitutional Monarchy,bicameral,National Assembly of Thailand,https://www.parliament.go.th/,WeVis,https://wevis.info,team@punchup.world
+TWN,Taiwan,Semi-presidential Republic,unicameral,Legislative Yuan,https://www.ly.gov.tw/,,,
+PHL,Philippines,Presidential Republic,bicameral,Congress of the Philippines,https://www.congress.gov.ph/,,,
+MYS,Malaysia,Federal Constitutional Monarchy,bicameral,Parliament of Malaysia,https://www.parlimen.gov.my/,,,
+IDN,Indonesia,Presidential Republic,unicameral,People's Representative Council (DPR),https://www.dpr.go.id/,,,
+LKA,Sri Lanka,Presidential Republic,unicameral,Parliament of Sri Lanka,https://www.parliament.lk/,,,
+KHM,Cambodia,Constitutional Monarchy,bicameral,Parliament of Cambodia,https://www.parliament.gov.kh/,,,
+MNG,Mongolia,Semi-presidential Republic,unicameral,State Great Khural,https://parliament.mn/,,,
+AUS,Australia,Federal Parliamentary Constitutional Monarchy,bicameral,Parliament of Australia,https://www.aph.gov.au/,,,
+KOR,South Korea,Presidential Republic,unicameral,National Assembly of the Republic of Korea,https://korea.assembly.go.kr/,,,
+JPN,Japan,Parliamentary Constitutional Monarchy,bicameral,National Diet of Japan,https://www.shugiin.go.jp/,,,

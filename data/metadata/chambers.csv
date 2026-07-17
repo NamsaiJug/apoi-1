@@ -1,0 +1,18 @@
+chamber_id,country_id,chamber_name,chamber_type
+THA_low,THA,House of Representatives,lower
+THA_up,THA,House of Senate,upper
+TWN_uni,TWN,Legislative Yuan,unicameral
+PHL_low,PHL,House of Representatives,lower
+PHL_up,PHL,Senate,upper
+MYS_low,MYS,Dewan Rakyat,lower
+MYS_up,MYS,Dewan Negara,upper
+IDN_uni,IDN,People's Representative Council,unicameral
+LKA_uni,LKA,Parliament of Sri Lanka,unicameral
+KHM_low,KHM,National Assembly,lower
+KHM_up,KHM,Senate,upper
+MNG_uni,MNG,State Great Khural,unicameral
+AUS_low,AUS,House of Representatives,lower
+AUS_up,AUS,Senate,upper
+KOR_uni,KOR,National Assembly,unicameral
+JPN_low,JPN,House of Representatives,lower
+JPN_up,JPN,House of Councillors,upper

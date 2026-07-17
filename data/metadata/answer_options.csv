@@ -1,0 +1,243 @@
+option_id,question_id,option_letter,label,score,is_na
+O0001,Q1.1,a,"Yes, codified in law or standing orders",1.0,False
+O0002,Q1.1,b,"Yes, but exists only as a non-binding guideline",0.5,False
+O0003,Q1.1,c,"No, no such code exists",0.0,False
+O0004,Q1.2,a,Fully operational as behaviour and sanctions are clear and can be applied when required,1.0,False
+O0005,Q1.2,b,Partially operational as behaviour or sanctions are not clearly stated,0.5,False
+O0006,Q1.2,c,Not operational as behaviour nor sanctions are stated,0.0,False
+O0007,Q2.1,a,"Yes, guaranteed by law",1.0,False
+O0008,Q2.1,b,"Yes, established by convention or internal custom",0.5,False
+O0009,Q2.1,c,"No, not required to disclose either by law or custom",0.0,False
+O0010,Q2.2,a,Completely accessible without the need for a request,1.0,False
+O0011,Q2.2,b,Accessible only upon request and/or with limited information available,0.5,False
+O0012,Q2.2,c,Not accessible to the public,0.0,False
+O0013,Q3.1,a,"Yes, guaranteed by law",1.0,False
+O0014,Q3.1,b,"Yes, established by convention or internal custom",0.5,False
+O0015,Q3.1,c,"No, not required to disclose either by law or custom",0.0,False
+O0016,Q3.2,a,Completely accessible without the need for a request,1.0,False
+O0017,Q3.2,b,Accessible only upon request and/or with limited information available,0.5,False
+O0018,Q3.2,c,Not accessible to the public,0.0,False
+O0019,Q4.1,a,"Yes, formal system exists",1.0,False
+O0020,Q4.1,b,"Yes, can raise queries but no formal system exists",0.5,False
+O0021,Q4.1,c,"No, not available",0.0,False
+O0022,Q4.2,a,Tracking exists and reports are publicly available,1.0,False
+O0023,Q4.2,b,"Tracking exists, but public reporting does not exist",0.5,False
+O0024,Q4.2,c,Tracking or reporting does not exist,0.0,False
+O0025,Q5.1,a,Mandatory,1.0,False
+O0026,Q5.1,b,"Not mandatory, but commonly practised",0.5,False
+O0027,Q5.1,c,Not practised,0.0,False
+O0028,Q5.2,a,All bills undergo scrutiny,1.0,False
+O0029,Q5.2,b,Scrutiny occurs inconsistently or selectively,0.25,False
+O0030,Q5.2,c,Scrutiny is absent,0.0,False
+O0031,Q6.1,a,Mandatory,1.0,False
+O0032,Q6.1,b,"Not mandatory, but applied selectively or occasionally",0.5,False
+O0033,Q6.1,c,Not practised,0.0,False
+O0034,Q6.2,a,Majority of substantive laws undergo scrutiny,1.0,False
+O0035,Q6.2,b,Scrutiny occurs inconsistently or selectively,0.5,False
+O0036,Q6.2,c,Scrutiny is absent,0.0,False
+O0037,Q7.1,a,The public is openly invited to provide feedback on most or all draft bills,1.0,False
+O0038,Q7.1,b,Public consultation occurs through closed calls or only for selected draft bills,0.5,False
+O0039,Q7.1,c,No formal mechanisms exist to facilitate public feedback on draft bills,0.0,False
+O0040,Q7.2,a,Information is consistently provided,1.0,False
+O0041,Q7.2,b,Information is provided inconsistently or selectively,0.5,False
+O0042,Q7.2,c,No information is provided,0.0,False
+O0043,Q8.1,a,The public is openly invited to provide feedback on most or all bills,1.0,False
+O0044,Q8.1,b,Public consultation occurs through closed calls or only for selected bills,0.5,False
+O0045,Q8.1,c,No formal mechanisms exist to facilitate public feedback on bills,0.0,False
+O0046,Q8.2,a,Information is consistently provided,1.0,False
+O0047,Q8.2,b,Information is provided inconsistently or selectively,0.5,False
+O0048,Q8.2,c,No information is provided,0.0,False
+O0049,Q9.1,a,Public can provide feedback through formal processes that are consistently used,1.0,False
+O0050,Q9.1,b,"Public can provide feedback, but only selectively or on an ad hoc basis",0.5,False
+O0051,Q9.1,c,No formal opportunity exists for the public to provide feedback,0.0,False
+O0052,Q9.2,a,Information is consistently provided,1.0,False
+O0053,Q9.2,b,Information is provided inconsistently or selectively,0.5,False
+O0054,Q9.2,c,No information is provided,0.0,False
+O0055,Q10.1,a,"Yes, a name list identifying MPs",0.25,False
+O0056,Q10.1,b,"Yes, all roles held by MPs in current Parliament",0.25,False
+O0057,Q10.1,c,"Yes, biographical profile information of MPs",0.25,False
+O0058,Q10.1,d,"Yes, contact information to reach MPs",0.25,False
+O0059,Q10.1,e,Not available,0.0,False
+O0060,Q10.2,a,Available for all or most MPs,1.0,False
+O0061,Q10.2,b,Available for some MPs,0.5,False
+O0062,Q10.2,c,Not available,0.0,False
+O0063,Q10.3,a,Real-time API,1.0,False
+O0064,Q10.3,b,Machine Readable Format,0.5,False
+O0065,Q10.3,c,Non-Machine Readable Format,0.25,False
+O0066,Q10.3,d,Not available,0.0,False
+O0067,Q11.1,a,"Yes, published names to identify MPs' staff",0.25,False
+O0068,Q11.1,b,"Yes, titles of MPs' staff in current Parliament",0.25,False
+O0069,Q11.1,c,"Yes, biographical profile information of MPs' staff",0.25,False
+O0070,Q11.1,d,"Yes, contact information to reach MPs' staff",0.25,False
+O0071,Q11.1,e,Not available,0.0,False
+O0072,Q11.2,a,Available for all or most staff,1.0,False
+O0073,Q11.2,b,Available for some,0.5,False
+O0074,Q11.2,c,Not available,0.0,False
+O0075,Q11.3,a,Real-time API,1.0,False
+O0076,Q11.3,b,Machine-Readable Format,0.5,False
+O0077,Q11.3,c,Non-Machine Readable Format,0.25,False
+O0078,Q11.3,d,Not available,0.0,False
+O0079,Q12.1,a,"Core accessibility infrastructure is in place (e.g., ramps, lifts, accessible restrooms, designated seating)",1.0,False
+O0080,Q12.1,b,"Some accessibility measures exist, but coverage is partial or inconsistent",0.5,False
+O0081,Q12.1,c,No meaningful accessibility measures exist,0.0,False
+O0082,Q12.2,a,Available in all or most buildings,1.0,False
+O0083,Q12.2,b,Available in some buildings,0.5,False
+O0084,Q12.2,c,Not available in any building,0.0,False
+O0085,Q13.1,a,Accessibility standards are met and applied consistently across the website,1.0,False
+O0086,Q13.1,b,Accessibility standards are applied partially or inconsistently,0.5,False
+O0087,Q13.1,c,Accessibility standards are not applied,0.0,False
+O0088,Q13.2,a,Applied across all or most content,1.0,False
+O0089,Q13.2,b,Applied across some content,0.5,False
+O0090,Q13.2,c,Not applied,0.0,False
+O0091,Q14.1,a,"Yes, and no permission required",1.0,False
+O0092,Q14.1,b,"Yes, with permission",0.5,False
+O0093,Q14.1,c,No,0.0,False
+O0094,Q15.1,a,Detailed agendas are consistently published,1.0,False
+O0095,Q15.1,b,"Agendas are published, but lack sufficient detail",0.5,False
+O0096,Q15.1,c,Agendas are not published,0.0,False
+O0097,Q15.2,a,More than 72 hours in advance,1.0,False
+O0098,Q15.2,b,More than 48 hours and up to 72 hours in advance,0.75,False
+O0099,Q15.2,c,More than 24 hours and up to 48 hours in advance,0.5,False
+O0100,Q15.2,d,Up to 24 hours in advance,0.25,False
+O0101,Q15.2,e,Not published in advance,0.0,False
+O0102,Q16.1,a,Recordings are published for most or all sessions,1.0,False
+O0103,Q16.1,b,Recordings are published for some sessions,0.5,False
+O0104,Q16.1,c,Recordings are not published,0.0,False
+O0105,Q16.2,a,Livestreamed or recordings available immediately after the session,1.0,False
+O0106,Q16.2,b,Recordings are published after some delay following the session,0.5,False
+O0107,Q16.2,c,Recordings are not published,0.0,False
+O0108,Q17.1,a,Transcripts are published for most or all sessions,1.0,False
+O0109,Q17.1,b,Transcripts are published for some sessions,0.5,False
+O0110,Q17.1,c,Transcripts are not published,0.0,False
+O0111,Q17.2,a,Published within 1 week,1.0,False
+O0112,Q17.2,b,Published more than 1 week and up to 2 weeks,0.75,False
+O0113,Q17.2,c,Published more than 2 weeks and up to 3 weeks,0.5,False
+O0114,Q17.2,d,Published more than 3 weeks after,0.25,False
+O0115,Q17.2,e,Not published,0.0,False
+O0116,Q17.3,a,Real-time API,1.0,False
+O0117,Q17.3,b,Machine-Readable Format,0.5,False
+O0118,Q17.3,c,Non-Machine-Readable Format,0.25,False
+O0119,Q17.3,d,Not available,0.0,False
+O0120,Q18.1,a,Attendees are published for most or all sessions,1.0,False
+O0121,Q18.1,b,Attendees are published for some sessions,0.5,False
+O0122,Q18.1,c,Attendees are not published,0.0,False
+O0123,Q18.2,a,Published within 24 hours,1.0,False
+O0124,Q18.2,b,Published more than 24 hours and up to 48 hours,0.75,False
+O0125,Q18.2,c,Published more than 48 hours and up to 72 hours,0.5,False
+O0126,Q18.2,d,Published more than 72 hours after,0.25,False
+O0127,Q18.2,e,Not published,0.0,False
+O0128,Q18.3,a,Real-time API,1.0,False
+O0129,Q18.3,b,Machine-Readable Format,0.5,False
+O0130,Q18.3,c,Non-Machine-Readable Format,0.25,False
+O0131,Q18.3,d,Not available,0.0,False
+O0132,Q19.1,a,"Yes, and no permission required",1.0,False
+O0133,Q19.1,b,"Yes, with permission",0.5,False
+O0134,Q19.1,c,No,0.0,False
+O0135,Q20.1,a,Detailed agendas are consistently published for all committees,1.0,False
+O0136,Q20.1,b,"Agendas are published, but lack sufficient detail or not applicable to all committees",0.5,False
+O0137,Q20.1,c,Agendas are not published,0.0,False
+O0138,Q20.2,a,More than 72 hours in advance,1.0,False
+O0139,Q20.2,b,More than 48 hours and up to 72 hours in advance,0.75,False
+O0140,Q20.2,c,More than 24 hours and up to 48 hours in advance,0.5,False
+O0141,Q20.2,d,Up to 24 hours in advance,0.25,False
+O0142,Q20.2,e,Not published in advance,0.0,False
+O0143,Q21.1,a,Recordings are published for most or all committee meetings,1.0,False
+O0144,Q21.1,b,Recordings are published for some committee meetings,0.5,False
+O0145,Q21.1,c,Recordings are not published,0.0,False
+O0146,Q21.2,a,Livestreamed or recordings available immediately after the meeting,1.0,False
+O0147,Q21.2,b,Recordings published after some delay following the meeting,0.5,False
+O0148,Q21.2,c,Recordings are not published,0.0,False
+O0149,Q22.1,a,Transcripts are published for most or all meetings,1.0,False
+O0150,Q22.1,b,Transcripts are published for some meetings,0.5,False
+O0151,Q22.1,c,Transcripts are not published,0.0,False
+O0152,Q22.2,a,Published within 1 week,1.0,False
+O0153,Q22.2,b,Published more than 1 week and up to 2 weeks,0.75,False
+O0154,Q22.2,c,Published more than 2 weeks and up to 3 weeks,0.5,False
+O0155,Q22.2,d,Published more than 3 weeks after,0.25,False
+O0156,Q22.2,e,Not published,0.0,False
+O0157,Q22.3,a,Real-time API,1.0,False
+O0158,Q22.3,b,Machine-Readable Format,0.5,False
+O0159,Q22.3,c,Non-Machine-Readable Format,0.1,False
+O0160,Q22.3,d,Not available,0.0,False
+O0161,Q23.1,a,Attendees are published for most or all meetings,1.0,False
+O0162,Q23.1,b,Attendees are published for some meetings,0.5,False
+O0163,Q23.1,c,Attendees are not published,0.0,False
+O0164,Q23.2,a,Published within 24 hours,1.0,False
+O0165,Q23.2,b,Published more than 24 hours and up to 48 hours,0.75,False
+O0166,Q23.2,c,Published more than 48 hours and up to 72 hours,0.5,False
+O0167,Q23.2,d,Published more than 72 hours after,0.25,False
+O0168,Q23.2,e,Not published,0.0,False
+O0169,Q23.3,a,Real-time API,1.0,False
+O0170,Q23.3,b,Machine-Readable Format,0.5,False
+O0171,Q23.3,c,Non-Machine-Readable Format,0.25,False
+O0172,Q23.3,d,Not available,0.0,False
+O0173,Q24.1,a,Drafts are published for all or most bills,1.0,False
+O0174,Q24.1,b,Drafts are published for some bills,0.5,False
+O0175,Q24.1,c,Drafts are not published,0.0,False
+O0176,Q24.2,a,Published more than 72 hours before deliberation,1.0,False
+O0177,Q24.2,b,Published more than 48 hours and up to 72 hours before deliberation,0.75,False
+O0178,Q24.2,c,Published more than 24 hours and up to 48 hours before deliberation,0.5,False
+O0179,Q24.2,d,Published up to 24 hours before deliberation,0.25,False
+O0180,Q24.2,e,Not published,0.0,False
+O0181,Q25.1,a,Gazetted date,0.25,False
+O0182,Q25.1,b,First reading date,0.25,False
+O0183,Q25.1,c,Second reading date,0.25,False
+O0184,Q25.1,d,Third reading date,0.25,False
+O0185,Q25.1,e,None of the above is published,0.0,False
+O0186,Q25.2,a,Real-time API,1.0,False
+O0187,Q25.2,b,Machine-Readable Format,0.5,False
+O0188,Q25.2,c,Non-Machine-Readable Format,0.25,False
+O0189,Q25.2,d,Not available,0.0,False
+O0190,Q25.3,a,All or most amendments are published,1.0,False
+O0191,Q25.3,b,Some amendments are published,0.5,False
+O0192,Q25.3,c,No amendments are published,0.0,False
+O0193,Q26.1,a,Published for most or all votes,1.0,False
+O0194,Q26.1,b,Published for some votes,0.5,False
+O0195,Q26.1,c,Not published,0.0,False
+O0196,Q26.2,a,Published within 24 hours,1.0,False
+O0197,Q26.2,b,Published more than 24 hours and up to 48 hours,0.75,False
+O0198,Q26.2,c,Published more than 48 hours and up to 72 hours,0.5,False
+O0199,Q26.2,d,Published more than 72 hours after,0.25,False
+O0200,Q26.2,e,Not published,0.0,False
+O0201,Q26.3,a,Real-time API,1.0,False
+O0202,Q26.3,b,Machine-Readable Format,0.5,False
+O0203,Q26.3,c,Non-Machine Readable Format,0.25,False
+O0204,Q26.3,d,Not available,0.0,False
+O0205,Q27.1,a,Base salary,0.25,False
+O0206,Q27.1,b,"All allowances given (housing, travel, constituency etc.)",0.25,False
+O0207,Q27.1,c,Pensions or retirement benefits,0.25,False
+O0208,Q27.1,d,"All other monetary or non-monetary benefits (e.g., health insurance, perks)",0.25,False
+O0209,Q27.1,e,Not published,0.0,False
+O0210,Q27.2,a,"Yes, published every fiscal year",1.0,False
+O0211,Q27.2,b,"Yes, published irregularly or partially",0.5,False
+O0212,Q27.2,c,"No, not published",0.0,False
+O0213,Q28.1,a,"Yes, Parliament publishes details on constituency fund utilization per Member of Parliament",1.0,False
+O0214,Q28.1,b,"Yes, details are published in the aggregate",0.5,False
+O0215,Q28.1,c,"No, reports are not published",0.0,False
+O0216,Q28.1,d,"Not applicable, as no such funds exist or are entirely managed outside parliamentary oversight",,True
+O0217,Q29.1,a,Administrative and staff salaries,0.2,False
+O0218,Q29.1,b,Committee operations and hearings,0.2,False
+O0219,Q29.1,c,Staff employed by MPs and offices,0.2,False
+O0220,Q29.1,d,Local travel and accommodation expenses,0.2,False
+O0221,Q29.1,e,Delegations and foreign parliamentary travel,0.2,False
+O0222,Q29.1,f,Not available,0.0,False
+O0223,Q29.2,a,Reports are published consistently every year,1.0,False
+O0224,Q29.2,b,Reports are published irregularly or only partially,0.5,False
+O0225,Q29.2,c,Reports are not published,0.0,False
+O0226,Q30.1,a,Estimates are consistently published before debate,1.0,False
+O0227,Q30.1,b,Estimates are published irregularly or partially before debate,0.25,False
+O0228,Q30.1,c,Estimates are not published before debate,0.0,False
+O0229,Q30.2,a,More than 4 weeks before,1.0,False
+O0230,Q30.2,b,2 weeks to less than 4 weeks before,0.75,False
+O0231,Q30.2,c,1 week to less than 2 weeks before,0.5,False
+O0232,Q30.2,d,Less than 1 week before,0.25,False
+O0233,Q30.2,e,Not available,0.0,False
+O0234,Q30.3,a,"Yes, published at every stage",1.0,False
+O0235,Q30.3,b,"Yes, published at some stages",0.5,False
+O0236,Q30.3,c,"No, not published",0.0,False
+O0237,Q31.1,a,Established by law,1.0,False
+O0238,Q31.1,b,Established by internal procedure,0.5,False
+O0239,Q31.1,c,No framework exists or Parliament is exempt from the national framework,0.0,False
+O0240,Q31.2,a,Established by law,1.0,False
+O0241,Q31.2,b,Established by procedure,0.5,False
+O0242,Q31.2,c,No option exists,0.0,False

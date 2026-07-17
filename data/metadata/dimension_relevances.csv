@@ -1,0 +1,15 @@
+relevance_id,dimension_id,dimension_relevance
+DR1,D1,Supporting integrity of MPs
+DR2,D1,Upholding citizen's ability to hold Parliament accountable
+DR3,D1,Creating accountability for legislation
+DR4,D2,Participation in legislative consideration
+DR5,D3,Availability of information of personnel tied to Parliament
+DR6,D2,Citizen's access to Parliament
+DR7,D3,Availability of agendas and schedules
+DR8,D3,Availability of recordings and transcripts
+DR9,D3,Availability of attendance data
+DR10,D3,Availability of draft legislation
+DR11,D3,Availability of voting records
+DR12,D3,Availability of financial information tied to functioning of Parliament
+DR13,D3,Availability of National Budget documents
+DR14,D3,Regulations to promote parliamentary transparency
