@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Indicator Profile — AAPO</title>
-<link rel="stylesheet" href="css/theme.css?v=9" />
+<link rel="stylesheet" href="css/theme.css?v=10" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
@@ -57,7 +57,18 @@
 
         <div class="grid lg:grid-cols-[1fr_360px] gap-8">
           <div class="text-sm space-y-1.5" id="indicator-facts"></div>
-          <div class="card p-6" id="overview-card"></div>
+          <div class="card p-6 relative" id="overview-card">
+            <button type="button" class="info-icon overview-badge-info-btn absolute top-4 right-4" aria-expanded="false" aria-label="What do these badges mean?">?</button>
+            <div class="overview-badge-info-tooltip hidden absolute top-12 right-4 w-72 z-10 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed normal-case tracking-normal font-body" style="background:var(--paper-raised)">
+              <ul class="list-disc pl-4 space-y-1.5">
+                <li><b>Achieved</b>: All questions within the indicator receive a score of 1.</li>
+                <li><b>Partly achieved</b>: At least one chamber scores less than 1 on at least one question within the indicator.</li>
+                <li><b>Not achieved</b>: All chambers receive a score of 0 for all questions within the indicator.</li>
+                <li><b>N/A</b>: All chambers receive N/A for all questions within the indicator.</li>
+              </ul>
+            </div>
+            <div id="overview-card-content"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -125,7 +136,7 @@
       const achievedPct = total ? (counts.achieved / total) * 100 : 0;
 
       // ---------- Overview card ----------
-      document.getElementById("overview-card").innerHTML = `
+      document.getElementById("overview-card-content").innerHTML = `
         <div class="mb-5" style="color:var(--achieved)">
           <span class="font-mono text-3xl font-bold">${fmtPct(achievedPct, 0)}</span>
           <span class="text-sm"> of countries</span>
@@ -332,6 +343,22 @@
 
       // A fixed-position tooltip would visually drift from its button on scroll, so close it instead.
       window.addEventListener("scroll", closeOverallTooltip, true);
+
+      // Overview card's "what do these badges mean?" tooltip — simple in-place toggle,
+      // since (unlike the per-country tooltip above) there's only ever one instance of this.
+      document.addEventListener("click", (e) => {
+        const badgeInfoBtn = e.target.closest(".overview-badge-info-btn");
+        const badgeTooltip = document.querySelector(".overview-badge-info-tooltip");
+        if (badgeInfoBtn) {
+          const isOpen = !badgeTooltip.classList.contains("hidden");
+          badgeTooltip.classList.toggle("hidden", isOpen);
+          badgeInfoBtn.setAttribute("aria-expanded", String(!isOpen));
+          return;
+        }
+        if (badgeTooltip && !badgeTooltip.classList.contains("hidden") && !badgeTooltip.contains(e.target)) {
+          badgeTooltip.classList.add("hidden");
+        }
+      });
 
       badgeTabsEl.addEventListener("click", (e) => {
         const btn = e.target.closest(".badge-tab-btn");
