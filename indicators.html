@@ -5,13 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Explore by Indicator — AAPO</title>
 <meta name="description" content="Select an indicator to see how every country compares, question by question." />
-<link rel="stylesheet" href="css/theme.css?v=9" />
+<link rel="stylesheet" href="css/theme.css?v=15" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
   .indicator-card { display: flex; align-items: center; gap: 24px; text-decoration: none; color: inherit; }
   .indicator-card:hover { border-color: var(--highlight); }
   .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; margin-right: 4px; flex-shrink: 0; }
+  .dimension-nav-btn {
+    display: flex; align-items: center; gap: 10px; flex: 1; max-width: 320px; padding: 16px 20px;
+    border-radius: var(--radius); background: none;
+    font-family: var(--font-display); text-decoration: none; text-underline-offset: 4px; text-decoration-thickness: 2px;
+    transition: text-decoration-color .15s ease;
+  }
+  .dimension-nav-btn:hover { text-decoration: underline; text-decoration-color: var(--highlight); }
+  .dimension-nav-btn.next { justify-content: flex-end; text-align: right; margin-left: auto; }
+  .dimension-nav-arrow { color: var(--ink-faint); flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -38,8 +47,8 @@
           Select an indicator to see how every country compares on a single indicator, question by question.
         </p>
         <div class="flex items-center justify-center gap-5 text-sm">
-          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
-          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">About the Index</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">Methodology</a>
         </div>
       </div>
     </section>
@@ -48,14 +57,17 @@
     <section class="shell py-16">
       <div class="flex border-b border-[var(--hairline)] mb-8" id="dimension-tabs"></div>
       <div id="dimension-panel"></div>
+      <div class="flex items-center justify-between gap-4 mt-10 pt-6 border-t border-[var(--hairline)]" id="dimension-nav"></div>
     </section>
+
+    <div id="download-cta-root"></div>
 
   </main>
 
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=20";
     import { loadFullDataset } from "./js/data.js?v=13";
     import { buildIndex, calculateIndicatorClassification } from "./js/calculations.js?v=15";
 
@@ -201,7 +213,43 @@
         btn.classList.add("active");
         activeDimensionId = btn.dataset.dimensionId;
         renderDimensionPanel(activeDimensionId);
+        renderDimensionNav();
       });
+
+      // ---------- Prev/Next dimension navigation (bottom of the section) ----------
+      const dimensionNavEl = document.getElementById("dimension-nav");
+
+      function goToDimension(dimensionId) {
+        activeDimensionId = dimensionId;
+        tabsEl.querySelectorAll(".tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.dimensionId === dimensionId));
+        renderDimensionPanel(dimensionId);
+        renderDimensionNav();
+        tabsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function renderDimensionNav() {
+        const idx = orderedDimensions.findIndex((d) => d.dimension_id === activeDimensionId);
+        const prev = idx > 0 ? orderedDimensions[idx - 1] : null;
+        const next = idx < orderedDimensions.length - 1 ? orderedDimensions[idx + 1] : null;
+        dimensionNavEl.innerHTML = `
+          ${prev ? `
+            <button type="button" class="dimension-nav-btn prev" data-dimension-id="${prev.dimension_id}">
+              <span class="dimension-nav-arrow">←</span>
+              <span><span class="block text-xs text-[var(--ink-faint)]">Previous dimension</span><span class="font-semibold">${prev.dimension}</span></span>
+            </button>` : "<span></span>"}
+          ${next ? `
+            <button type="button" class="dimension-nav-btn next" data-dimension-id="${next.dimension_id}">
+              <span><span class="block text-xs text-[var(--ink-faint)]">Next dimension</span><span class="font-semibold">${next.dimension}</span></span>
+              <span class="dimension-nav-arrow">→</span>
+            </button>` : "<span></span>"}
+        `;
+      }
+      dimensionNavEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".dimension-nav-btn");
+        if (!btn) return;
+        goToDimension(btn.dataset.dimensionId);
+      });
+      renderDimensionNav();
 
       renderDimensionPanel(activeDimensionId);
     });

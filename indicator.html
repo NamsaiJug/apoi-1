@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Indicator Profile — AAPO</title>
-<link rel="stylesheet" href="css/theme.css?v=10" />
+<link rel="stylesheet" href="css/theme.css?v=15" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
@@ -47,8 +47,8 @@
             <select id="cycle-select" class="control !py-1.5 !text-xs"></select>
           </div>
           <div class="flex items-center gap-5 text-sm">
-            <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
-            <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+            <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">About the Index</a>
+            <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">Methodology</a>
           </div>
         </div>
 
@@ -75,16 +75,19 @@
 
     <!-- ===================== BADGE TABS + COUNTRY CARDS ===================== -->
     <section class="shell py-16">
-      <div class="flex items-center gap-8 mb-8 flex-wrap" id="badge-tabs"></div>
+      <div class="flex items-center gap-8 mb-3 flex-wrap" id="badge-tabs"></div>
+      <p class="text-sm text-[var(--ink-soft)] mb-8" id="badge-tab-desc"></p>
       <div id="country-list"></div>
     </section>
+
+    <div id="download-cta-root"></div>
 
   </main>
 
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=20";
     import { loadFullDataset } from "./js/data.js?v=13";
     import { buildIndex, calculateIndicatorClassification, calculateQuestionScore } from "./js/calculations.js?v=15";
     import { fmtPct, badgeFor } from "./js/ui.js?v=13";
@@ -159,12 +162,14 @@
 
       // ---------- Badge tabs ----------
       const TABS = [
-        { key: "achieved", label: "Achieved", color: "var(--achieved)" },
-        { key: "partly_achieved", label: "Partly Achieved", color: "var(--partly)" },
-        { key: "not_achieved", label: "Not Achieved", color: "var(--not-achieved)" },
-        { key: "na", label: "N/A", color: "var(--na)" },
+        { key: "achieved", label: "Achieved", color: "var(--achieved)", desc: "All questions within the indicator receive a score of 1." },
+        { key: "partly_achieved", label: "Partly Achieved", color: "var(--partly)", desc: "At least one chamber scores less than 1 on at least one question within the indicator." },
+        { key: "not_achieved", label: "Not Achieved", color: "var(--not-achieved)", desc: "All chambers receive a score of 0 for all questions within the indicator." },
+        { key: "na", label: "N/A", color: "var(--na)", desc: "All chambers receive N/A for all questions within the indicator." },
       ];
       const badgeTabsEl = document.getElementById("badge-tabs");
+      const badgeTabDescEl = document.getElementById("badge-tab-desc");
+      badgeTabDescEl.textContent = TABS[0].desc;
       badgeTabsEl.innerHTML = TABS.map((t, i) => `
         <button class="badge-tab-btn${i === 0 ? " active" : ""}" data-key="${t.key}" style="color:${t.color}">
           ${t.label} <span class="count">(${counts[t.key] || 0})</span>
@@ -365,6 +370,7 @@
         if (!btn) return;
         badgeTabsEl.querySelectorAll(".badge-tab-btn").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
+        badgeTabDescEl.textContent = TABS.find((t) => t.key === btn.dataset.key)?.desc ?? "";
         renderCountryList(btn.dataset.key);
       });
 

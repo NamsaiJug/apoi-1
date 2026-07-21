@@ -2,8 +2,9 @@
 // app.js — shared bootstrap called by every page.
 // =========================================================
 
-import { mountNavbar } from "../components/navbar.js?v=4";
-import { mountFooter } from "../components/footer.js?v=2";
+import { mountNavbar } from "../components/navbar.js?v=6";
+import { mountFooter } from "../components/footer.js?v=4";
+import { mountDownloadCta } from "../components/downloadCta.js?v=1";
 import { mountGlossary, linkGlossaryTerms } from "../components/glossary.js?v=3";
 import { initAccordions } from "../components/accordion.js?v=1";
 import { revealOnScroll } from "./ui.js?v=1";
@@ -12,6 +13,7 @@ import { revealOnScroll } from "./ui.js?v=1";
 export async function bootstrapPage(activeNavKey) {
   mountNavbar(activeNavKey);
   mountFooter();
+  mountDownloadCta(); // no-ops on pages without a #download-cta-root placeholder
   try {
     await mountGlossary(); // loads glossary.csv before we try to auto-link terms
     linkGlossaryTerms(document.body);

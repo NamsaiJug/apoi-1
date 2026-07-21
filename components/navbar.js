@@ -23,7 +23,7 @@ export function mountNavbar(activeKey = "") {
           <span class="inline-flex items-center justify-center w-8 h-8 rounded-full" style="background:var(--highlight)">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="white" stroke-width="1.4"/><circle cx="8" cy="8" r="2.4" fill="white"/></svg>
           </span>
-          <span class="hidden sm:inline">AAPO</span>
+          <span class="hidden sm:inline">APOI</span>
         </a>
 
         <div class="hidden md:flex items-center gap-7" id="nav-links"></div>
@@ -56,4 +56,22 @@ export function mountNavbar(activeKey = "") {
   document.getElementById("glossary-nav-btn")?.addEventListener("click", () => {
     window.dispatchEvent(new CustomEvent("aapo:openGlossary"));
   });
+
+  // Hide the navbar on scroll down, reveal it on scroll up. Always visible
+  // near the very top of the page regardless of direction.
+  const navEl = root.querySelector(".aapo-nav");
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentY = window.scrollY;
+    if (currentY <= 40) {
+      navEl.classList.remove("nav-hidden");
+    } else if (currentY > lastScrollY) {
+      navEl.classList.add("nav-hidden");
+      mobile.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+    } else if (currentY < lastScrollY) {
+      navEl.classList.remove("nav-hidden");
+    }
+    lastScrollY = currentY;
+  }, { passive: true });
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Explore by Country — AAPO</title>
 <meta name="description" content="Select a country to view its detailed parliamentary openness scores for each indicator." />
-<link rel="stylesheet" href="css/theme.css?v=9" />
+<link rel="stylesheet" href="css/theme.css?v=15" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
@@ -46,8 +46,8 @@
           Select a country to view its detailed parliamentary openness scores for each indicator.
         </p>
         <div class="flex items-center justify-center gap-5 text-sm">
-          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
-          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">About the Index</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">Methodology</a>
         </div>
       </div>
     </section>
@@ -89,12 +89,14 @@
 
     </section>
 
+    <div id="download-cta-root"></div>
+
   </main>
 
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage } from "./js/app.js?v=16";
+    import { bootstrapPage } from "./js/app.js?v=20";
     import { loadFullDataset } from "./js/data.js?v=13";
     import { buildIndex, calculateRanking, getChamberForCountry, calculateChamberScore } from "./js/calculations.js?v=14";
     import { fmtPct } from "./js/ui.js?v=13";

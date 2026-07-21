@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About — AAPO</title>
 <meta name="description" content="What AAPO measures, how the methodology works, who's behind it, and how to get in touch." />
-<link rel="stylesheet" href="css/theme.css?v=9" />
+<link rel="stylesheet" href="css/theme.css?v=15" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
@@ -160,7 +160,7 @@
               questionnaire design, with the framework formally finalised in June 2026.
             </p>
 
-            <h3 class="font-display text-lg font-semibold mb-3">Assessment Framework and Scoring</h3>
+            <h3 id="assessment-framework-and-scoring" class="font-display text-lg font-semibold mb-3 scroll-mt-24">Assessment Framework and Scoring</h3>
             <p class="text-[var(--ink-soft)] leading-relaxed mb-8">
               The APOI framework comprises three dimensions and 31 assessment items. Dimension One —
               Transparency (16 items) — examines the proactive disclosure of meeting agendas, session
@@ -250,7 +250,7 @@
           <!-- ===================== CONTACT ===================== -->
           <div id="contact" class="rounded-[var(--radius)] p-8 scroll-mt-24" style="background:var(--highlight-dim)">
             <h2 class="font-display text-2xl font-bold mb-4">Contact</h2>
-            <p class="text-sm text-[var(--ink-soft)]"><a href="mailto:hello@aapo-index.org" class="text-[var(--highlight)] hover:underline">hello@aapo-index.org</a></p>
+            <p class="text-sm text-[var(--ink-soft)]"><a href="mailto:hello@aapo-index.org" class="text-[var(--highlight-2)] hover:underline">hello@aapo-index.org</a></p>
           </div>
 
         </div>
@@ -262,7 +262,7 @@
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=20";
     import { loadCountries } from "./js/data.js?v=13";
 
     document.addEventListener("DOMContentLoaded", async () => {
@@ -297,7 +297,7 @@
               <div>
                 <div class="font-display font-semibold">${c.org_name || "Not yet published"}</div>
                 ${c.org_name ? `
-                  <div class="text-sm text-[var(--ink-soft)]">${c.org_website ? `<a href="${c.org_website}" target="_blank" rel="noopener" class="text-[var(--highlight)] hover:underline">${c.org_website}</a>` : ""}</div>
+                  <div class="text-sm text-[var(--ink-soft)]">${c.org_website ? `<a href="${c.org_website}" target="_blank" rel="noopener" class="text-[var(--highlight-2)] hover:underline">${c.org_website}</a>` : ""}</div>
                   <div class="text-sm text-[var(--ink-soft)]">${c.org_contact || ""}</div>
                 ` : `<div class="text-sm text-[var(--ink-faint)]">Evaluator details have not yet been published for this cycle.</div>`}
               </div>

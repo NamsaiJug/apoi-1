@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Insights — AAPO</title>
 <meta name="description" content="Overall parliamentary openness scores across Asia-Pacific, with dimension-by-dimension breakdowns and country comparisons." />
-<link rel="stylesheet" href="css/theme.css?v=9" />
+<link rel="stylesheet" href="css/theme.css?v=15" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
@@ -34,8 +34,8 @@
           <select id="cycle-select" class="control !py-2"></select>
         </div>
         <div class="flex items-center justify-center gap-5 text-sm mb-9">
-          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight)]">About the Index</a>
-          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight)]">Methodology</a>
+          <a href="about.html" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">About the Index</a>
+          <a href="about.html#methodology" class="underline underline-offset-2 hover:text-[var(--highlight-2)]">Methodology</a>
         </div>
         <p class="font-display font-bold text-[var(--ink)] mb-3" id="hero-country-count"></p>
         <p class="max-w-xl mx-auto text-[var(--ink-soft)] leading-relaxed mb-12" id="hero-summary">
@@ -93,7 +93,7 @@
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=16";
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=20";
     import { loadFullDataset } from "./js/data.js?v=13";
     import { buildIndex, calculateRanking, calculateChamberRanking } from "./js/calculations.js?v=15";
     import { renderCountryScoreChart } from "./js/charts.js?v=14";
@@ -119,7 +119,7 @@
       // all of them — the sections still compute their own scores (each is a
       // different scope), but they all stay in sync on mode + highlighted country.
       let sharedCompareMode = "mixed";
-      let sharedHighlightId = "";
+      let sharedHighlightIds = new Set();
       let overallController = null;
       let dimensionController = null;
       const activeControllers = () => [overallController, dimensionController].filter(Boolean);
@@ -132,10 +132,10 @@
         });
       }
 
-      function broadcastHighlightChange(highlightId) {
-        sharedHighlightId = highlightId || "";
+      function broadcastHighlightChange(highlightIds) {
+        sharedHighlightIds = new Set(highlightIds);
         activeControllers().forEach((ctrl) => {
-          if (ctrl.highlightSelect.value !== sharedHighlightId) ctrl.highlightSelect.value = sharedHighlightId;
+          ctrl.syncHighlightUI();
           ctrl.renderHighlightOnly();
         });
       }
@@ -166,9 +166,15 @@
                 </ul>
               </div>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 relative">
               <span class="font-display font-medium text-sm">Highlight</span>
-              <select class="control highlight-select"></select>
+              <div class="highlight-combobox relative">
+                <div class="highlight-input-wrap flex items-center gap-1.5 flex-wrap cursor-text" style="min-width:200px">
+                  <div class="highlight-chips flex items-center gap-1 flex-wrap"></div>
+                  <input type="text" class="highlight-search-input flex-1 min-w-[80px] bg-transparent outline-none text-sm" placeholder="Select country" autocomplete="off" />
+                </div>
+                <div class="highlight-dropdown hidden absolute top-full left-0 mt-1 w-full max-h-56 overflow-y-auto z-20 card p-1"></div>
+              </div>
             </div>
           </div>
 
@@ -177,8 +183,22 @@
               <canvas class="score-chart"></canvas>
             </div>
             <div class="rank-country">
-              <div class="grid text-xs eyebrow pb-2 border-b border-[var(--hairline)]" style="grid-template-columns:32px 1fr 48px 20px">
-                <span>Rank</span><span>Country</span><span class="text-right">Score</span><span></span>
+              <div class="grid text-xs eyebrow pb-2 border-b border-[var(--hairline)] items-center" style="grid-template-columns:32px 1fr 48px 20px">
+                <span>Rank</span><span>Country</span>
+                <span class="text-right flex items-center justify-end gap-1 relative">
+                  Score
+                  <button type="button" class="info-icon score-info-btn" aria-expanded="false" aria-label="How is this score calculated?">?</button>
+                  <div class="score-info-tooltip hidden absolute top-full right-0 mt-2 w-80 z-20 card p-3 text-xs text-[var(--ink-soft)] leading-relaxed text-left normal-case tracking-normal font-body" style="background:var(--paper-raised)">
+                    <b>The score</b> is the sum of the points earned across all assessment questions of each
+                    <a href="indicators.html" class="text-[var(--highlight-2)] hover:underline">Indicator</a>,
+                    with each question worth one point, then converted into a percentage. The total possible
+                    score may vary between countries because some assessment questions are not applicable in
+                    certain national contexts. These questions are excluded from the calculation, so each
+                    country's score is based only on the questions that apply to its parliament.
+                    (Read more at <a href="about.html#assessment-framework-and-scoring" class="text-[var(--highlight-2)] hover:underline">Assessment Framework and Scoring</a>)
+                  </div>
+                </span>
+                <span></span>
               </div>
               <div class="rank-country-body max-h-[${tableMaxHeight}px] overflow-y-auto"></div>
             </div>
@@ -192,21 +212,79 @@
        */
       function mountScoreSection(sectionEl, { level = "overall", key = null } = {}) {
         const chamberSelect = sectionEl.querySelector(".chamber-select");
-        const highlightSelect = sectionEl.querySelector(".highlight-select");
         const canvas = sectionEl.querySelector(".score-chart");
         const tableBody = sectionEl.querySelector(".rank-country-body");
         const infoBtn = sectionEl.querySelector(".chamber-info-btn");
         const infoTooltip = sectionEl.querySelector(".chamber-info-tooltip");
 
-        highlightSelect.innerHTML = `<option value="">Select country</option>` + dataset.countries
-          .slice().sort((a, b) => a.country_name.localeCompare(b.country_name))
-          .map((c) => `<option value="${c.country_id}">${c.country_name}</option>`).join("");
+        // ---------- Highlight combobox (searchable, multi-select) ----------
+        const highlightWrap = sectionEl.querySelector(".highlight-input-wrap");
+        const highlightChips = sectionEl.querySelector(".highlight-chips");
+        const highlightInput = sectionEl.querySelector(".highlight-search-input");
+        const highlightDropdown = sectionEl.querySelector(".highlight-dropdown");
+        const sortedCountries = dataset.countries.slice().sort((a, b) => a.country_name.localeCompare(b.country_name));
 
-        // Reflect whatever Compare/Highlight selection is already shared across
-        // the other score sections, so a newly mounted section (e.g. switching
-        // to a different dimension tab) starts in sync rather than resetting.
+        function renderHighlightDropdown(filterText = "") {
+          const q = filterText.trim().toLowerCase();
+          const matches = sortedCountries.filter((c) => c.country_name.toLowerCase().includes(q));
+          highlightDropdown.innerHTML = matches.length
+            ? matches.map((c) => `
+                <button type="button" class="highlight-option flex items-center gap-2 w-full text-left px-2 py-1.5 rounded text-sm hover:bg-[var(--highlight-dim)]" data-country-id="${c.country_id}">
+                  <span class="highlight-option-check flex-shrink-0" style="width:14px">${sharedHighlightIds.has(c.country_id) ? "✓" : ""}</span>
+                  ${c.country_name}
+                </button>`).join("")
+            : `<p class="text-xs text-[var(--ink-faint)] px-2 py-1.5">No countries match "${filterText}"</p>`;
+        }
+
+        function syncHighlightUI() {
+          highlightChips.innerHTML = [...sharedHighlightIds].map((id) => {
+            const c = countryById.get(id);
+            return c ? `
+              <span class="highlight-chip inline-flex items-center gap-1 text-xs font-medium rounded-full pl-2 pr-1 py-0.5" style="background:var(--highlight-dim); color:var(--highlight)">
+                ${c.country_name}
+                <button type="button" class="highlight-chip-remove leading-none" data-country-id="${id}" aria-label="Remove ${c.country_name}">×</button>
+              </span>` : "";
+          }).join("");
+          if (!highlightDropdown.classList.contains("hidden")) renderHighlightDropdown(highlightInput.value);
+        }
+        syncHighlightUI();
+
+        highlightInput.addEventListener("focus", () => {
+          highlightDropdown.classList.remove("hidden");
+          renderHighlightDropdown(highlightInput.value);
+        });
+        highlightInput.addEventListener("input", () => renderHighlightDropdown(highlightInput.value));
+        highlightWrap.addEventListener("click", () => highlightInput.focus());
+
+        highlightDropdown.addEventListener("click", (e) => {
+          const opt = e.target.closest(".highlight-option");
+          if (!opt) return;
+          const id = opt.dataset.countryId;
+          const next = new Set(sharedHighlightIds);
+          next.has(id) ? next.delete(id) : next.add(id);
+          broadcastHighlightChange(next);
+          highlightInput.value = "";
+          highlightInput.focus();
+          renderHighlightDropdown("");
+        });
+
+        highlightChips.addEventListener("click", (e) => {
+          const btn = e.target.closest(".highlight-chip-remove");
+          if (!btn) return;
+          const next = new Set(sharedHighlightIds);
+          next.delete(btn.dataset.countryId);
+          broadcastHighlightChange(next);
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!sectionEl.contains(e.target)) highlightDropdown.classList.add("hidden");
+          else if (!highlightWrap.contains(e.target) && !highlightDropdown.contains(e.target)) highlightDropdown.classList.add("hidden");
+        });
+
+        // Reflect whatever Compare selection is already shared across the other
+        // score sections, so a newly mounted section (e.g. switching to a
+        // different dimension tab) starts in sync rather than resetting.
         chamberSelect.value = sharedCompareMode;
-        highlightSelect.value = sharedHighlightId;
 
         // click-to-toggle info tooltip (rather than a hover-only title)
         infoBtn.addEventListener("click", (e) => {
@@ -219,6 +297,22 @@
           if (!infoTooltip.classList.contains("hidden") && e.target !== infoBtn && !infoTooltip.contains(e.target)) {
             infoTooltip.classList.add("hidden");
             infoBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Score header's "how is this calculated?" tooltip — same click-to-toggle pattern.
+        const scoreInfoBtn = sectionEl.querySelector(".score-info-btn");
+        const scoreInfoTooltip = sectionEl.querySelector(".score-info-tooltip");
+        scoreInfoBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = !scoreInfoTooltip.classList.contains("hidden");
+          scoreInfoTooltip.classList.toggle("hidden", isOpen);
+          scoreInfoBtn.setAttribute("aria-expanded", String(!isOpen));
+        });
+        document.addEventListener("click", (e) => {
+          if (!scoreInfoTooltip.classList.contains("hidden") && e.target !== scoreInfoBtn && !scoreInfoTooltip.contains(e.target)) {
+            scoreInfoTooltip.classList.add("hidden");
+            scoreInfoBtn.setAttribute("aria-expanded", "false");
           }
         });
 
@@ -271,11 +365,10 @@
         // rather than destroying/recreating (which would restart the animation from 0).
         function renderData() {
           const ranking = computeRanking();
-          const highlightId = highlightSelect.value || null;
           const labels = ranking.map((r) => r.name);
           const achieved = ranking.map((r) => r.pct ?? 0);
           const remainder = ranking.map((r) => 100 - (r.pct ?? 0));
-          const colors = ranking.map((r) => (r.countryId === highlightId ? resolveColor("--amber", "#D9A441") : resolveColor("--highlight", "#1F3A5F")));
+          const colors = ranking.map((r) => (sharedHighlightIds.has(r.countryId) ? resolveColor("--amber", "#D9A441") : resolveColor("--highlight", "#1F3A5F")));
           const average = ranking.length ? ranking.reduce((sum, r) => sum + (r.pct ?? 0), 0) / ranking.length : null;
 
           if (!chart) {
@@ -291,22 +384,20 @@
           renderTable(ranking, average);
         }
 
-        // Highlight dropdown changed: no data change, just recolor one bar — instantly,
+        // Highlight selection changed: no data change, just recolor bars — instantly,
         // with no animation, since nothing is actually moving.
         function renderHighlightOnly() {
           if (!chart) return renderData();
           const ranking = computeRanking();
-          const highlightId = highlightSelect.value || null;
-          const colors = ranking.map((r) => (r.countryId === highlightId ? resolveColor("--amber", "#D9A441") : resolveColor("--highlight", "#1F3A5F")));
+          const colors = ranking.map((r) => (sharedHighlightIds.has(r.countryId) ? resolveColor("--amber", "#D9A441") : resolveColor("--highlight", "#1F3A5F")));
           chart.data.datasets[0].backgroundColor = colors;
           chart.update("none");
         }
 
         chamberSelect.addEventListener("change", () => broadcastCompareChange(chamberSelect.value));
-        highlightSelect.addEventListener("change", () => broadcastHighlightChange(highlightSelect.value));
         renderData();
 
-        return { chamberSelect, highlightSelect, renderData, renderHighlightOnly };
+        return { chamberSelect, syncHighlightUI, renderData, renderHighlightOnly };
       }
 
       const overallSectionEl = document.getElementById("overall-score-section");

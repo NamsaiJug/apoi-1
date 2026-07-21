@@ -17,6 +17,7 @@
 
   /* Accents */
   --highlight: #1F3A5F;
+  --highlight-2: #5437CC;
   --highlight-dim: #E7ECF1;
   --amber: #D9A441;
   --amber-dim: #FBF1DD;
@@ -48,6 +49,7 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  padding-top: 64px; /* compensates for the now fixed-position navbar being taken out of document flow */
 }
 
 .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
@@ -73,8 +75,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   border-bottom: 1px solid var(--hairline);
   background: rgba(247,245,240,0.92);
   backdrop-filter: blur(6px);
-  position: sticky; top: 0; z-index: 40;
+  position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 40;
+  transition: transform .25s ease;
 }
+.aapo-nav.nav-hidden { transform: translateY(-100%); }
 .aapo-nav a.nav-link {
   color: var(--ink-soft);
   font-size: 0.9rem;
@@ -123,8 +127,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 }
 .accordion-chevron { transition: transform .2s ease; color: var(--ink-faint); flex-shrink: 0; }
 .accordion-item.open > .accordion-trigger .accordion-chevron { transform: rotate(180deg); }
-.accordion-panel { display: grid; grid-template-rows: minmax(0, 0fr); min-height: 0; overflow: hidden; transition: grid-template-rows .25s ease; }
-.accordion-item.open > .accordion-panel { grid-template-rows: minmax(0, 1fr); }
+.accordion-panel { display: grid; grid-template-rows: minmax(0, 0fr); min-height: 0; overflow: hidden; visibility: hidden; transition: grid-template-rows .25s ease, visibility 0s linear .25s; }
+.accordion-item.open > .accordion-panel { grid-template-rows: minmax(0, 1fr); visibility: visible; transition: grid-template-rows .25s ease, visibility 0s linear; }
 .accordion-panel-inner { overflow: hidden; min-height: 0; }
 
 /* ---------- Glossary side panel ---------- */
@@ -143,11 +147,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .glossary-panel.open { transform: translateX(0); }
 
 .glossary-term-trigger {
-  color: inherit; cursor: pointer; white-space: nowrap;
+  color: var(--highlight-2); cursor: pointer; white-space: nowrap;
 }
-.glossary-term-trigger:hover .glossary-icon { color: #16293F; }
+.glossary-term-trigger:hover { color: #422A9E; }
+.glossary-term-trigger:hover .glossary-icon { color: #422A9E; }
 .glossary-icon {
-  display: inline-block; vertical-align: -1px; margin-left: 3px; color: var(--highlight);
+  display: inline-block; vertical-align: -1px; margin-left: 3px; color: var(--highlight-2);
 }
 
 /* ---------- Aperture signature element ---------- */
@@ -159,6 +164,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 
 /* ---------- Shared: dropdown control + info-icon tooltip trigger ---------- */
 select.control { border: 1px solid var(--hairline); border-radius: 8px; padding: 8px 12px; background: var(--paper-raised); font-family: var(--font-display); font-size: 0.86rem; }
+.highlight-input-wrap { border: 1px solid var(--hairline); border-radius: 8px; padding: 6px 10px; background: var(--paper-raised); font-family: var(--font-display); font-size: 0.86rem; }
+.highlight-input-wrap:focus-within { border-color: var(--highlight); }
+.highlight-chip-remove { color: var(--highlight); opacity: 0.7; }
+.highlight-chip-remove:hover { opacity: 1; }
+.highlight-option-check { color: var(--highlight); font-weight: 700; }
 .info-icon { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 999px; border: 1px solid var(--ink-faint); background: transparent; color: var(--ink-faint); font-size: 11px; font-weight: 600; font-family: inherit; line-height: 1; padding: 0; cursor: pointer; flex-shrink: 0; }
 .info-icon:hover { border-color: var(--ink); color: var(--ink); }
 
