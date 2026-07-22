@@ -17,7 +17,7 @@
   .chamber-tab-btn:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
   .chamber-tab-btn.active { color: #fff; background: var(--highlight); border-color: var(--highlight); }
   .chamber-tab-btn:hover:not(.active) { color: var(--ink); background: var(--highlight-dim); }
-  .mini-bar-row { display: grid; grid-template-columns: 1fr 32px; align-items: center; gap: 8px; font-size: 0.72rem; }
+  .mini-bar-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; font-size: 0.72rem; }
   .dimension-nav-btn {
     display: flex; align-items: center; gap: 10px; flex: 1; max-width: 320px; padding: 16px 20px;
     border-radius: var(--radius); background: none;
@@ -65,7 +65,7 @@
 
         <h1 id="country-name" class="font-display text-4xl font-bold mb-6">—</h1>
 
-        <div class="grid lg:grid-cols-[1fr_360px] gap-8">
+        <div class="grid lg:grid-cols-2 gap-8">
           <div>
             <div class="text-sm space-y-1.5 mb-6" id="country-facts"></div>
             <div class="eyebrow mb-2">Key findings</div>
@@ -188,7 +188,10 @@
             <div class="mb-2">
               <div class="mini-bar-row mb-1">
                 <span class="text-[var(--ink-soft)]">${d.dimension}</span>
-                <span class="font-mono text-right text-[var(--ink)]">${fmtPct(s.pct, 0)}</span>
+                <span class="text-right">
+                  <span class="font-mono text-[var(--ink)]">${fmtPct(s.pct, 0)}</span>
+                  <span class="font-mono text-[0.68rem] text-[var(--ink-faint)]">(<span style="color:var(--highlight)">${fmtRaw(s.score)}</span>/${Math.round(s.max)})</span>
+                </span>
               </div>
               <div class="mini-bar-slot" data-chamber="${idPrefix}" data-dim="${d.dimension_id}"></div>
             </div>`;
