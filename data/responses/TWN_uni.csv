@@ -1,69 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-TWN_uni_0069,TWN_uni,Q1.1,O0001,"Available in the national language only, no official translation.","See parliament website, official publications section."
-TWN_uni_0070,TWN_uni,Q1.2,O0004,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-TWN_uni_0071,TWN_uni,Q2.1,O0007,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-TWN_uni_0072,TWN_uni,Q2.2,O0010,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-TWN_uni_0073,TWN_uni,Q3.1,O0013,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-TWN_uni_0074,TWN_uni,Q3.2,O0017,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-TWN_uni_0075,TWN_uni,Q4.1,O0019,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-TWN_uni_0076,TWN_uni,Q4.2,O0023,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-TWN_uni_0077,TWN_uni,Q5.1,O0026,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-TWN_uni_0078,TWN_uni,Q5.2,O0028,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-TWN_uni_0079,TWN_uni,Q6.1,O0031,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-TWN_uni_0080,TWN_uni,Q6.2,O0034,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-TWN_uni_0081,TWN_uni,Q7.1,O0038,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-TWN_uni_0082,TWN_uni,Q7.2,O0040,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-TWN_uni_0083,TWN_uni,Q8.1,O0043,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-TWN_uni_0084,TWN_uni,Q8.2,O0047,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-TWN_uni_0085,TWN_uni,Q9.1,O0049,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-TWN_uni_0086,TWN_uni,Q9.2,O0052,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-TWN_uni_0087,TWN_uni,Q10.1,O0055;O0056,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-TWN_uni_0088,TWN_uni,Q10.2,O0061,"Available in the national language only, no official translation.","See parliament website, official publications section."
-TWN_uni_0089,TWN_uni,Q10.3,O0063,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-TWN_uni_0090,TWN_uni,Q11.1,O0069,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-TWN_uni_0091,TWN_uni,Q11.2,O0073,"Available in the national language only, no official translation.","See parliament website, official publications section."
-TWN_uni_0092,TWN_uni,Q11.3,O0075,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-TWN_uni_0093,TWN_uni,Q12.1,O0079,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-TWN_uni_0094,TWN_uni,Q12.2,O0082,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-TWN_uni_0095,TWN_uni,Q13.1,O0086,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-TWN_uni_0096,TWN_uni,Q13.2,O0088,"Available in the national language only, no official translation.","See parliament website, official publications section."
-TWN_uni_0097,TWN_uni,Q14.1,O0091,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-TWN_uni_0098,TWN_uni,Q15.1,O0094,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-TWN_uni_0099,TWN_uni,Q15.2,O0097,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-TWN_uni_0100,TWN_uni,Q16.1,O0102,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-TWN_uni_0101,TWN_uni,Q16.2,O0105,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-TWN_uni_0102,TWN_uni,Q17.1,O0108,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-TWN_uni_0103,TWN_uni,Q17.2,O0113,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-TWN_uni_0104,TWN_uni,Q17.3,O0116,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-TWN_uni_0105,TWN_uni,Q18.1,O0120,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-TWN_uni_0106,TWN_uni,Q18.2,O0123,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-TWN_uni_0107,TWN_uni,Q18.3,O0130,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-TWN_uni_0108,TWN_uni,Q19.1,O0133,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-TWN_uni_0109,TWN_uni,Q20.1,O0135,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-TWN_uni_0110,TWN_uni,Q20.2,O0140,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-TWN_uni_0111,TWN_uni,Q21.1,O0143,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-TWN_uni_0112,TWN_uni,Q21.2,O0146,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-TWN_uni_0113,TWN_uni,Q22.1,O0150,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-TWN_uni_0114,TWN_uni,Q22.2,O0152,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-TWN_uni_0115,TWN_uni,Q22.3,O0157,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-TWN_uni_0116,TWN_uni,Q23.1,O0161,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-TWN_uni_0117,TWN_uni,Q23.2,O0164,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-TWN_uni_0118,TWN_uni,Q23.3,O0171,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-TWN_uni_0119,TWN_uni,Q24.1,O0173,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-TWN_uni_0120,TWN_uni,Q24.2,O0176,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-TWN_uni_0121,TWN_uni,Q25.1,O0181;O0182;O0183,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-TWN_uni_0122,TWN_uni,Q25.2,O0186,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-TWN_uni_0123,TWN_uni,Q25.3,O0191,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-TWN_uni_0124,TWN_uni,Q26.1,O0193,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-TWN_uni_0125,TWN_uni,Q26.2,O0198,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-TWN_uni_0126,TWN_uni,Q26.3,O0201,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-TWN_uni_0127,TWN_uni,Q27.1,O0205;O0206;O0207;O0208,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-TWN_uni_0128,TWN_uni,Q27.2,O0210,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-TWN_uni_0129,TWN_uni,Q28.1,O0214,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-TWN_uni_0130,TWN_uni,Q29.1,O0217;O0218;O0219,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-TWN_uni_0131,TWN_uni,Q29.2,O0223,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-TWN_uni_0132,TWN_uni,Q30.1,O0226,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-TWN_uni_0133,TWN_uni,Q30.2,O0229,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-TWN_uni_0134,TWN_uni,Q30.3,O0234,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-TWN_uni_0135,TWN_uni,Q31.1,O0238,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-TWN_uni_0136,TWN_uni,Q31.2,O0241,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
+response_id,chamber_id,question_id,selected_option_ids
+TWN_uni_0069,TWN_uni,Q1.1,O0001
+TWN_uni_0070,TWN_uni,Q1.2,O0004
+TWN_uni_0071,TWN_uni,Q2.1,O0007
+TWN_uni_0072,TWN_uni,Q2.2,O0010
+TWN_uni_0073,TWN_uni,Q3.1,O0013
+TWN_uni_0074,TWN_uni,Q3.2,O0017
+TWN_uni_0075,TWN_uni,Q4.1,O0019
+TWN_uni_0076,TWN_uni,Q4.2,O0023
+TWN_uni_0077,TWN_uni,Q5.1,O0026
+TWN_uni_0078,TWN_uni,Q5.2,O0028
+TWN_uni_0079,TWN_uni,Q6.1,O0031
+TWN_uni_0080,TWN_uni,Q6.2,O0034
+TWN_uni_0081,TWN_uni,Q7.1,O0038
+TWN_uni_0082,TWN_uni,Q7.2,O0040
+TWN_uni_0083,TWN_uni,Q8.1,O0043
+TWN_uni_0084,TWN_uni,Q8.2,O0047
+TWN_uni_0085,TWN_uni,Q9.1,O0049
+TWN_uni_0086,TWN_uni,Q9.2,O0052
+TWN_uni_0087,TWN_uni,Q10.1,O0055;O0056
+TWN_uni_0088,TWN_uni,Q10.2,O0061
+TWN_uni_0089,TWN_uni,Q10.3,O0063
+TWN_uni_0090,TWN_uni,Q11.1,O0069
+TWN_uni_0091,TWN_uni,Q11.2,O0073
+TWN_uni_0092,TWN_uni,Q11.3,O0075
+TWN_uni_0093,TWN_uni,Q12.1,O0079
+TWN_uni_0094,TWN_uni,Q12.2,O0082
+TWN_uni_0095,TWN_uni,Q13.1,O0086
+TWN_uni_0096,TWN_uni,Q13.2,O0088
+TWN_uni_0097,TWN_uni,Q14.1,O0091
+TWN_uni_0098,TWN_uni,Q15.1,O0094
+TWN_uni_0099,TWN_uni,Q15.2,O0097
+TWN_uni_0100,TWN_uni,Q16.1,O0102
+TWN_uni_0101,TWN_uni,Q16.2,O0105
+TWN_uni_0102,TWN_uni,Q17.1,O0108
+TWN_uni_0103,TWN_uni,Q17.2,O0113
+TWN_uni_0104,TWN_uni,Q17.3,O0116
+TWN_uni_0105,TWN_uni,Q18.1,O0120
+TWN_uni_0106,TWN_uni,Q18.2,O0123
+TWN_uni_0107,TWN_uni,Q18.3,O0130
+TWN_uni_0108,TWN_uni,Q19.1,O0133
+TWN_uni_0109,TWN_uni,Q20.1,O0135
+TWN_uni_0110,TWN_uni,Q20.2,O0140
+TWN_uni_0111,TWN_uni,Q21.1,O0143
+TWN_uni_0112,TWN_uni,Q21.2,O0146
+TWN_uni_0113,TWN_uni,Q22.1,O0150
+TWN_uni_0114,TWN_uni,Q22.2,O0152
+TWN_uni_0115,TWN_uni,Q22.3,O0157
+TWN_uni_0116,TWN_uni,Q23.1,O0161
+TWN_uni_0117,TWN_uni,Q23.2,O0164
+TWN_uni_0118,TWN_uni,Q23.3,O0171
+TWN_uni_0119,TWN_uni,Q24.1,O0173
+TWN_uni_0120,TWN_uni,Q24.2,O0176
+TWN_uni_0121,TWN_uni,Q25.1,O0181;O0182;O0183
+TWN_uni_0122,TWN_uni,Q25.2,O0186
+TWN_uni_0123,TWN_uni,Q25.3,O0191
+TWN_uni_0124,TWN_uni,Q26.1,O0193
+TWN_uni_0125,TWN_uni,Q26.2,O0198
+TWN_uni_0126,TWN_uni,Q26.3,O0201
+TWN_uni_0127,TWN_uni,Q27.1,O0205;O0206;O0207;O0208
+TWN_uni_0128,TWN_uni,Q27.2,O0210
+TWN_uni_0129,TWN_uni,Q28.1,O0214
+TWN_uni_0130,TWN_uni,Q29.1,O0217;O0218;O0219
+TWN_uni_0131,TWN_uni,Q29.2,O0223
+TWN_uni_0132,TWN_uni,Q30.1,O0226
+TWN_uni_0133,TWN_uni,Q30.2,O0229
+TWN_uni_0134,TWN_uni,Q30.3,O0234
+TWN_uni_0135,TWN_uni,Q31.1,O0238
+TWN_uni_0136,TWN_uni,Q31.2,O0241

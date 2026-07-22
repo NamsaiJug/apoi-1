@@ -87,11 +87,11 @@
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=20";
-    import { loadFullDataset } from "./js/data.js?v=13";
-    import { buildIndex, calculateIndicatorClassification, calculateQuestionScore } from "./js/calculations.js?v=15";
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=21";
+    import { loadFullDataset } from "./js/data.js?v=14";
+    import { buildIndex, calculateIndicatorClassification, calculateQuestionScore } from "./js/calculations.js?v=16";
     import { fmtPct, badgeFor } from "./js/ui.js?v=13";
-    import { questionBlockHTML } from "./components/questionBlock.js?v=1";
+    import { questionBlockHTML, indicatorContextHTML } from "./components/questionBlock.js?v=3";
 
     document.addEventListener("DOMContentLoaded", async () => {
       await bootstrapPage("indicators");
@@ -224,7 +224,7 @@
         const overallPct = validPcts.length ? validPcts.reduce((a, b) => a + b, 0) / validPcts.length : null;
 
         const defaultChamberId = lowerChamber.chamber_id;
-        const chamberContentHTML = (chamberId) => questions.map((q, i) => questionBlockHTML(q, i, chamberId, idx)).join("");
+        const chamberContentHTML = (chamberId) => questions.map((q, i) => questionBlockHTML(q, i, chamberId, idx)).join("") + indicatorContextHTML(chamberId, indicatorId, idx);
 
         return `
           <div class="card mb-4 overflow-hidden country-indicator-card" data-country-id="${countryId}" data-active-chamber="" data-reveal>
@@ -306,7 +306,7 @@
           const card = chamberBtn.closest(".country-indicator-card");
           card.dataset.activeChamber = chamberBtn.dataset.chamberId;
           card.querySelectorAll(".chamber-select-col").forEach((b) => b.classList.toggle("active", b === chamberBtn));
-          card.querySelector("[data-chamber-content]").innerHTML = questions.map((q, i) => questionBlockHTML(q, i, chamberBtn.dataset.chamberId, idx)).join("");
+          card.querySelector("[data-chamber-content]").innerHTML = questions.map((q, i) => questionBlockHTML(q, i, chamberBtn.dataset.chamberId, idx)).join("") + indicatorContextHTML(chamberBtn.dataset.chamberId, indicatorId, idx);
           card.querySelector(".card-content").style.display = "block";
           card.querySelector(".card-chevron").style.transform = "rotate(180deg)";
           refreshDynamicUI();

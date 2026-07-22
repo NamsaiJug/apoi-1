@@ -8,7 +8,7 @@
 
 /** Builds fast lookup indexes from a loaded dataset (see data.js#loadFullDataset). */
 export function buildIndex(dataset) {
-  const { dimensions, relevances, indicators, questions, answerOptions, countries, chambers, responses } = dataset;
+  const { dimensions, relevances, indicators, questions, answerOptions, countries, chambers, responses, indicatorContext = [] } = dataset;
 
   const optionsByQuestion = new Map();
   for (const o of answerOptions) {
@@ -52,10 +52,16 @@ export function buildIndex(dataset) {
     responseByChamberQuestion.set(`${r.chamber_id}__${r.question_id}`, r);
   }
 
+  const contextByChamberIndicator = new Map();
+  for (const c of indicatorContext) {
+    contextByChamberIndicator.set(`${c.chamber_id}__${c.indicator_id}`, c);
+  }
+
   return {
     dimensions, relevances, indicators, questions, answerOptions, countries, chambers, responses,
     optionsByQuestion, optionsById, questionsByIndicator, indicatorsByRelevance,
     relevancesByDimension, chambersByCountry, responsesByChamber, responseByChamberQuestion,
+    contextByChamberIndicator,
   };
 }
 

@@ -1,69 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-PHL_up_0205,PHL_up,Q1.1,O0002,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-PHL_up_0206,PHL_up,Q1.2,O0004,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_up_0207,PHL_up,Q2.1,O0008,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_up_0208,PHL_up,Q2.2,O0010,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-PHL_up_0209,PHL_up,Q3.1,O0014,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_up_0210,PHL_up,Q3.2,O0017,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-PHL_up_0211,PHL_up,Q4.1,O0019,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-PHL_up_0212,PHL_up,Q4.2,O0023,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-PHL_up_0213,PHL_up,Q5.1,O0025,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-PHL_up_0214,PHL_up,Q5.2,O0029,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-PHL_up_0215,PHL_up,Q6.1,O0032,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-PHL_up_0216,PHL_up,Q6.2,O0034,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-PHL_up_0217,PHL_up,Q7.1,O0039,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-PHL_up_0218,PHL_up,Q7.2,O0040,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_up_0219,PHL_up,Q8.1,O0043,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-PHL_up_0220,PHL_up,Q8.2,O0046,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-PHL_up_0221,PHL_up,Q9.1,O0050,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-PHL_up_0222,PHL_up,Q9.2,O0052,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_up_0223,PHL_up,Q10.1,O0055;O0056;O0057,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-PHL_up_0224,PHL_up,Q10.2,O0060,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-PHL_up_0225,PHL_up,Q10.3,O0065,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-PHL_up_0226,PHL_up,Q11.1,O0069,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_up_0227,PHL_up,Q11.2,O0072,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-PHL_up_0228,PHL_up,Q11.3,O0075,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_up_0229,PHL_up,Q12.1,O0079,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-PHL_up_0230,PHL_up,Q12.2,O0082,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_up_0231,PHL_up,Q13.1,O0087,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_up_0232,PHL_up,Q13.2,O0090,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-PHL_up_0233,PHL_up,Q14.1,O0091,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_up_0234,PHL_up,Q15.1,O0095,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_up_0235,PHL_up,Q15.2,O0099,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-PHL_up_0236,PHL_up,Q16.1,O0102,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_up_0237,PHL_up,Q16.2,O0106,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-PHL_up_0238,PHL_up,Q17.1,O0110,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-PHL_up_0239,PHL_up,Q17.2,O0113,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-PHL_up_0240,PHL_up,Q17.3,O0118,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-PHL_up_0241,PHL_up,Q18.1,O0121,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-PHL_up_0242,PHL_up,Q18.2,O0123,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-PHL_up_0243,PHL_up,Q18.3,O0130,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-PHL_up_0244,PHL_up,Q19.1,O0133,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_up_0245,PHL_up,Q20.1,O0136,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_up_0246,PHL_up,Q20.2,O0140,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-PHL_up_0247,PHL_up,Q21.1,O0144,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-PHL_up_0248,PHL_up,Q21.2,O0146,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-PHL_up_0249,PHL_up,Q22.1,O0150,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-PHL_up_0250,PHL_up,Q22.2,O0156,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_up_0251,PHL_up,Q22.3,O0157,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-PHL_up_0252,PHL_up,Q23.1,O0162,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-PHL_up_0253,PHL_up,Q23.2,O0166,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_up_0254,PHL_up,Q23.3,O0169,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-PHL_up_0255,PHL_up,Q24.1,O0174,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_up_0256,PHL_up,Q24.2,O0178,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-PHL_up_0257,PHL_up,Q25.1,O0181;O0182;O0183,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_up_0258,PHL_up,Q25.2,O0188,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_up_0259,PHL_up,Q25.3,O0190,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-PHL_up_0260,PHL_up,Q26.1,O0194,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-PHL_up_0261,PHL_up,Q26.2,O0198,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-PHL_up_0262,PHL_up,Q26.3,O0201,"Available in the national language only, no official translation.","See parliament website, official publications section."
-PHL_up_0263,PHL_up,Q27.1,O0205;O0206;O0207,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-PHL_up_0264,PHL_up,Q27.2,O0210,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_up_0265,PHL_up,Q28.1,O0214,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_up_0266,PHL_up,Q29.1,O0217;O0218;O0219;O0220,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_up_0267,PHL_up,Q29.2,O0224,"Available in the national language only, no official translation.","See parliament website, official publications section."
-PHL_up_0268,PHL_up,Q30.1,O0226,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-PHL_up_0269,PHL_up,Q30.2,O0231,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-PHL_up_0270,PHL_up,Q30.3,O0234,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-PHL_up_0271,PHL_up,Q31.1,O0238,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_up_0272,PHL_up,Q31.2,O0240,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
+response_id,chamber_id,question_id,selected_option_ids
+PHL_up_0205,PHL_up,Q1.1,O0002
+PHL_up_0206,PHL_up,Q1.2,O0004
+PHL_up_0207,PHL_up,Q2.1,O0008
+PHL_up_0208,PHL_up,Q2.2,O0010
+PHL_up_0209,PHL_up,Q3.1,O0014
+PHL_up_0210,PHL_up,Q3.2,O0017
+PHL_up_0211,PHL_up,Q4.1,O0019
+PHL_up_0212,PHL_up,Q4.2,O0023
+PHL_up_0213,PHL_up,Q5.1,O0025
+PHL_up_0214,PHL_up,Q5.2,O0029
+PHL_up_0215,PHL_up,Q6.1,O0032
+PHL_up_0216,PHL_up,Q6.2,O0034
+PHL_up_0217,PHL_up,Q7.1,O0039
+PHL_up_0218,PHL_up,Q7.2,O0040
+PHL_up_0219,PHL_up,Q8.1,O0043
+PHL_up_0220,PHL_up,Q8.2,O0046
+PHL_up_0221,PHL_up,Q9.1,O0050
+PHL_up_0222,PHL_up,Q9.2,O0052
+PHL_up_0223,PHL_up,Q10.1,O0055;O0056;O0057
+PHL_up_0224,PHL_up,Q10.2,O0060
+PHL_up_0225,PHL_up,Q10.3,O0065
+PHL_up_0226,PHL_up,Q11.1,O0069
+PHL_up_0227,PHL_up,Q11.2,O0072
+PHL_up_0228,PHL_up,Q11.3,O0075
+PHL_up_0229,PHL_up,Q12.1,O0079
+PHL_up_0230,PHL_up,Q12.2,O0082
+PHL_up_0231,PHL_up,Q13.1,O0087
+PHL_up_0232,PHL_up,Q13.2,O0090
+PHL_up_0233,PHL_up,Q14.1,O0091
+PHL_up_0234,PHL_up,Q15.1,O0095
+PHL_up_0235,PHL_up,Q15.2,O0099
+PHL_up_0236,PHL_up,Q16.1,O0102
+PHL_up_0237,PHL_up,Q16.2,O0106
+PHL_up_0238,PHL_up,Q17.1,O0110
+PHL_up_0239,PHL_up,Q17.2,O0113
+PHL_up_0240,PHL_up,Q17.3,O0118
+PHL_up_0241,PHL_up,Q18.1,O0121
+PHL_up_0242,PHL_up,Q18.2,O0123
+PHL_up_0243,PHL_up,Q18.3,O0130
+PHL_up_0244,PHL_up,Q19.1,O0133
+PHL_up_0245,PHL_up,Q20.1,O0136
+PHL_up_0246,PHL_up,Q20.2,O0140
+PHL_up_0247,PHL_up,Q21.1,O0144
+PHL_up_0248,PHL_up,Q21.2,O0146
+PHL_up_0249,PHL_up,Q22.1,O0150
+PHL_up_0250,PHL_up,Q22.2,O0156
+PHL_up_0251,PHL_up,Q22.3,O0157
+PHL_up_0252,PHL_up,Q23.1,O0162
+PHL_up_0253,PHL_up,Q23.2,O0166
+PHL_up_0254,PHL_up,Q23.3,O0169
+PHL_up_0255,PHL_up,Q24.1,O0174
+PHL_up_0256,PHL_up,Q24.2,O0178
+PHL_up_0257,PHL_up,Q25.1,O0181;O0182;O0183
+PHL_up_0258,PHL_up,Q25.2,O0188
+PHL_up_0259,PHL_up,Q25.3,O0190
+PHL_up_0260,PHL_up,Q26.1,O0194
+PHL_up_0261,PHL_up,Q26.2,O0198
+PHL_up_0262,PHL_up,Q26.3,O0201
+PHL_up_0263,PHL_up,Q27.1,O0205;O0206;O0207
+PHL_up_0264,PHL_up,Q27.2,O0210
+PHL_up_0265,PHL_up,Q28.1,O0214
+PHL_up_0266,PHL_up,Q29.1,O0217;O0218;O0219;O0220
+PHL_up_0267,PHL_up,Q29.2,O0224
+PHL_up_0268,PHL_up,Q30.1,O0226
+PHL_up_0269,PHL_up,Q30.2,O0231
+PHL_up_0270,PHL_up,Q30.3,O0234
+PHL_up_0271,PHL_up,Q31.1,O0238
+PHL_up_0272,PHL_up,Q31.2,O0240

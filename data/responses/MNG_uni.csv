@@ -1,69 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-MNG_uni_0681,MNG_uni,Q1.1,O0003,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MNG_uni_0682,MNG_uni,Q1.2,O0005,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MNG_uni_0683,MNG_uni,Q2.1,O0008,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-MNG_uni_0684,MNG_uni,Q2.2,O0011,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-MNG_uni_0685,MNG_uni,Q3.1,O0013,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-MNG_uni_0686,MNG_uni,Q3.2,O0017,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MNG_uni_0687,MNG_uni,Q4.1,O0020,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-MNG_uni_0688,MNG_uni,Q4.2,O0022,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-MNG_uni_0689,MNG_uni,Q5.1,O0025,"Available in the national language only, no official translation.","See parliament website, official publications section."
-MNG_uni_0690,MNG_uni,Q5.2,O0028,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-MNG_uni_0691,MNG_uni,Q6.1,O0031,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MNG_uni_0692,MNG_uni,Q6.2,O0034,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MNG_uni_0693,MNG_uni,Q7.1,O0037,"Available in the national language only, no official translation.","See parliament website, official publications section."
-MNG_uni_0694,MNG_uni,Q7.2,O0041,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MNG_uni_0695,MNG_uni,Q8.1,O0044,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MNG_uni_0696,MNG_uni,Q8.2,O0046,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-MNG_uni_0697,MNG_uni,Q9.1,O0049,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-MNG_uni_0698,MNG_uni,Q9.2,O0053,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MNG_uni_0699,MNG_uni,Q10.1,O0055,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-MNG_uni_0700,MNG_uni,Q10.2,O0061,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MNG_uni_0701,MNG_uni,Q10.3,O0065,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-MNG_uni_0702,MNG_uni,Q11.1,O0067,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MNG_uni_0703,MNG_uni,Q11.2,O0072,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MNG_uni_0704,MNG_uni,Q11.3,O0075,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-MNG_uni_0705,MNG_uni,Q12.1,O0081,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-MNG_uni_0706,MNG_uni,Q12.2,O0083,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MNG_uni_0707,MNG_uni,Q13.1,O0086,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MNG_uni_0708,MNG_uni,Q13.2,O0088,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-MNG_uni_0709,MNG_uni,Q14.1,O0092,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-MNG_uni_0710,MNG_uni,Q15.1,O0094,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-MNG_uni_0711,MNG_uni,Q15.2,O0097,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MNG_uni_0712,MNG_uni,Q16.1,O0104,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MNG_uni_0713,MNG_uni,Q16.2,O0106,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-MNG_uni_0714,MNG_uni,Q17.1,O0110,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MNG_uni_0715,MNG_uni,Q17.2,O0113,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MNG_uni_0716,MNG_uni,Q17.3,O0116,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MNG_uni_0717,MNG_uni,Q18.1,O0120,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MNG_uni_0718,MNG_uni,Q18.2,O0125,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-MNG_uni_0719,MNG_uni,Q18.3,O0128,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MNG_uni_0720,MNG_uni,Q19.1,O0134,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-MNG_uni_0721,MNG_uni,Q20.1,O0135,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-MNG_uni_0722,MNG_uni,Q20.2,O0138,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MNG_uni_0723,MNG_uni,Q21.1,O0143,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-MNG_uni_0724,MNG_uni,Q21.2,O0146,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-MNG_uni_0725,MNG_uni,Q22.1,O0151,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-MNG_uni_0726,MNG_uni,Q22.2,O0156,"Available in the national language only, no official translation.","See parliament website, official publications section."
-MNG_uni_0727,MNG_uni,Q22.3,O0157,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-MNG_uni_0728,MNG_uni,Q23.1,O0162,"Available in the national language only, no official translation.","See parliament website, official publications section."
-MNG_uni_0729,MNG_uni,Q23.2,O0164,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-MNG_uni_0730,MNG_uni,Q23.3,O0171,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MNG_uni_0731,MNG_uni,Q24.1,O0175,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-MNG_uni_0732,MNG_uni,Q24.2,O0178,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-MNG_uni_0733,MNG_uni,Q25.1,O0181;O0182,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-MNG_uni_0734,MNG_uni,Q25.2,O0188,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MNG_uni_0735,MNG_uni,Q25.3,O0191,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-MNG_uni_0736,MNG_uni,Q26.1,O0193,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MNG_uni_0737,MNG_uni,Q26.2,O0200,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-MNG_uni_0738,MNG_uni,Q26.3,O0203,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-MNG_uni_0739,MNG_uni,Q27.1,O0205;O0206,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MNG_uni_0740,MNG_uni,Q27.2,O0210,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MNG_uni_0741,MNG_uni,Q28.1,O0216,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-MNG_uni_0742,MNG_uni,Q29.1,O0217;O0218;O0219,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MNG_uni_0743,MNG_uni,Q29.2,O0223,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MNG_uni_0744,MNG_uni,Q30.1,O0227,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-MNG_uni_0745,MNG_uni,Q30.2,O0233,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MNG_uni_0746,MNG_uni,Q30.3,O0236,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MNG_uni_0747,MNG_uni,Q31.1,O0239,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MNG_uni_0748,MNG_uni,Q31.2,O0241,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
+response_id,chamber_id,question_id,selected_option_ids
+MNG_uni_0681,MNG_uni,Q1.1,O0003
+MNG_uni_0682,MNG_uni,Q1.2,O0005
+MNG_uni_0683,MNG_uni,Q2.1,O0008
+MNG_uni_0684,MNG_uni,Q2.2,O0011
+MNG_uni_0685,MNG_uni,Q3.1,O0013
+MNG_uni_0686,MNG_uni,Q3.2,O0017
+MNG_uni_0687,MNG_uni,Q4.1,O0020
+MNG_uni_0688,MNG_uni,Q4.2,O0022
+MNG_uni_0689,MNG_uni,Q5.1,O0025
+MNG_uni_0690,MNG_uni,Q5.2,O0028
+MNG_uni_0691,MNG_uni,Q6.1,O0031
+MNG_uni_0692,MNG_uni,Q6.2,O0034
+MNG_uni_0693,MNG_uni,Q7.1,O0037
+MNG_uni_0694,MNG_uni,Q7.2,O0041
+MNG_uni_0695,MNG_uni,Q8.1,O0044
+MNG_uni_0696,MNG_uni,Q8.2,O0046
+MNG_uni_0697,MNG_uni,Q9.1,O0049
+MNG_uni_0698,MNG_uni,Q9.2,O0053
+MNG_uni_0699,MNG_uni,Q10.1,O0055
+MNG_uni_0700,MNG_uni,Q10.2,O0061
+MNG_uni_0701,MNG_uni,Q10.3,O0065
+MNG_uni_0702,MNG_uni,Q11.1,O0067
+MNG_uni_0703,MNG_uni,Q11.2,O0072
+MNG_uni_0704,MNG_uni,Q11.3,O0075
+MNG_uni_0705,MNG_uni,Q12.1,O0081
+MNG_uni_0706,MNG_uni,Q12.2,O0083
+MNG_uni_0707,MNG_uni,Q13.1,O0086
+MNG_uni_0708,MNG_uni,Q13.2,O0088
+MNG_uni_0709,MNG_uni,Q14.1,O0092
+MNG_uni_0710,MNG_uni,Q15.1,O0094
+MNG_uni_0711,MNG_uni,Q15.2,O0097
+MNG_uni_0712,MNG_uni,Q16.1,O0104
+MNG_uni_0713,MNG_uni,Q16.2,O0106
+MNG_uni_0714,MNG_uni,Q17.1,O0110
+MNG_uni_0715,MNG_uni,Q17.2,O0113
+MNG_uni_0716,MNG_uni,Q17.3,O0116
+MNG_uni_0717,MNG_uni,Q18.1,O0120
+MNG_uni_0718,MNG_uni,Q18.2,O0125
+MNG_uni_0719,MNG_uni,Q18.3,O0128
+MNG_uni_0720,MNG_uni,Q19.1,O0134
+MNG_uni_0721,MNG_uni,Q20.1,O0135
+MNG_uni_0722,MNG_uni,Q20.2,O0138
+MNG_uni_0723,MNG_uni,Q21.1,O0143
+MNG_uni_0724,MNG_uni,Q21.2,O0146
+MNG_uni_0725,MNG_uni,Q22.1,O0151
+MNG_uni_0726,MNG_uni,Q22.2,O0156
+MNG_uni_0727,MNG_uni,Q22.3,O0157
+MNG_uni_0728,MNG_uni,Q23.1,O0162
+MNG_uni_0729,MNG_uni,Q23.2,O0164
+MNG_uni_0730,MNG_uni,Q23.3,O0171
+MNG_uni_0731,MNG_uni,Q24.1,O0175
+MNG_uni_0732,MNG_uni,Q24.2,O0178
+MNG_uni_0733,MNG_uni,Q25.1,O0181;O0182
+MNG_uni_0734,MNG_uni,Q25.2,O0188
+MNG_uni_0735,MNG_uni,Q25.3,O0191
+MNG_uni_0736,MNG_uni,Q26.1,O0193
+MNG_uni_0737,MNG_uni,Q26.2,O0200
+MNG_uni_0738,MNG_uni,Q26.3,O0203
+MNG_uni_0739,MNG_uni,Q27.1,O0205;O0206
+MNG_uni_0740,MNG_uni,Q27.2,O0210
+MNG_uni_0741,MNG_uni,Q28.1,O0216
+MNG_uni_0742,MNG_uni,Q29.1,O0217;O0218;O0219
+MNG_uni_0743,MNG_uni,Q29.2,O0223
+MNG_uni_0744,MNG_uni,Q30.1,O0227
+MNG_uni_0745,MNG_uni,Q30.2,O0233
+MNG_uni_0746,MNG_uni,Q30.3,O0236
+MNG_uni_0747,MNG_uni,Q31.1,O0239
+MNG_uni_0748,MNG_uni,Q31.2,O0241

@@ -9,6 +9,14 @@ import { mountGlossary, linkGlossaryTerms } from "../components/glossary.js?v=3"
 import { initAccordions } from "../components/accordion.js?v=1";
 import { revealOnScroll } from "./ui.js?v=1";
 
+// Glossary auto-linking is intentionally scoped to just question text and
+// answer options (the .question-answer-block component) rather than the
+// whole page — a term appearing elsewhere (headings, descriptions, country
+// context, etc.) should not be turned into a glossary trigger.
+function linkGlossaryInQuestionBlocks() {
+  document.querySelectorAll(".question-answer-block").forEach((block) => linkGlossaryTerms(block));
+}
+
 /** Call once per page, right after DOM is ready. */
 export async function bootstrapPage(activeNavKey) {
   mountNavbar(activeNavKey);
@@ -16,7 +24,7 @@ export async function bootstrapPage(activeNavKey) {
   mountDownloadCta(); // no-ops on pages without a #download-cta-root placeholder
   try {
     await mountGlossary(); // loads glossary.csv before we try to auto-link terms
-    linkGlossaryTerms(document.body);
+    linkGlossaryInQuestionBlocks();
   } catch (err) {
     // The glossary is a nice-to-have layer on top of the page, not core
     // functionality — a failed/slow CSV fetch (flaky network, CDN hiccup)
@@ -31,7 +39,7 @@ export async function bootstrapPage(activeNavKey) {
 /** Re-run accordion binding + reveal + glossary term-linking after dynamically inserting new markup. */
 export function refreshDynamicUI() {
   try {
-    linkGlossaryTerms(document.body);
+    linkGlossaryInQuestionBlocks();
   } catch (err) {
     console.warn("[app.js] Glossary term-linking failed; continuing.", err);
   }

@@ -1,173 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-THA_low_001,THA_low,Q1.1,O0001,"[formal parliamentary procedures] 
-Laws and regulations governing the ethics of Thai parliamentarians consist of several different regulations–including internal parliamentary regulations such as Regulations on the Code of Ethics for Members of the House of Representatives and Committees, B.E. 2563 (2020), 
-Regulations on the Code of Ethics for Members of the House of Representatives and Committees, B.E. 2553 (2010), Regulations on the Code of Ethics for Members of the Senate and Committees, B.E. 2563 (2020), Regulations on the Code of Ethics for Members of the National Legislative Assembly and Committees, B.E. 2558 (2015)
- and regulations issued by other independent organisations such as Ethical Standards of the Constitution Court Judges and Holders of Positions in Independent Agencies, the State Audit Office Auditor-General, and Heads of Constitutional Court and Independent Agency Administrative Units, B.E. 2561
- 
-[actual parliamentary practice]
-Thai MPs are punished more severely and extensively under the ethical standards of independent organizations rather than under parliamentary regulations, as parliamentary regulations are often perceived as a form of internal review or broad meeting etiquettes, which in practice remains rarely punitive. In contrast, standards enforced by independent  organizations are used as the primary tool for removing politicians from the system.","Source 1: ข้อบังคับการประชุมรัฐสภา พ.ศ. ๒๕๖๓ 
-Source 2 : มาตรฐานทางจริยธรรมของ ตุลาการศาลรัฐธรรมนูญ และผู้ดํารงตําแหน่งในองค์กรอิสระ รวมทั้งผู้ว่าการตรวจเงินแผ่นดิน และหัวหน้าหน่วยงานธุรการของศาลรัฐธรรมนูญและองค์กรอิสระ พ.ศ. ๒๕๖๑ "
-THA_low_002,THA_low,Q1.2,O0005,"[formal parliamentary procedures] 
-Laws and regulations governing the ethics of Thai parliamentarians consist of several different regulations–including internal parliamentary regulations such as Regulations on the Code of Ethics for Members of the House of Representatives and Committees, B.E. 2563 (2020), 
-Regulations on the Code of Ethics for Members of the House of Representatives and Committees, B.E. 2553 (2010), Regulations on the Code of Ethics for Members of the Senate and Committees, B.E. 2563 (2020), Regulations on the Code of Ethics for Members of the National Legislative Assembly and Committees, B.E. 2558 (2015)
- and regulations issued by other independent organisations such as Ethical Standards of the Constitution Court Judges and Holders of Positions in Independent Agencies, the State Audit Office Auditor-General, and Heads of Constitutional Court and Independent Agency Administrative Units, B.E. 2561
- 
-[actual parliamentary practice]
-Thai MPs are punished more severely and extensively under the ethical standards of independent organizations rather than under parliamentary regulations, as parliamentary regulations are often perceived as a form of internal review or broad meeting etiquettes, which in practice remains rarely punitive. In contrast, standards enforced by independent  organizations are used as the primary tool for removing politicians from the system.",
-THA_low_003,THA_low,Q2.1,O0009,"[formal parliamentary procedures], while conflict of interest is illegal per Article 184 and 185 of the 2017 Constitution of Thailand and Article 8 and 9 of 2020 Parliamentary Procedure Regulations, the information besides assets upon taking and leaving office is not disclosed to the public.",
-THA_low_004,THA_low,Q2.2,O0012,"[formal parliamentary procedures], while conflict of interest is illegal per Article 184 and 185 of the 2017 Constitution of Thailand and Article 8 and 9 of 2020 Parliamentary Procedure Regulations, the information besides assets upon taking and leaving office is not disclosed to the public.",
-THA_low_005,THA_low,Q3.1,O0013,"[formal parliamentary procedures] 
-- Regulations by the Office of the Nation Anti-Corruption Commission's [an independent external organisation that does not report to the parliament] require MPs, their spouses, and minor children to disclose their assets twice throughout their terms: once upon taking office and once on leaving office. Changes to assets are not immediately disclosed during their terms.
-- While the information on the assets is disclosed at the NACC office, it is only published online for only one year,  and therefore not accessible by the general public after the first year unless a request is filed at the NACC.",Source 1: https://asset.nacc.go.th/dcs-app/ ระบบเปิดเผยบัญชีทรัพย์สินและหนี้สิน (DCS)
-THA_low_006,THA_low,Q3.2,O0017,"[formal parliamentary procedures] 
-- Regulations by the Office of the Nation Anti-Corruption Commission's [an independent external organisation that does not report to the parliament] require MPs, their spouses, and minor children to disclose their assets twice throughout their terms: once upon taking office and once on leaving office. Changes to assets are not immediately disclosed during their terms.
-- While the information on the assets is disclosed at the NACC office, it is only published online for only one year,  and therefore not accessible by the general public after the first year unless a request is filed at the NACC.",
-THA_low_007,THA_low,Q4.1,O0019,"[formal parliamentary procedures] 
-there are channels to contact parliamentary support units for complaints and queries via their numbers, e-portals, and emails, but there isn't any measure instilled to ensure whether or how the queries will be handled.
-
-Contact information for individual MPs is not provided.",Source 1: สำนักงานเลขาธิการสภาผู้แทนราษฎร 
-THA_low_008,THA_low,Q4.2,O0024,,
-THA_low_009,THA_low,Q5.1,O0025,Pre-scrutiny is mandatory and conducted by parliamentary support units.,"Source 1: https://www.parliament.go.th/view/10/authority_and_responsibilities/TH-TH 
-Source 2: https://www.parliament.go.th/view/9/อำนาจหน้าที่_วิสัยทัศน์_พันธกิจ_ยุทธศาสตร์/TH-TH  "
-THA_low_010,THA_low,Q5.2,O0028,Pre-scrutiny is mandatory and conducted by parliamentary support units.,
-THA_low_011,THA_low,Q6.1,O0033,"[formal parliamentary procedures] 
-post-legislative scrutiny is mandated by the The 2017 Constitution of Thailand under article 77, but traditionally carried out by government agencies, not executed by parliament or MPs per Rules on Legislative Drafting and Evaluation
-of the Outcomes of Law Act, B.E. 2562 (2019)
-""When the law has come into force, the State should undertake an evaluation of the outcomes of the
-law at every specified period of time, for which consultation with stakeholders shall be conducted, with a view to developing all laws to be suitable to and appropriate for the changing contexts."" 
-The duty falls under the executive branch.",
-THA_low_012,THA_low,Q6.2,O0035,"[formal parliamentary procedures] 
-post-legislative scrutiny is mandated by the The 2017 Constitution of Thailand under article 77, but traditionally carried out by government agencies, not executed by parliament or MPs per Rules on Legislative Drafting and Evaluation
-of the Outcomes of Law Act, B.E. 2562 (2019)
-""When the law has come into force, the State should undertake an evaluation of the outcomes of the
-law at every specified period of time, for which consultation with stakeholders shall be conducted, with a view to developing all laws to be suitable to and appropriate for the changing contexts."" 
-The duty falls under the executive branch.",
-THA_low_013,THA_low,Q7.1,O0037,"[formal parliamentary procedures]
-Thai The 2017 Constitution of Thailand article 77 Paragraph 2 ""Prior to the enactment of every law, the State should conduct consultation with stakeholders, analyse any impacts that may occur from the law thoroughly and systematically, and should also disclose the results of the consultation and analysis to the public, and take them into consideration at every stage of the legislative process""
-
-public hearing and and feedback report on each hearing is available on its own site https://www.parliament.go.th/article77/index.php 
-Aside from the online portal, public hearing is also conducted in affected areas for some bills as well. 
-
-
-[actual parliamentary practice]
-The feedback provided by the public during the hearing is not legally binding. ","source 1: https://www.parliament.go.th/article77/index.php   
-source 2: ปัญหากระบวนการรับฟังความคิดเห็นในการตรากฎหมายตามมาตรา 77 ของรัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2560 "
-THA_low_014,THA_low,Q7.2,O0041,"[formal parliamentary procedures]
-Thai The 2017 Constitution of Thailand article 77 Paragraph 2 ""Prior to the enactment of every law, the State should conduct consultation with stakeholders, analyse any impacts that may occur from the law thoroughly and systematically, and should also disclose the results of the consultation and analysis to the public, and take them into consideration at every stage of the legislative process""
-
-public hearing and and feedback report on each hearing is available on its own site https://www.parliament.go.th/article77/index.php 
-Aside from the online portal, public hearing is also conducted in affected areas for some bills as well. 
-
-
-[actual parliamentary practice]
-The feedback provided by the public during the hearing is not legally binding. ",
-THA_low_015,THA_low,Q8.1,O0044,Feedback during parliamentary review or committee stages occur through invitation.,
-THA_low_016,THA_low,Q8.2,O0048,Feedback during parliamentary review or committee stages occur through invitation.,
-THA_low_017,THA_low,Q9.1,O0050,"[formal parliamentary procedures]- Per The 2017 Constitution of Thailand article 77  ""When the law has come into force, the State should undertake an evaluation of the outcomes of the law at every specified period of time, for which consultation with stakeholders shall be conducted, with a view to developing all laws to be suitable to and appropriate for the changing contexts."" 
-
-Public consultation process can be included in the post-enactment review reporting, but is determined by government agencies via The Rules on Legislative Drafting and Evaluation
-of the Outcomes of Law Act, B.E. 2562 (2019), and is not applicable to all laws.
-
-",
-THA_low_018,THA_low,Q9.2,O0053,"[formal parliamentary procedures]- Per The 2017 Constitution of Thailand article 77  ""When the law has come into force, the State should undertake an evaluation of the outcomes of the law at every specified period of time, for which consultation with stakeholders shall be conducted, with a view to developing all laws to be suitable to and appropriate for the changing contexts."" 
-
-Public consultation process can be included in the post-enactment review reporting, but is determined by government agencies via The Rules on Legislative Drafting and Evaluation
-of the Outcomes of Law Act, B.E. 2562 (2019), and is not applicable to all laws.
-
-",
-THA_low_019,THA_low,Q10.1,O0055,only the name list and party is provided,
-THA_low_020,THA_low,Q10.2,O0060,only the name list and party is provided,
-THA_low_021,THA_low,Q10.3,O0065,only the name list and party is provided,
-THA_low_022,THA_low,Q11.1,O0071,Information on MP staff is unavailable.,
-THA_low_023,THA_low,Q11.2,O0074,Information on MP staff is unavailable.,
-THA_low_024,THA_low,Q11.3,O0078,Information on MP staff is unavailable.,
-THA_low_025,THA_low,Q12.1,O0080,"The parliament was designed to accomdate people with disability, though in practice some areas still lack maintenance and facilities may not be readily avaialable at all times. ","Source 1: https://www.facebook.com/photo/?fbid=1474320351403437&set=pcb.1474320558070083
-Source 2: สิ่งอำนวยความสะดวกภายในอาคารรัฐสภา ตามกฎกระทรวง  "
-THA_low_026,THA_low,Q12.2,O0083,"The parliament was designed to accomdate people with disability, though in practice some areas still lack maintenance and facilities may not be readily avaialable at all times. ",
-THA_low_027,THA_low,Q13.1,O0086,"Web Content Accessibility Guidelines is not strictly adhered to, and a few of website  pages include transcripts for audio, alternative formats for texts, alternative dialect reading, and alternative colorways, though most pages do not.",
-THA_low_028,THA_low,Q13.2,O0089,,
-THA_low_029,THA_low,Q14.1,O0092,"A request must be filed in advance for non-MPs to observe plenary sessions.
-",Source 1: https://www.parliament.go.th/assets/portals/455/files/ระเบียบการเข้าฟังการประชุม%202562.pdf 
-THA_low_030,THA_low,Q15.1,O0094,Agendas are published on the parliament website/calendar.,Source 1: https://www.parliament.go.th/view/1/representatives/TH-TH 
-THA_low_031,THA_low,Q15.2,O0098,Agendas are published on the parliament website/calendar.,
-THA_low_032,THA_low,Q16.1,O0102,Non-confidential sessions are livestreamed through the parliament's channels. ,"Source 1: TPchannel
-Source 2: Parliament Search"
-THA_low_033,THA_low,Q16.2,O0105,Non-confidential sessions are livestreamed through the parliament's channels. ,
-THA_low_034,THA_low,Q17.1,O0109,Official transcripts are published per Article 23 of the 2020 Parliamentary Procedure Regulations  unless the session was classified as confidential.,
-THA_low_035,THA_low,Q17.2,O0114,"There is no regulated timeframe for the official transcripts. In practice, they are usually published at the prorogation, months after the meetings.
-However, AI-assisted, non-machine readable transcripts are provided on the parliament website no later than a week after the meeting. 
-","Source 1: Parliament Search
-Source 2: รายงานการประชุม (PDF) ชุดที่ 26"
-THA_low_036,THA_low,Q17.3,O0118,,
-THA_low_037,THA_low,Q18.1,O0120,"Attendance is published in the transcript records.
-
-Presence during votes can be accessed via the database. 
-","Source 1: https://msbis.parliament.go.th/ewtadmin/ewt/parliament_report/main.php?filename=index  
-Source 2: รายงานการประชุม (PDF) ชุดที่ 26 "
-THA_low_038,THA_low,Q18.2,O0126,"Attendance is published in the transcript records, and as there is no regulated timeframe for the official transcripts. In practice, they are usually published at the prorogation, months after the meetings.",
-THA_low_039,THA_low,Q18.3,O0130,,
-THA_low_040,THA_low,Q19.1,O0133,,
-THA_low_041,THA_low,Q20.1,O0136,"inconslusive as of now, practices vary depending on each committee",
-THA_low_042,THA_low,Q20.2,O0138,"inconslusive as of now, practices vary depending on each committee",
-THA_low_043,THA_low,Q21.1,O0145,"There are no laws that require the committee meeting recordings (audio or video) to be published. 
-
-In practice, some committees allow their meetings to be live-streamed and published through their own channels (such as facebook or youtube), but the decision is made arbitrarily and not adopted by the majority of the committees.",
-THA_low_044,THA_low,Q21.2,O0148,"There are no laws that require the committee meeting recordings (audio or video) to be published. 
-
-In practice, some committees allow their meetings to be live-streamed and published through their own channels (such as facebook or youtube), but the decision is made arbitrarily and not adopted by the majority of the committees.",
-THA_low_045,THA_low,Q22.1,O0151,Transcripts are not published,
-THA_low_046,THA_low,Q22.2,O0156,Transcripts are not published,
-THA_low_047,THA_low,Q22.3,O0160,Transcripts are not published,
-THA_low_048,THA_low,Q23.1,O0162,"Attendance cen be accessed in committee meeting reports.
-Per Article 78 of 2020 Parliamentary Procedure Regulations, as well as article 60 of the 2017 Constitution of Thailand, report publication are mandatory for committee meetings unless prohibited by the enate or House of Representatives. However, in practice, most committees do not provide meeting reports in a timely manner.",
-THA_low_049,THA_low,Q23.2,O0167,,ข้อบังคับการประชุม รัฐสภา พ.ศ. ๒๕๖๓ และที่แก้ไข
-THA_low_050,THA_low,Q23.3,O0171,,
-THA_low_051,THA_low,Q24.1,O0173,Draft bills are required to be published at least three days before deliberation.,https://lis.parliament.go.th/index/index.php 
-THA_low_052,THA_low,Q24.2,O0176,Draft bills are required to be published at least three days before deliberation.,
-THA_low_053,THA_low,Q25.1,O0181;O0182;O0183;O0184,Details for bills are digitized but not machine-readable,
-THA_low_054,THA_low,Q25.2,O0188,Details for bills are digitized but not machine-readable,
-THA_low_055,THA_low,Q25.3,O0190,Details for bills are digitized but not machine-readable,
-THA_low_056,THA_low,Q26.1,O0194,"Individual voting records can be accessed via the following database for the House of Representatives, per the Rules of Procedure of the House of Representatives B.E. 2562 (2019) Rule 89 
-""The Secretary-General shall cause the voting of each member to be
-recorded and disclose such record at the parliamentary area including publish electronically or
-other types of telecommunications for the public, except in case of voting by secret ballot
-under Rule 84""
-
-",https://msbis.parliament.go.th/ewtadmin/ewt/parliament_report/main.php?filename=index 
-THA_low_057,THA_low,Q26.2,O0197,"Individual voting records can be accessed via the following database for the House of Representatives, per the Rules of Procedure of the House of Representatives B.E. 2562 (2019) Rule 89 
-""The Secretary-General shall cause the voting of each member to be
-recorded and disclose such record at the parliamentary area including publish electronically or
-other types of telecommunications for the public, except in case of voting by secret ballot
-under Rule 84""
-
-",
-THA_low_058,THA_low,Q26.3,O0203,"Individual voting records can be accessed via the following database for the House of Representatives, per the Rules of Procedure of the House of Representatives B.E. 2562 (2019) Rule 89 
-""The Secretary-General shall cause the voting of each member to be
-recorded and disclose such record at the parliamentary area including publish electronically or
-other types of telecommunications for the public, except in case of voting by secret ballot
-under Rule 84""
-
-",
-THA_low_059,THA_low,Q27.1,O0205;O0206;O0207;O0208,"The parliament doesn't provide detailed annual reports on utilization of and spending on salaries and benefits of each individual MP, however, an outline on MP's base salaries and benefits are provided
-",https://www.parliament.go.th/assets/portals/1/files/13%20สิทธิประโยชน์.pdf 
-THA_low_060,THA_low,Q27.2,O0210,"Reports on utilization of and spending on salaries and benefits of House of Represenatives and the Senate are provided yearly, accessible via the link below. 
-The spendings are grouped into broad categories and not itemised.
-https://web.parliament.go.th/view/79/รายงานงบการเงิน/TH-TH ",https://web.parliament.go.th/view/79/รายงานงบการเงิน/TH-TH 
-THA_low_061,THA_low,Q28.1,O0216,,
-THA_low_062,THA_low,Q29.1,O0217;O0218;O0219;O0220;O0221,"Reports on utilization of and spending on salaries and benefits of House of Represenatives and the Senate are provided yearly, accessible via the link below. 
-The spendings are grouped into broad categories and not itemised.
-https://web.parliament.go.th/view/79/รายงานงบการเงิน/TH-TH ",https://www.senate.go.th/view/1/money_manage/TH-TH 
-THA_low_063,THA_low,Q29.2,O0223,"Reports on utilization of and spending on salaries and benefits of House of Represenatives and the Senate are provided yearly, accessible via the link below. 
-The spendings are grouped into broad categories and not itemised.
-https://web.parliament.go.th/view/79/รายงานงบการเงิน/TH-TH ",
-THA_low_064,THA_low,Q30.1,O0226,"
-Details regarding amendments to the national budget by the committee can be accessed via the link below
-",คณะกรรมาธิการวิสามัญพิจารณาร่างพระราชบัญญัติงบประมาณ รายจ่ายประจำปี สภาผู้แทนราษฎร 
-THA_low_065,THA_low,Q30.2,O0231,"
-Details regarding amendments to the national budget by the committee can be accessed via the link below
-",ปฏิทินงบประมาณ 2570
-THA_low_066,THA_low,Q30.3,O0234,"
-Details regarding amendments to the national budget by the committee can be accessed via the link below
-",
-THA_low_067,THA_low,Q31.1,O0237,A loose and outdated guideline on information disclosre is provided," มาตรการเผยแพร่ข้อมูลต่อสาธารณะ, "
-THA_low_068,THA_low,Q31.2,O0240,,
+response_id,chamber_id,question_id,selected_option_ids
+THA_low_001,THA_low,Q1.1,O0001
+THA_low_002,THA_low,Q1.2,O0005
+THA_low_003,THA_low,Q2.1,O0009
+THA_low_004,THA_low,Q2.2,O0012
+THA_low_005,THA_low,Q3.1,O0013
+THA_low_006,THA_low,Q3.2,O0017
+THA_low_007,THA_low,Q4.1,O0019
+THA_low_008,THA_low,Q4.2,O0024
+THA_low_009,THA_low,Q5.1,O0025
+THA_low_010,THA_low,Q5.2,O0028
+THA_low_011,THA_low,Q6.1,O0033
+THA_low_012,THA_low,Q6.2,O0035
+THA_low_013,THA_low,Q7.1,O0037
+THA_low_014,THA_low,Q7.2,O0041
+THA_low_015,THA_low,Q8.1,O0044
+THA_low_016,THA_low,Q8.2,O0048
+THA_low_017,THA_low,Q9.1,O0050
+THA_low_018,THA_low,Q9.2,O0053
+THA_low_019,THA_low,Q10.1,O0055
+THA_low_020,THA_low,Q10.2,O0060
+THA_low_021,THA_low,Q10.3,O0065
+THA_low_022,THA_low,Q11.1,O0071
+THA_low_023,THA_low,Q11.2,O0074
+THA_low_024,THA_low,Q11.3,O0078
+THA_low_025,THA_low,Q12.1,O0080
+THA_low_026,THA_low,Q12.2,O0083
+THA_low_027,THA_low,Q13.1,O0086
+THA_low_028,THA_low,Q13.2,O0089
+THA_low_029,THA_low,Q14.1,O0092
+THA_low_030,THA_low,Q15.1,O0094
+THA_low_031,THA_low,Q15.2,O0098
+THA_low_032,THA_low,Q16.1,O0102
+THA_low_033,THA_low,Q16.2,O0105
+THA_low_034,THA_low,Q17.1,O0109
+THA_low_035,THA_low,Q17.2,O0114
+THA_low_036,THA_low,Q17.3,O0118
+THA_low_037,THA_low,Q18.1,O0120
+THA_low_038,THA_low,Q18.2,O0126
+THA_low_039,THA_low,Q18.3,O0130
+THA_low_040,THA_low,Q19.1,O0133
+THA_low_041,THA_low,Q20.1,O0136
+THA_low_042,THA_low,Q20.2,O0138
+THA_low_043,THA_low,Q21.1,O0145
+THA_low_044,THA_low,Q21.2,O0148
+THA_low_045,THA_low,Q22.1,O0151
+THA_low_046,THA_low,Q22.2,O0156
+THA_low_047,THA_low,Q22.3,O0160
+THA_low_048,THA_low,Q23.1,O0162
+THA_low_049,THA_low,Q23.2,O0167
+THA_low_050,THA_low,Q23.3,O0171
+THA_low_051,THA_low,Q24.1,O0173
+THA_low_052,THA_low,Q24.2,O0176
+THA_low_053,THA_low,Q25.1,O0181;O0182;O0183;O0184
+THA_low_054,THA_low,Q25.2,O0188
+THA_low_055,THA_low,Q25.3,O0190
+THA_low_056,THA_low,Q26.1,O0194
+THA_low_057,THA_low,Q26.2,O0197
+THA_low_058,THA_low,Q26.3,O0203
+THA_low_059,THA_low,Q27.1,O0205;O0206;O0207;O0208
+THA_low_060,THA_low,Q27.2,O0210
+THA_low_061,THA_low,Q28.1,O0216
+THA_low_062,THA_low,Q29.1,O0217;O0218;O0219;O0220;O0221
+THA_low_063,THA_low,Q29.2,O0223
+THA_low_064,THA_low,Q30.1,O0226
+THA_low_065,THA_low,Q30.2,O0231
+THA_low_066,THA_low,Q30.3,O0234
+THA_low_067,THA_low,Q31.1,O0237
+THA_low_068,THA_low,Q31.2,O0240

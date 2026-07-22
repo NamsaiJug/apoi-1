@@ -2,12 +2,13 @@
 // questionBlock.js — the reusable "question-answer-block" used on both
 // country.html and indicator.html: a single question's text, its answer
 // options (bulleted, selected one highlighted, each showing its own point
-// value), the achieved score, collapsible Country context / Evidence
-// sources boxes, and a Report issue link. Extracted here so both pages
-// share the exact same markup/behavior rather than duplicating it.
+// value), the achieved score, and a Report issue link. Also exports
+// indicatorContextHTML(), the Country context / Evidence sources boxes
+// shown once per indicator (they apply to the indicator as a whole, not
+// to any single question within it).
 // =========================================================
 
-import { calculateQuestionScore } from "../js/calculations.js?v=15";
+import { calculateQuestionScore } from "../js/calculations.js?v=16";
 
 export const REPORT_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdUzpNtGzBEwPaC1FhNTuFkcwCtLkogFzRZJpnQv5QeHVf7pg/viewform";
 
@@ -22,6 +23,23 @@ export function accordionBoxHTML(label, text) {
       <div class="accordion-panel">
         <div class="accordion-panel-inner px-3 pb-3 text-xs text-[var(--ink-soft)] leading-relaxed">${text || "—"}</div>
       </div>
+    </div>`;
+}
+
+/**
+ * Renders the Country context / Evidence sources boxes for a whole indicator
+ * (one chamber's context, applying to every question under that indicator).
+ * @param {string} chamberId
+ * @param {string} indicatorId
+ * @param {object} idx - the index object from buildIndex()
+ */
+export function indicatorContextHTML(chamberId, indicatorId, idx) {
+  const ctx = idx.contextByChamberIndicator.get(`${chamberId}__${indicatorId}`);
+  if (!ctx) return "";
+  return `
+    <div class="mb-4 pt-5 mt-5 border-t border-[var(--hairline)]">
+      ${accordionBoxHTML("Country context", ctx.country_context)}
+      ${accordionBoxHTML("Evidence sources", ctx.supporting_evidence)}
     </div>`;
 }
 
@@ -56,10 +74,6 @@ export function questionBlockHTML(q, index, chamberId, idx) {
       <div class="grid md:grid-cols-[1fr_1fr_64px] gap-4">
         <div>
           <div class="text-base leading-relaxed mb-3"><span class="font-mono text-[var(--ink-faint)] mr-2">${index + 1}</span>${q.question_text}</div>
-          ${resp ? `
-            ${accordionBoxHTML("Country context", resp.country_context)}
-            ${accordionBoxHTML("Evidence sources", resp.supporting_evidence)}
-          ` : ""}
         </div>
         <div class="text-sm space-y-1.5">
           ${optionsHTML}

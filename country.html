@@ -103,14 +103,14 @@
   <div id="footer-root"></div>
 
   <script type="module">
-    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=20";
-    import { loadFullDataset } from "./js/data.js?v=13";
+    import { bootstrapPage, refreshDynamicUI } from "./js/app.js?v=21";
+    import { loadFullDataset } from "./js/data.js?v=14";
     import {
       buildIndex, calculateCountryScore, calculateChamberScore, calculateDimensionScore, calculateCountryRawScore,
       calculateIndicatorClassification, calculateIndicatorClassificationForChamber, calculateQuestionScore,
-    } from "./js/calculations.js?v=15";
+    } from "./js/calculations.js?v=16";
     import { fmtPct, badgeFor } from "./js/ui.js?v=13";
-    import { questionBlockHTML } from "./components/questionBlock.js?v=1";
+    import { questionBlockHTML, indicatorContextHTML } from "./components/questionBlock.js?v=3";
 
     // Formats a raw (achieved) score for display: whole numbers show as-is,
     // fractional totals (e.g. 0.25 + 1 + 0.25 = 1.5) show their real decimal
@@ -389,6 +389,7 @@
               <div class="accordion-panel">
                 <div class="accordion-panel-inner px-5 pb-5">
                   ${questions.map((q, i) => questionBlockHTML(q, i, chamberId, idx)).join("")}
+                  ${indicatorContextHTML(chamberId, ind.indicator_id, idx)}
                   <div class="text-right mt-5">
                     <a href="indicator.html?id=${ind.indicator_id}" class="btn text-sm font-medium" style="background:var(--highlight-dim); color:var(--highlight);">Explore indicator →</a>
                   </div>

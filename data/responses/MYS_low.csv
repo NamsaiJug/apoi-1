@@ -1,69 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-MYS_low_0273,MYS_low,Q1.1,O0003,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MYS_low_0274,MYS_low,Q1.2,O0005,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-MYS_low_0275,MYS_low,Q2.1,O0008,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-MYS_low_0276,MYS_low,Q2.2,O0010,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-MYS_low_0277,MYS_low,Q3.1,O0013,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-MYS_low_0278,MYS_low,Q3.2,O0017,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MYS_low_0279,MYS_low,Q4.1,O0020,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-MYS_low_0280,MYS_low,Q4.2,O0023,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-MYS_low_0281,MYS_low,Q5.1,O0026,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MYS_low_0282,MYS_low,Q5.2,O0029,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MYS_low_0283,MYS_low,Q6.1,O0032,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-MYS_low_0284,MYS_low,Q6.2,O0034,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MYS_low_0285,MYS_low,Q7.1,O0037,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-MYS_low_0286,MYS_low,Q7.2,O0041,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MYS_low_0287,MYS_low,Q8.1,O0043,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-MYS_low_0288,MYS_low,Q8.2,O0047,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MYS_low_0289,MYS_low,Q9.1,O0049,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MYS_low_0290,MYS_low,Q9.2,O0052,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MYS_low_0291,MYS_low,Q10.1,O0055,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MYS_low_0292,MYS_low,Q10.2,O0061,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MYS_low_0293,MYS_low,Q10.3,O0065,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-MYS_low_0294,MYS_low,Q11.1,O0067,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MYS_low_0295,MYS_low,Q11.2,O0072,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-MYS_low_0296,MYS_low,Q11.3,O0077,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-MYS_low_0297,MYS_low,Q12.1,O0080,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MYS_low_0298,MYS_low,Q12.2,O0083,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-MYS_low_0299,MYS_low,Q13.1,O0085,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MYS_low_0300,MYS_low,Q13.2,O0088,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MYS_low_0301,MYS_low,Q14.1,O0092,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MYS_low_0302,MYS_low,Q15.1,O0094,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MYS_low_0303,MYS_low,Q15.2,O0097,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MYS_low_0304,MYS_low,Q16.1,O0102,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-MYS_low_0305,MYS_low,Q16.2,O0107,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-MYS_low_0306,MYS_low,Q17.1,O0109,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-MYS_low_0307,MYS_low,Q17.2,O0111,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-MYS_low_0308,MYS_low,Q17.3,O0118,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MYS_low_0309,MYS_low,Q18.1,O0120,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MYS_low_0310,MYS_low,Q18.2,O0123,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MYS_low_0311,MYS_low,Q18.3,O0131,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MYS_low_0312,MYS_low,Q19.1,O0134,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MYS_low_0313,MYS_low,Q20.1,O0135,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-MYS_low_0314,MYS_low,Q20.2,O0140,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-MYS_low_0315,MYS_low,Q21.1,O0144,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-MYS_low_0316,MYS_low,Q21.2,O0147,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-MYS_low_0317,MYS_low,Q22.1,O0150,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MYS_low_0318,MYS_low,Q22.2,O0154,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-MYS_low_0319,MYS_low,Q22.3,O0160,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MYS_low_0320,MYS_low,Q23.1,O0161,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-MYS_low_0321,MYS_low,Q23.2,O0166,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-MYS_low_0322,MYS_low,Q23.3,O0171,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MYS_low_0323,MYS_low,Q24.1,O0174,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-MYS_low_0324,MYS_low,Q24.2,O0178,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-MYS_low_0325,MYS_low,Q25.1,O0181;O0182;O0183,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-MYS_low_0326,MYS_low,Q25.2,O0186,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-MYS_low_0327,MYS_low,Q25.3,O0190,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MYS_low_0328,MYS_low,Q26.1,O0194,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-MYS_low_0329,MYS_low,Q26.2,O0198,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-MYS_low_0330,MYS_low,Q26.3,O0204,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-MYS_low_0331,MYS_low,Q27.1,O0205;O0206;O0207,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MYS_low_0332,MYS_low,Q27.2,O0211,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-MYS_low_0333,MYS_low,Q28.1,O0215,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-MYS_low_0334,MYS_low,Q29.1,O0217,"Available in the national language only, no official translation.","See parliament website, official publications section."
-MYS_low_0335,MYS_low,Q29.2,O0224,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-MYS_low_0336,MYS_low,Q30.1,O0226,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-MYS_low_0337,MYS_low,Q30.2,O0233,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-MYS_low_0338,MYS_low,Q30.3,O0234,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-MYS_low_0339,MYS_low,Q31.1,O0237,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-MYS_low_0340,MYS_low,Q31.2,O0241,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
+response_id,chamber_id,question_id,selected_option_ids
+MYS_low_0273,MYS_low,Q1.1,O0003
+MYS_low_0274,MYS_low,Q1.2,O0005
+MYS_low_0275,MYS_low,Q2.1,O0008
+MYS_low_0276,MYS_low,Q2.2,O0010
+MYS_low_0277,MYS_low,Q3.1,O0013
+MYS_low_0278,MYS_low,Q3.2,O0017
+MYS_low_0279,MYS_low,Q4.1,O0020
+MYS_low_0280,MYS_low,Q4.2,O0023
+MYS_low_0281,MYS_low,Q5.1,O0026
+MYS_low_0282,MYS_low,Q5.2,O0029
+MYS_low_0283,MYS_low,Q6.1,O0032
+MYS_low_0284,MYS_low,Q6.2,O0034
+MYS_low_0285,MYS_low,Q7.1,O0037
+MYS_low_0286,MYS_low,Q7.2,O0041
+MYS_low_0287,MYS_low,Q8.1,O0043
+MYS_low_0288,MYS_low,Q8.2,O0047
+MYS_low_0289,MYS_low,Q9.1,O0049
+MYS_low_0290,MYS_low,Q9.2,O0052
+MYS_low_0291,MYS_low,Q10.1,O0055
+MYS_low_0292,MYS_low,Q10.2,O0061
+MYS_low_0293,MYS_low,Q10.3,O0065
+MYS_low_0294,MYS_low,Q11.1,O0067
+MYS_low_0295,MYS_low,Q11.2,O0072
+MYS_low_0296,MYS_low,Q11.3,O0077
+MYS_low_0297,MYS_low,Q12.1,O0080
+MYS_low_0298,MYS_low,Q12.2,O0083
+MYS_low_0299,MYS_low,Q13.1,O0085
+MYS_low_0300,MYS_low,Q13.2,O0088
+MYS_low_0301,MYS_low,Q14.1,O0092
+MYS_low_0302,MYS_low,Q15.1,O0094
+MYS_low_0303,MYS_low,Q15.2,O0097
+MYS_low_0304,MYS_low,Q16.1,O0102
+MYS_low_0305,MYS_low,Q16.2,O0107
+MYS_low_0306,MYS_low,Q17.1,O0109
+MYS_low_0307,MYS_low,Q17.2,O0111
+MYS_low_0308,MYS_low,Q17.3,O0118
+MYS_low_0309,MYS_low,Q18.1,O0120
+MYS_low_0310,MYS_low,Q18.2,O0123
+MYS_low_0311,MYS_low,Q18.3,O0131
+MYS_low_0312,MYS_low,Q19.1,O0134
+MYS_low_0313,MYS_low,Q20.1,O0135
+MYS_low_0314,MYS_low,Q20.2,O0140
+MYS_low_0315,MYS_low,Q21.1,O0144
+MYS_low_0316,MYS_low,Q21.2,O0147
+MYS_low_0317,MYS_low,Q22.1,O0150
+MYS_low_0318,MYS_low,Q22.2,O0154
+MYS_low_0319,MYS_low,Q22.3,O0160
+MYS_low_0320,MYS_low,Q23.1,O0161
+MYS_low_0321,MYS_low,Q23.2,O0166
+MYS_low_0322,MYS_low,Q23.3,O0171
+MYS_low_0323,MYS_low,Q24.1,O0174
+MYS_low_0324,MYS_low,Q24.2,O0178
+MYS_low_0325,MYS_low,Q25.1,O0181;O0182;O0183
+MYS_low_0326,MYS_low,Q25.2,O0186
+MYS_low_0327,MYS_low,Q25.3,O0190
+MYS_low_0328,MYS_low,Q26.1,O0194
+MYS_low_0329,MYS_low,Q26.2,O0198
+MYS_low_0330,MYS_low,Q26.3,O0204
+MYS_low_0331,MYS_low,Q27.1,O0205;O0206;O0207
+MYS_low_0332,MYS_low,Q27.2,O0211
+MYS_low_0333,MYS_low,Q28.1,O0215
+MYS_low_0334,MYS_low,Q29.1,O0217
+MYS_low_0335,MYS_low,Q29.2,O0224
+MYS_low_0336,MYS_low,Q30.1,O0226
+MYS_low_0337,MYS_low,Q30.2,O0233
+MYS_low_0338,MYS_low,Q30.3,O0234
+MYS_low_0339,MYS_low,Q31.1,O0237
+MYS_low_0340,MYS_low,Q31.2,O0241

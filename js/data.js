@@ -12,6 +12,7 @@ const CACHE = {
   countries: null,
   chambers: null,
   responsesByChamber: {},
+  contextByChamber: {},
   glossary: null,
 };
 
@@ -91,11 +92,19 @@ export async function loadChambers() {
   return rows;
 }
 
-/** Loads the response CSV for a single chamber. */
+/** Loads the response CSV for a single chamber (question-level: selected options only). */
 export async function loadResponses(chamberId) {
   if (CACHE.responsesByChamber[chamberId]) return CACHE.responsesByChamber[chamberId];
   const rows = await loadCSV(`${DATA_ROOT}/responses/${chamberId}.csv`);
   CACHE.responsesByChamber[chamberId] = rows;
+  return rows;
+}
+
+/** Loads the indicator-level country_context/supporting_evidence CSV for a single chamber. */
+export async function loadIndicatorContext(chamberId) {
+  if (CACHE.contextByChamber[chamberId]) return CACHE.contextByChamber[chamberId];
+  const rows = await loadCSV(`${DATA_ROOT}/responses/${chamberId}_context.csv`);
+  CACHE.contextByChamber[chamberId] = rows;
   return rows;
 }
 
@@ -114,16 +123,24 @@ export async function loadAllResponses() {
   return all.flat();
 }
 
+/** Loads indicator-level context/evidence for every chamber. */
+export async function loadAllIndicatorContext() {
+  const chambers = await loadChambers();
+  const all = await Promise.all(chambers.map((c) => loadIndicatorContext(c.chamber_id)));
+  return all.flat();
+}
+
 /**
  * Convenience: loads everything the calculation engine typically needs at once.
  * Returns a single normalized "dataset" object.
  */
 export async function loadFullDataset() {
-  const [meta, countries, chambers, responses] = await Promise.all([
+  const [meta, countries, chambers, responses, indicatorContext] = await Promise.all([
     loadMetadata(),
     loadCountries(),
     loadChambers(),
     loadAllResponses(),
+    loadAllIndicatorContext(),
   ]);
-  return { ...meta, countries, chambers, responses };
+  return { ...meta, countries, chambers, responses, indicatorContext };
 }

@@ -1,69 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-KOR_uni_0137,KOR_uni,Q1.1,O0001,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-KOR_uni_0138,KOR_uni,Q1.2,O0005,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-KOR_uni_0139,KOR_uni,Q2.1,O0007,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-KOR_uni_0140,KOR_uni,Q2.2,O0010,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-KOR_uni_0141,KOR_uni,Q3.1,O0014,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-KOR_uni_0142,KOR_uni,Q3.2,O0017,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-KOR_uni_0143,KOR_uni,Q4.1,O0019,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-KOR_uni_0144,KOR_uni,Q4.2,O0022,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-KOR_uni_0145,KOR_uni,Q5.1,O0025,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-KOR_uni_0146,KOR_uni,Q5.2,O0028,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-KOR_uni_0147,KOR_uni,Q6.1,O0032,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-KOR_uni_0148,KOR_uni,Q6.2,O0035,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-KOR_uni_0149,KOR_uni,Q7.1,O0037,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-KOR_uni_0150,KOR_uni,Q7.2,O0041,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-KOR_uni_0151,KOR_uni,Q8.1,O0043,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-KOR_uni_0152,KOR_uni,Q8.2,O0046,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-KOR_uni_0153,KOR_uni,Q9.1,O0049,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-KOR_uni_0154,KOR_uni,Q9.2,O0053,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-KOR_uni_0155,KOR_uni,Q10.1,O0055;O0056;O0057,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-KOR_uni_0156,KOR_uni,Q10.2,O0060,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-KOR_uni_0157,KOR_uni,Q10.3,O0063,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-KOR_uni_0158,KOR_uni,Q11.1,O0069,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-KOR_uni_0159,KOR_uni,Q11.2,O0072,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-KOR_uni_0160,KOR_uni,Q11.3,O0075,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-KOR_uni_0161,KOR_uni,Q12.1,O0079,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-KOR_uni_0162,KOR_uni,Q12.2,O0083,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-KOR_uni_0163,KOR_uni,Q13.1,O0085,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-KOR_uni_0164,KOR_uni,Q13.2,O0089,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-KOR_uni_0165,KOR_uni,Q14.1,O0092,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-KOR_uni_0166,KOR_uni,Q15.1,O0095,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-KOR_uni_0167,KOR_uni,Q15.2,O0099,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-KOR_uni_0168,KOR_uni,Q16.1,O0102,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-KOR_uni_0169,KOR_uni,Q16.2,O0105,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-KOR_uni_0170,KOR_uni,Q17.1,O0109,"Available in the national language only, no official translation.","See parliament website, official publications section."
-KOR_uni_0171,KOR_uni,Q17.2,O0111,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-KOR_uni_0172,KOR_uni,Q17.3,O0116,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-KOR_uni_0173,KOR_uni,Q18.1,O0120,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-KOR_uni_0174,KOR_uni,Q18.2,O0125,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-KOR_uni_0175,KOR_uni,Q18.3,O0128,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-KOR_uni_0176,KOR_uni,Q19.1,O0132,"Available in the national language only, no official translation.","See parliament website, official publications section."
-KOR_uni_0177,KOR_uni,Q20.1,O0135,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-KOR_uni_0178,KOR_uni,Q20.2,O0138,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-KOR_uni_0179,KOR_uni,Q21.1,O0143,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-KOR_uni_0180,KOR_uni,Q21.2,O0146,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-KOR_uni_0181,KOR_uni,Q22.1,O0149,"Available in the national language only, no official translation.","See parliament website, official publications section."
-KOR_uni_0182,KOR_uni,Q22.2,O0152,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-KOR_uni_0183,KOR_uni,Q22.3,O0159,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-KOR_uni_0184,KOR_uni,Q23.1,O0162,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-KOR_uni_0185,KOR_uni,Q23.2,O0164,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-KOR_uni_0186,KOR_uni,Q23.3,O0169,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-KOR_uni_0187,KOR_uni,Q24.1,O0174,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-KOR_uni_0188,KOR_uni,Q24.2,O0178,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-KOR_uni_0189,KOR_uni,Q25.1,O0181,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-KOR_uni_0190,KOR_uni,Q25.2,O0186,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-KOR_uni_0191,KOR_uni,Q25.3,O0191,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-KOR_uni_0192,KOR_uni,Q26.1,O0194,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-KOR_uni_0193,KOR_uni,Q26.2,O0196,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-KOR_uni_0194,KOR_uni,Q26.3,O0201,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-KOR_uni_0195,KOR_uni,Q27.1,O0205;O0206;O0207,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-KOR_uni_0196,KOR_uni,Q27.2,O0210,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-KOR_uni_0197,KOR_uni,Q28.1,O0213,Confirmed via secondary reporting; not directly verified with the secretariat.,No public documentation found at time of assessment.
-KOR_uni_0198,KOR_uni,Q29.1,O0217;O0218;O0219,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-KOR_uni_0199,KOR_uni,Q29.2,O0223,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-KOR_uni_0200,KOR_uni,Q30.1,O0226,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-KOR_uni_0201,KOR_uni,Q30.2,O0231,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-KOR_uni_0202,KOR_uni,Q30.3,O0235,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-KOR_uni_0203,KOR_uni,Q31.1,O0238,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-KOR_uni_0204,KOR_uni,Q31.2,O0240,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
+response_id,chamber_id,question_id,selected_option_ids
+KOR_uni_0137,KOR_uni,Q1.1,O0001
+KOR_uni_0138,KOR_uni,Q1.2,O0005
+KOR_uni_0139,KOR_uni,Q2.1,O0007
+KOR_uni_0140,KOR_uni,Q2.2,O0010
+KOR_uni_0141,KOR_uni,Q3.1,O0014
+KOR_uni_0142,KOR_uni,Q3.2,O0017
+KOR_uni_0143,KOR_uni,Q4.1,O0019
+KOR_uni_0144,KOR_uni,Q4.2,O0022
+KOR_uni_0145,KOR_uni,Q5.1,O0025
+KOR_uni_0146,KOR_uni,Q5.2,O0028
+KOR_uni_0147,KOR_uni,Q6.1,O0032
+KOR_uni_0148,KOR_uni,Q6.2,O0035
+KOR_uni_0149,KOR_uni,Q7.1,O0037
+KOR_uni_0150,KOR_uni,Q7.2,O0041
+KOR_uni_0151,KOR_uni,Q8.1,O0043
+KOR_uni_0152,KOR_uni,Q8.2,O0046
+KOR_uni_0153,KOR_uni,Q9.1,O0049
+KOR_uni_0154,KOR_uni,Q9.2,O0053
+KOR_uni_0155,KOR_uni,Q10.1,O0055;O0056;O0057
+KOR_uni_0156,KOR_uni,Q10.2,O0060
+KOR_uni_0157,KOR_uni,Q10.3,O0063
+KOR_uni_0158,KOR_uni,Q11.1,O0069
+KOR_uni_0159,KOR_uni,Q11.2,O0072
+KOR_uni_0160,KOR_uni,Q11.3,O0075
+KOR_uni_0161,KOR_uni,Q12.1,O0079
+KOR_uni_0162,KOR_uni,Q12.2,O0083
+KOR_uni_0163,KOR_uni,Q13.1,O0085
+KOR_uni_0164,KOR_uni,Q13.2,O0089
+KOR_uni_0165,KOR_uni,Q14.1,O0092
+KOR_uni_0166,KOR_uni,Q15.1,O0095
+KOR_uni_0167,KOR_uni,Q15.2,O0099
+KOR_uni_0168,KOR_uni,Q16.1,O0102
+KOR_uni_0169,KOR_uni,Q16.2,O0105
+KOR_uni_0170,KOR_uni,Q17.1,O0109
+KOR_uni_0171,KOR_uni,Q17.2,O0111
+KOR_uni_0172,KOR_uni,Q17.3,O0116
+KOR_uni_0173,KOR_uni,Q18.1,O0120
+KOR_uni_0174,KOR_uni,Q18.2,O0125
+KOR_uni_0175,KOR_uni,Q18.3,O0128
+KOR_uni_0176,KOR_uni,Q19.1,O0132
+KOR_uni_0177,KOR_uni,Q20.1,O0135
+KOR_uni_0178,KOR_uni,Q20.2,O0138
+KOR_uni_0179,KOR_uni,Q21.1,O0143
+KOR_uni_0180,KOR_uni,Q21.2,O0146
+KOR_uni_0181,KOR_uni,Q22.1,O0149
+KOR_uni_0182,KOR_uni,Q22.2,O0152
+KOR_uni_0183,KOR_uni,Q22.3,O0159
+KOR_uni_0184,KOR_uni,Q23.1,O0162
+KOR_uni_0185,KOR_uni,Q23.2,O0164
+KOR_uni_0186,KOR_uni,Q23.3,O0169
+KOR_uni_0187,KOR_uni,Q24.1,O0174
+KOR_uni_0188,KOR_uni,Q24.2,O0178
+KOR_uni_0189,KOR_uni,Q25.1,O0181
+KOR_uni_0190,KOR_uni,Q25.2,O0186
+KOR_uni_0191,KOR_uni,Q25.3,O0191
+KOR_uni_0192,KOR_uni,Q26.1,O0194
+KOR_uni_0193,KOR_uni,Q26.2,O0196
+KOR_uni_0194,KOR_uni,Q26.3,O0201
+KOR_uni_0195,KOR_uni,Q27.1,O0205;O0206;O0207
+KOR_uni_0196,KOR_uni,Q27.2,O0210
+KOR_uni_0197,KOR_uni,Q28.1,O0213
+KOR_uni_0198,KOR_uni,Q29.1,O0217;O0218;O0219
+KOR_uni_0199,KOR_uni,Q29.2,O0223
+KOR_uni_0200,KOR_uni,Q30.1,O0226
+KOR_uni_0201,KOR_uni,Q30.2,O0231
+KOR_uni_0202,KOR_uni,Q30.3,O0235
+KOR_uni_0203,KOR_uni,Q31.1,O0238
+KOR_uni_0204,KOR_uni,Q31.2,O0240

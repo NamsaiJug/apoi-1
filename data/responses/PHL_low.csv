@@ -1,69 +1,69 @@
-response_id,chamber_id,question_id,selected_option_ids,country_context,supporting_evidence
-PHL_low_0137,PHL_low,Q1.1,O0001,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-PHL_low_0138,PHL_low,Q1.2,O0005,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-PHL_low_0139,PHL_low,Q2.1,O0007,Confirmed via secondary reporting; not directly verified with the secretariat.,Cross-checked with civil society monitoring reports.
-PHL_low_0140,PHL_low,Q2.2,O0011,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-PHL_low_0141,PHL_low,Q3.1,O0013,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-PHL_low_0142,PHL_low,Q3.2,O0017,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_low_0143,PHL_low,Q4.1,O0020,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-PHL_low_0144,PHL_low,Q4.2,O0023,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0145,PHL_low,Q5.1,O0025,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-PHL_low_0146,PHL_low,Q5.2,O0028,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-PHL_low_0147,PHL_low,Q6.1,O0032,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-PHL_low_0148,PHL_low,Q6.2,O0035,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0149,PHL_low,Q7.1,O0039,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_low_0150,PHL_low,Q7.2,O0041,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_low_0151,PHL_low,Q8.1,O0043,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-PHL_low_0152,PHL_low,Q8.2,O0046,"Provided only upon formal request, not proactively disclosed.",Reference: most recent annual transparency report.
-PHL_low_0153,PHL_low,Q9.1,O0050,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_low_0154,PHL_low,Q9.2,O0054,"Available in the national language only, no official translation.",No public documentation found at time of assessment.
-PHL_low_0155,PHL_low,Q10.1,O0055;O0056,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_low_0156,PHL_low,Q10.2,O0061,Publicly available on the parliament's official website.,Reference: most recent annual transparency report.
-PHL_low_0157,PHL_low,Q10.3,O0063,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0158,PHL_low,Q11.1,O0067,"Available in the national language only, no official translation.","See parliament website, official publications section."
-PHL_low_0159,PHL_low,Q11.2,O0072,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_low_0160,PHL_low,Q11.3,O0075,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0161,PHL_low,Q12.1,O0079,"Available in the national language only, no official translation.",Illustrative placeholder — not independently verified.
-PHL_low_0162,PHL_low,Q12.2,O0083,"Available in the national language only, no official translation.","See parliament website, official publications section."
-PHL_low_0163,PHL_low,Q13.1,O0085,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0164,PHL_low,Q13.2,O0088,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_low_0165,PHL_low,Q14.1,O0091,Confirmed via secondary reporting; not directly verified with the secretariat.,Reference: most recent annual transparency report.
-PHL_low_0166,PHL_low,Q15.1,O0094,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-PHL_low_0167,PHL_low,Q15.2,O0097,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0168,PHL_low,Q16.1,O0102,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-PHL_low_0169,PHL_low,Q16.2,O0105,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-PHL_low_0170,PHL_low,Q17.1,O0108,Practice varies by session; not consistently applied.,Cross-checked with civil society monitoring reports.
-PHL_low_0171,PHL_low,Q17.2,O0111,Practice varies by session; not consistently applied.,Illustrative placeholder — not independently verified.
-PHL_low_0172,PHL_low,Q17.3,O0116,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0173,PHL_low,Q18.1,O0121,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-PHL_low_0174,PHL_low,Q18.2,O0123,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0175,PHL_low,Q18.3,O0128,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_low_0176,PHL_low,Q19.1,O0132,Publicly available on the parliament's official website.,Illustrative placeholder — not independently verified.
-PHL_low_0177,PHL_low,Q20.1,O0136,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0178,PHL_low,Q20.2,O0142,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_low_0179,PHL_low,Q21.1,O0143,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0180,PHL_low,Q21.2,O0147,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-PHL_low_0181,PHL_low,Q22.1,O0149,Confirmed via secondary reporting; not directly verified with the secretariat.,Illustrative placeholder — not independently verified.
-PHL_low_0182,PHL_low,Q22.2,O0154,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_low_0183,PHL_low,Q22.3,O0157,"Available in the national language only, no official translation.",Cross-checked with civil society monitoring reports.
-PHL_low_0184,PHL_low,Q23.1,O0161,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_low_0185,PHL_low,Q23.2,O0164,"Provided only upon formal request, not proactively disclosed.",No public documentation found at time of assessment.
-PHL_low_0186,PHL_low,Q23.3,O0172,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0187,PHL_low,Q24.1,O0173,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0188,PHL_low,Q24.2,O0176,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0189,PHL_low,Q25.1,O0181;O0182;O0183,Publicly available on the parliament's official website.,Cross-checked with civil society monitoring reports.
-PHL_low_0190,PHL_low,Q25.2,O0188,Publicly available on the parliament's official website.,No public documentation found at time of assessment.
-PHL_low_0191,PHL_low,Q25.3,O0191,"Available in the national language only, no official translation.","See parliament website, official publications section."
-PHL_low_0192,PHL_low,Q26.1,O0194,"Provided only upon formal request, not proactively disclosed.",Cross-checked with civil society monitoring reports.
-PHL_low_0193,PHL_low,Q26.2,O0196,Practice varies by session; not consistently applied.,"See parliament website, official publications section."
-PHL_low_0194,PHL_low,Q26.3,O0203,Practice varies by session; not consistently applied.,Reference: most recent annual transparency report.
-PHL_low_0195,PHL_low,Q27.1,O0205;O0206,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-PHL_low_0196,PHL_low,Q27.2,O0210,Publicly available on the parliament's official website.,"See parliament website, official publications section."
-PHL_low_0197,PHL_low,Q28.1,O0214,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
-PHL_low_0198,PHL_low,Q29.1,O0217;O0218;O0219;O0220,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_low_0199,PHL_low,Q29.2,O0223,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_low_0200,PHL_low,Q30.1,O0226,"Provided only upon formal request, not proactively disclosed.","See parliament website, official publications section."
-PHL_low_0201,PHL_low,Q30.2,O0231,Confirmed via secondary reporting; not directly verified with the secretariat.,"See parliament website, official publications section."
-PHL_low_0202,PHL_low,Q30.3,O0235,"Provided only upon formal request, not proactively disclosed.",Illustrative placeholder — not independently verified.
-PHL_low_0203,PHL_low,Q31.1,O0238,Practice varies by session; not consistently applied.,No public documentation found at time of assessment.
-PHL_low_0204,PHL_low,Q31.2,O0241,"Available in the national language only, no official translation.",Reference: most recent annual transparency report.
+response_id,chamber_id,question_id,selected_option_ids
+PHL_low_0137,PHL_low,Q1.1,O0001
+PHL_low_0138,PHL_low,Q1.2,O0005
+PHL_low_0139,PHL_low,Q2.1,O0007
+PHL_low_0140,PHL_low,Q2.2,O0011
+PHL_low_0141,PHL_low,Q3.1,O0013
+PHL_low_0142,PHL_low,Q3.2,O0017
+PHL_low_0143,PHL_low,Q4.1,O0020
+PHL_low_0144,PHL_low,Q4.2,O0023
+PHL_low_0145,PHL_low,Q5.1,O0025
+PHL_low_0146,PHL_low,Q5.2,O0028
+PHL_low_0147,PHL_low,Q6.1,O0032
+PHL_low_0148,PHL_low,Q6.2,O0035
+PHL_low_0149,PHL_low,Q7.1,O0039
+PHL_low_0150,PHL_low,Q7.2,O0041
+PHL_low_0151,PHL_low,Q8.1,O0043
+PHL_low_0152,PHL_low,Q8.2,O0046
+PHL_low_0153,PHL_low,Q9.1,O0050
+PHL_low_0154,PHL_low,Q9.2,O0054
+PHL_low_0155,PHL_low,Q10.1,O0055;O0056
+PHL_low_0156,PHL_low,Q10.2,O0061
+PHL_low_0157,PHL_low,Q10.3,O0063
+PHL_low_0158,PHL_low,Q11.1,O0067
+PHL_low_0159,PHL_low,Q11.2,O0072
+PHL_low_0160,PHL_low,Q11.3,O0075
+PHL_low_0161,PHL_low,Q12.1,O0079
+PHL_low_0162,PHL_low,Q12.2,O0083
+PHL_low_0163,PHL_low,Q13.1,O0085
+PHL_low_0164,PHL_low,Q13.2,O0088
+PHL_low_0165,PHL_low,Q14.1,O0091
+PHL_low_0166,PHL_low,Q15.1,O0094
+PHL_low_0167,PHL_low,Q15.2,O0097
+PHL_low_0168,PHL_low,Q16.1,O0102
+PHL_low_0169,PHL_low,Q16.2,O0105
+PHL_low_0170,PHL_low,Q17.1,O0108
+PHL_low_0171,PHL_low,Q17.2,O0111
+PHL_low_0172,PHL_low,Q17.3,O0116
+PHL_low_0173,PHL_low,Q18.1,O0121
+PHL_low_0174,PHL_low,Q18.2,O0123
+PHL_low_0175,PHL_low,Q18.3,O0128
+PHL_low_0176,PHL_low,Q19.1,O0132
+PHL_low_0177,PHL_low,Q20.1,O0136
+PHL_low_0178,PHL_low,Q20.2,O0142
+PHL_low_0179,PHL_low,Q21.1,O0143
+PHL_low_0180,PHL_low,Q21.2,O0147
+PHL_low_0181,PHL_low,Q22.1,O0149
+PHL_low_0182,PHL_low,Q22.2,O0154
+PHL_low_0183,PHL_low,Q22.3,O0157
+PHL_low_0184,PHL_low,Q23.1,O0161
+PHL_low_0185,PHL_low,Q23.2,O0164
+PHL_low_0186,PHL_low,Q23.3,O0172
+PHL_low_0187,PHL_low,Q24.1,O0173
+PHL_low_0188,PHL_low,Q24.2,O0176
+PHL_low_0189,PHL_low,Q25.1,O0181;O0182;O0183
+PHL_low_0190,PHL_low,Q25.2,O0188
+PHL_low_0191,PHL_low,Q25.3,O0191
+PHL_low_0192,PHL_low,Q26.1,O0194
+PHL_low_0193,PHL_low,Q26.2,O0196
+PHL_low_0194,PHL_low,Q26.3,O0203
+PHL_low_0195,PHL_low,Q27.1,O0205;O0206
+PHL_low_0196,PHL_low,Q27.2,O0210
+PHL_low_0197,PHL_low,Q28.1,O0214
+PHL_low_0198,PHL_low,Q29.1,O0217;O0218;O0219;O0220
+PHL_low_0199,PHL_low,Q29.2,O0223
+PHL_low_0200,PHL_low,Q30.1,O0226
+PHL_low_0201,PHL_low,Q30.2,O0231
+PHL_low_0202,PHL_low,Q30.3,O0235
+PHL_low_0203,PHL_low,Q31.1,O0238
+PHL_low_0204,PHL_low,Q31.2,O0241
